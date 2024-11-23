@@ -4,6 +4,7 @@ import EventEmitter from 'events';
 import settings from './config/settings';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
+import logger from './logger';
 
 const receiveImageEmitter = new EventEmitter();
 
@@ -12,18 +13,19 @@ async function startServer() {
         const RECEIVE_IMAGE_PORT = settings.RECEIVE_IMAGE_PORT;
         const imageServer = new WebSocket.Server({ host: settings.RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
 
-        console.log(`Image Receiver running on ws://${settings.RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
+        logger.info(`Image Receiver running on ws://${settings.RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
 
         imageServer.on('connection', (socket) => {
-            console.log('Connected to image sender');
+            logger.info('Connected to image sender');
 
             socket.on('message', async (data) => {
-                console.log('Image received');
+                logger.info('Image received');
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
                 try {
                     if (!fs.existsSync(imagesDir)) {
                         fs.mkdirSync(imagesDir, { recursive: true });
+                        logger.info(`Created directory: ${imagesDir}`);
                     }
 
                     // Generate a unique filename for the received image
@@ -45,39 +47,42 @@ async function startServer() {
                             }
                             const base64Image = imageData.image.split(';base64,').pop();
                             await fs.promises.writeFile(filePath, base64Image, 'base64');
-                            console.log(`Image saved to ${filePath} (Base64)`);
+                            logger.info(`Image saved to ${filePath} (Base64)`);
                             receiveImageEmitter.emit('imageReceived', base64Image);
                         } catch (e) {
-                            console.error('Error parsing Base64 image data:', e);
+                            logger.error('Error parsing Base64 image data:', e);
                         }
                     } else {
                         // Assume binary data if not Base64
                         await fs.promises.writeFile(filePath, data);
-                        console.log(`Image saved to ${filePath} (Binary)`);
+                        logger.info(`Image saved to ${filePath} (Binary)`);
                         receiveImageEmitter.emit('imageReceived', data.toString('base64'));
                     }
                 } catch (err) {
-                    console.error('Error handling the image directory or file:', err);
+                    logger.error('Error handling the image directory or file:', err);
                 }
             });
 
             socket.on('close', () => {
-                console.log('Image sender disconnected');
+                logger.info('Image sender disconnected');
             });
 
             socket.on('error', (err) => {
-                console.error('Socket error:', err);
+                logger.error('Socket error:', err);
             });
         });
 
         imageServer.on('error', (err) => {
-            console.error('Error starting the server:', err);
+            logger.error('Error starting the server:', err);
         });
     } catch (err) {
-        console.error('Error starting the server:', err);
+        logger.error('Error starting the server:', err);
     }
 }
 
 startServer();
 
 module.exports = receiveImageEmitter;
+receiveImageEmitter.on('imageReceived', (imageData) => {
+    logger.info('Image received and processed');
+});

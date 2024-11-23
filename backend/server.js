@@ -1,15 +1,13 @@
 // server.js 
-const express = require('express');
-const http = require('http');
-const { Server } = require('socket.io');
-const sendPromptToFriend = require('./promptSender');
-const receiveImage = require('./receiveImage');
-const path = require('path');
-const errorHandler = require('./middleware/errorHandler');
-const logger = require('./logger');
-const { body, validationResult } = require('express-validator');
-const net = require('net'); 
-const { v4: uuidv4 } = require('uuid');
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
+import sendPromptToFriend from './promptSender';
+import receiveImage from './receiveImage';
+import path from 'path';
+import errorHandler from './middleware/errorHandler';
+import logger from './backend/logger.js';
+import { body, validationResult } from 'express-validator';
 
 const app = express();
 const server = http.createServer(app);
@@ -22,7 +20,7 @@ app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
 
 // Serve index.html
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 

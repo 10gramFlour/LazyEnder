@@ -1,7 +1,13 @@
-const { spawn, exec } = require('child_process');
-const path = require('path');
-const logger = require('./backend/logger');
-const kill = require('tree-kill');
+import { spawn, exec } from 'child_process';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import logger from './backend/logger.js';
+import kill from 'tree-kill';
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Validate and sanitize script paths
 function validateScriptPath(scriptPath) {
