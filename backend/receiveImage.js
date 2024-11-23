@@ -40,15 +40,32 @@ async function startServer() {
                 logger.info(`Total received data size: ${dataBuffer.length} bytes`);
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
+                const activeDir = path.join(imagesDir, 'active');
+                const archiveDir = path.join(imagesDir, 'archive');
+
                 try {
-                    if (!fs.existsSync(imagesDir)) {
-                        fs.mkdirSync(imagesDir, { recursive: true });
-                        logger.info(`Created directory: ${imagesDir}`);
+                    if (!fs.existsSync(activeDir)) {
+                        fs.mkdirSync(activeDir, { recursive: true });
+                        logger.info(`Created directory: ${activeDir}`);
+                    }
+
+                    if (!fs.existsSync(archiveDir)) {
+                        fs.mkdirSync(archiveDir, { recursive: true });
+                        logger.info(`Created directory: ${archiveDir}`);
+                    }
+
+                    // Move the current active image to the archive
+                    const activeFiles = fs.readdirSync(activeDir);
+                    for (const file of activeFiles) {
+                        const oldPath = path.join(activeDir, file);
+                        const newPath = path.join(archiveDir, file);
+                        fs.renameSync(oldPath, newPath);
+                        logger.info(`Moved ${file} to archive`);
                     }
 
                     // Generate a unique filename for the received image
                     const uniqueFilename = `received_image_${uuidv4()}.jpg`;
-                    let filePath = path.join(imagesDir, uniqueFilename);
+                    let filePath = path.join(activeDir, uniqueFilename);
 
                     // Validate and sanitize incoming data
                     if (!Buffer.isBuffer(dataBuffer)) {
@@ -58,7 +75,6 @@ async function startServer() {
                     // Assume binary data and write it to the file
                     await fs.promises.writeFile(filePath, dataBuffer);
                     logger.info(`Image saved to ${filePath} (Binary)`);
-                    receiveImageEmitter.emit('imageReceived', filePath);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }

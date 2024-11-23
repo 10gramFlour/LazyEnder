@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         promptForm.addEventListener('submit', async (event) => {
             event.preventDefault();
+            console.log('Form submit event triggered');
+
             const prompt = document.getElementById('prompt').value.trim();
+            console.log('Prompt value:', prompt);
 
             if (prompt) {
                 console.log('Sending prompt to server:', prompt);
@@ -42,32 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         body: JSON.stringify({ prompt })
                     });
 
+                    console.log('Response received from server');
                     const result = await response.json();
+                    console.log('Result from server:', result);
+
                     if (response.ok) {
                         console.log('Received image path from server:', result.imagePath);
                         // Hide loading indicator
                         document.getElementById('loading').style.display = 'none';
 
-                        // Create and display new image
-                        const img = document.createElement('img');
-                        img.src = result.imagePath; // Assuming the image path is returned
-                        img.alt = 'Generated Image';
-                        img.id = 'generatedImage';
-
-                        const imageContainer = document.getElementById('imageContainer');
-                        imageContainer.innerHTML = ''; // Remove previous image
-                        imageContainer.appendChild(img);
-                        console.log('Image displayed:', img.src);
+                        // Update the active image
+                        const activeImage = document.getElementById('activeImage');
+                        activeImage.src = result.imagePath;
+                        console.log('Active image updated:', activeImage.src);
 
                         // Show download button
                         const downloadButton = document.getElementById('downloadButton');
                         downloadButton.style.display = 'block';
                         downloadButton.onclick = () => {
                             const a = document.createElement('a');
-                            a.href = img.src;
+                            a.href = activeImage.src;
                             a.download = 'generated_image.jpg';
                             a.click();
-                            console.log('Download initiated for:', img.src);
+                            console.log('Download initiated for:', activeImage.src);
                         };
                     } else {
                         console.error('Error from server:', result.error);
