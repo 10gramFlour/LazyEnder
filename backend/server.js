@@ -6,7 +6,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import sendPromptToFriend from './promptSender.js';
-import receiveImage from './receiveImage.js';
+import EventEmitter from 'events';
+const receiveImage = new EventEmitter();
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
@@ -21,7 +22,7 @@ const __dirname = dirname(__filename);
 async function startServer() {
     logger.info('Starting server setup...');
     const PORT = RECEIVE_PROMPT_PORT; // Fixed HTTP port for sending prompts
-    const WEBSOCKET_PORT = 8081; // Changed WebSocket port to avoid conflict
+    const WEBSOCKET_PORT = 8081; // Fixed WebSocket port
     logger.info(`Using fixed ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
 
     server = http.createServer(app);

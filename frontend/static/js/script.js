@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('connect', () => {
         console.log('WebSocket connection established');
+        const statusBadge = document.getElementById('statusBadge');
+        statusBadge.textContent = 'Connected';
+        statusBadge.className = 'connected';
+    });
+
+    socket.on('disconnect', () => {
+        console.log('WebSocket connection closed');
+        const statusBadge = document.getElementById('statusBadge');
+        statusBadge.textContent = 'Disconnected';
+        statusBadge.className = 'disconnected';
     });
 
     socket.on('imageUpdated', (data) => {
@@ -35,10 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    socket.on('disconnect', () => {
-        console.log('WebSocket connection closed');
-    });
-
     socket.on('error', (error) => {
         console.error('WebSocket error:', error);
         document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
@@ -47,6 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('connect_error', (error) => {
         console.error('WebSocket connection error:', error);
         document.getElementById('error').textContent = 'Unable to connect to the server. Please check your internet connection and try again.';
+    });
+
+    socket.on('reconnect_attempt', () => {
+        const statusBadge = document.getElementById('statusBadge');
+        statusBadge.textContent = 'Reconnecting...';
+        statusBadge.className = 'reconnecting';
+    });
+
+    socket.on('reconnect', () => {
+        const statusBadge = document.getElementById('statusBadge');
+        statusBadge.textContent = 'Connected';
+        statusBadge.className = 'connected';
     });
 
     if (promptForm) {
@@ -60,82 +78,59 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Prompt value:', prompt);
 
             if (prompt) {
-            console.log('Sending prompt to server:', prompt);
-            // Show loading indicator
-            document.getElementById('loading').style.display = 'block';
-            document.getElementById('error').textContent = ''; // Clear previous error messages
+                console.log('Sending prompt to server:', prompt);
+                // Show loading indicator
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').textContent = ''; // Clear previous error messages
 
-            try {
-                const response = await fetch('/sendPrompt', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'socket-id': socket.id // Send the socket ID in the request headers
-                },
-                body: JSON.stringify({ prompt })
-                });
+                try {
+                    const response = await fetch('/sendPrompt', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'socket-id': socket.id // Send the socket ID in the request headers
+                        },
+                        body: JSON.stringify({ prompt })
+                    });
 
-                console.log('Response received from server');
-                const result = await response.json();
-                console.log('Result from server:', result);
+                    console.log('Response received from server');
+                    const result = await response.json();
+                    console.log('Result from server:', result);
 
-                if (response.ok) {
-                console.log('Received image path from server:', result.imagePath);
-                // Hide loading indicator
-                document.getElementById('loading').style.display = 'none';
+                    if (response.ok) {
+                        console.log('Received image path from server:', result.imagePath);
+                        // Hide loading indicator
+                        document.getElementById('loading').style.display = 'none';
 
-                // Update the active image
-                const activeImage = document.getElementById('activeImage');
-                activeImage.src = result.imagePath;
-                console.log('Active image updated:', activeImage.src);
+                        // Update the active image
+                        const activeImage = document.getElementById('activeImage');
+                        activeImage.src = result.imagePath;
+                        console.log('Active image updated:', activeImage.src);
 
-                // Show download button
-                const downloadButton = document.getElementById('downloadButton');
-                downloadButton.style.display = 'block';
-                downloadButton.onclick = () => {
-                    const a = document.createElement('a');
-                    a.href = activeImage.src;
-                    a.download = 'generated_image.jpg';
-                    a.click();
-                    console.log('Download initiated for:', activeImage.src);
-                };
-                } else {
-                console.error('Error from server:', result.error);
-                document.getElementById('error').textContent = result.error;
+                        // Show download button
+                        const downloadButton = document.getElementById('downloadButton');
+                        downloadButton.style.display = 'block';
+                        downloadButton.onclick = () => {
+                            const a = document.createElement('a');
+                            a.href = activeImage.src;
+                            a.download = 'generated_image.jpg';
+                            a.click();
+                            console.log('Download initiated for:', activeImage.src);
+                        };
+                    } else {
+                        console.error('Error from server:', result.error);
+                        document.getElementById('error').textContent = result.error;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    document.getElementById('error').textContent = 'An error occurred. Please try again later.';
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('error').textContent = 'An error occurred. Please try again later.';
-            }
             } else {
-            console.error('Prompt cannot be empty.');
-            document.getElementById('error').textContent = 'Prompt cannot be empty.';
+                console.error('Prompt cannot be empty.');
+                document.getElementById('error').textContent = 'Prompt cannot be empty.';
             }
         });
     } else {
         console.error('promptForm element not found');
     }
-});
-
-
-// Handle WebSocket reconnection attempts
-socket.on('reconnect_attempt', () => {
-    const statusBadge = document.getElementById('statusBadge');
-    statusBadge.textContent = 'Reconnecting...';
-    statusBadge.className = 'reconnecting';
-});
-
-// Handle WebSocket reconnection success
-socket.on('reconnect', () => {
-    const statusBadge = document.getElementById('statusBadge');
-    statusBadge.textContent = 'Reconnected';
-    statusBadge.className = 'connected';
-});
-
-// Handle WebSocket reconnection failure
-socket.on('reconnect_failed', () => {
-    const statusBadge = document.getElementById('statusBadge');
-    statusBadge.textContent = 'Reconnection Failed';
-    statusBadge.className = 'disconnected';
-    document.getElementById('error').textContent = 'Failed to reconnect to the server. Please refresh the page or try again later.';
 });

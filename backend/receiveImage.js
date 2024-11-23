@@ -56,6 +56,7 @@ async function startServer() {
 
                     // Emit event to notify the specific client
                     receiveImageEmitter.emit('imageReceived', imagePath);
+                    logger.info(`Event 'imageReceived' emitted with path: ${imagePath}`);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }
