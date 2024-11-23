@@ -6,22 +6,21 @@ import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 
-
 const receiveImageEmitter = new EventEmitter();
-let serverStarted = false;
-let imageServer;
 
-async function startServer(port = RECEIVE_IMAGE_PORT) {
+let serverStarted = false;
+
+async function startServer() {
     if (serverStarted) {
         logger.info('Server is already running.');
         return;
     }
+    serverStarted = true;
 
     try {
-        imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port });
-        serverStarted = true;
+        const imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
 
-        logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${port}`);
+        logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
 
         imageServer.on('connection', (socket) => {
             logger.info('Connected to image sender');
@@ -81,27 +80,10 @@ async function startServer(port = RECEIVE_IMAGE_PORT) {
         });
 
         imageServer.on('error', (err) => {
-            if (err.code === 'EADDRINUSE') {
-                logger.error(`Address in use, retrying with a different port...`);
-                startServer(port + 1);
-            } else {
-                logger.error('Error starting the server:', err);
-            }
+            logger.error('Error starting the server:', err);
         });
-
-        process.on('SIGINT', shutdownServer);
-        process.on('SIGTERM', shutdownServer);
     } catch (err) {
         logger.error('Error starting the server:', err);
-    }
-}
-
-function shutdownServer() {
-    if (imageServer) {
-        imageServer.close(() => {
-            logger.info('Server shut down gracefully.');
-            process.exit(0);
-        });
     }
 }
 
