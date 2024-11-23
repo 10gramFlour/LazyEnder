@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 console.log('Download initiated for:', activeImage.src);
                             };
 
+                            // Handle WebSocket image updates
                             socket.on('imageUpdated', (data) => {
                                 console.log('WebSocket message received:', data);
                                 if (data.imagePath) {
@@ -84,16 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
                                     console.log('Active image updated via WebSocket:', activeImage.src);
                                 }
                             });
-
+                            
+                            // Handle WebSocket disconnection
                             socket.on('disconnect', () => {
                                 console.log('WebSocket connection closed');
                             });
-
+                            
+                            // Handle WebSocket errors
                             socket.on('error', (error) => {
                                 console.error('WebSocket error:', error);
                                 document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
                             });
-
+                            
+                            // Handle WebSocket connection errors
                             socket.on('connect_error', (error) => {
                                 console.error('WebSocket connection error:', error);
                                 document.getElementById('error').textContent = 'Unable to connect to the server. Please check your internet connection and try again.';
@@ -117,17 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Handle WebSocket errors
-socket.on('error', (error) => {
-    console.error('WebSocket error:', error);
-    document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
-});
-
-// Handle WebSocket connection errors
-socket.on('connect_error', (error) => {
-    console.error('WebSocket connection error:', error);
-    document.getElementById('error').textContent = 'Unable to connect to the server. Please check your internet connection and try again.';
-});
 
 // Handle WebSocket reconnection attempts
 socket.on('reconnect_attempt', () => {
