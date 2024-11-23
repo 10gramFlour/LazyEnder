@@ -1,7 +1,7 @@
-// promptSender.js 
-const net = require('net');
-const { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } = require('./config/settings');
-const validator = require('validator');
+// promptSender.js
+import net from 'net';
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
+import validator from 'validator';
 
 // Function to validate and sanitize the prompt
 const validateAndSanitizePrompt = (prompt) => {
@@ -44,4 +44,4 @@ const sendPromptToFriend = (prompt) => {
     });
 };
 
-module.exports = sendPromptToFriend;
+export default sendPromptToFriend;
