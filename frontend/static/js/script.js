@@ -41,7 +41,7 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
 
                 // Create and display new image
                 const img = document.createElement('img');
-                img.src = `/static/${result.imagePath.split('\\').pop()}`; // Assuming the image path is returned
+                img.src = result.imagePath; // Assuming the image path is returned
                 img.alt = 'Generated Image';
                 img.id = 'generatedImage';
 

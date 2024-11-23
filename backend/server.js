@@ -39,7 +39,7 @@ async function startServer() {
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
 
     // Serve index.html
-    app.get('/', (_req, res) => {
+    app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/index.html'));
     });
 
@@ -63,7 +63,7 @@ async function startServer() {
             if (receiveImage.listenerCount('imageReceived') === 0) {
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info('Image received from friend.');
-                    res.json({ imagePath: filePath }); // Send the image path to the frontend
+                    res.json({ imagePath: `/static/${path.basename(filePath)}` }); // Send the image path to the frontend
                 });
             }
         } catch (error) {
