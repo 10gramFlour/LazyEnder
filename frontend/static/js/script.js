@@ -1,10 +1,8 @@
 // Establish WebSocket connection
 const socket = io();  // Production environment
-console.log('Attempting to establish WebSocket connection...');
 
 // Update status badge on connection
 socket.on('connect', () => {
-    console.log('WebSocket connection established successfully.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Connected';
     statusBadge.className = 'connected';
@@ -12,7 +10,6 @@ socket.on('connect', () => {
 
 // Update status badge on disconnection
 socket.on('disconnect', () => {
-    console.log('WebSocket connection lost.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Disconnected';
     statusBadge.className = 'disconnected';
@@ -74,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // WebSocket connection to receive updates
-                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Use the dynamic WebSocket port
+                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
 
                         socket.addEventListener('open', () => {
                             console.log('WebSocket connection established');
@@ -131,7 +128,6 @@ socket.on('connect_error', (error) => {
 
 // Handle WebSocket reconnection attempts
 socket.on('reconnect_attempt', () => {
-    console.log('Attempting to reconnect WebSocket...');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnecting...';
     statusBadge.className = 'reconnecting';
@@ -139,7 +135,6 @@ socket.on('reconnect_attempt', () => {
 
 // Handle WebSocket reconnection success
 socket.on('reconnect', () => {
-    console.log('WebSocket reconnected successfully.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnected';
     statusBadge.className = 'connected';
@@ -147,7 +142,6 @@ socket.on('reconnect', () => {
 
 // Handle WebSocket reconnection failure
 socket.on('reconnect_failed', () => {
-    console.error('WebSocket reconnection failed.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnection Failed';
     statusBadge.className = 'disconnected';

@@ -6,14 +6,9 @@
     "auditLog": "C:\\Apps\\LazyEnder\\logs\\.9525af7eb78769ec89c5abcf0c18d0046c79cb8e-audit.json",
     "files": [
         {
-            "date": 1732309385348,
-            "name": "C:\\Apps\\LazyEnder\\logs\\application-2024-11-22.log",
-            "hash": "d7bdcbf34f5bbd0a8e06986280e76e785d231f2bbff05a8dd7dfeee44a4397a1"
-        },
-        {
-            "date": 1732351177685,
+            "date": 1732380891004,
             "name": "C:\\Apps\\LazyEnder\\logs\\application-2024-11-23.log",
-            "hash": "b9ccab7b58efacfc2c79b97083b70bc4ae13948689bf6e230921f1e5cecd820d"
+            "hash": "3eb5aec60ca3516397ddc4fc4f80bff1f2d28d8e8469397ade64ce4db31adc23"
         }
     ],
     "hashType": "sha256"

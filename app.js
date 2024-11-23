@@ -1,8 +1,8 @@
+import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
-import { exec } from 'child_process';
 import kill from 'tree-kill';
 
 // Get the directory of the current script file
@@ -21,66 +21,50 @@ function validateScriptPath(scriptPath) {
 const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js'));
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
 
-let serverProcesses = {
-    backendServer: null,
-    receiveImageServer: null,
-};
+let backendServerStarted = false;
+let receiveImageServerStarted = false;
 
 // Function to start a server using Node.js child process
 function startServer(scriptPath, serverName) {
-    if (serverProcesses[serverName]) {
-        logger.warn(`${serverName} is already running (PID: ${serverProcesses[serverName].pid}).`);
+    if ((serverName === 'Backend Server' && backendServerStarted) || 
+        (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
+        logger.warn(`${serverName} is already started.`);
         return null;
     }
 
-    const serverProcess = exec(`node ${scriptPath}`, (error, stdout, stderr) => {
-        if (error) {
-            logger.error(`Error starting ${serverName}: ${error}`);
-            return;
-        }
-        if (stderr) {
-            logger.error(`${serverName} stderr: ${stderr}`);
-            return;
-        }
-        logger.info(`${serverName} stdout: ${stdout}`);
+    logger.info(`Starting ${serverName}...`);
+    const server = spawn('node', [scriptPath]);
+
+    server.stdout.on('data', (data) => {
+        logger.info(`${serverName} stdout: ${data}`);
     });
 
-    serverProcess.on('exit', (code) => {
+    server.stderr.on('data', (data) => {
+        logger.error(`${serverName} stderr: ${data}`);
+    });
+
+    server.on('error', (err) => {
+        logger.error(`${serverName} failed to start: ${err}`);
+    });
+
+    server.on('close', (code) => {
         logger.info(`${serverName} exited with code ${code}`);
-        serverProcesses[serverName] = null;
     });
 
-    serverProcesses[serverName] = serverProcess;
-    logger.info(`${serverName} started with PID: ${serverProcess.pid}`);
-    return serverProcess;
+    if (serverName === 'Backend Server') backendServerStarted = true;
+    if (serverName === 'Receive Image Server') receiveImageServerStarted = true;
+
+    return server;
 }
 
-// Stop a server by its process
-function stopServer(serverName) {
-    const processToKill = serverProcesses[serverName];
-    if (!processToKill) {
-        logger.warn(`${serverName} is not running.`);
-        return;
-    }
-
-    kill(processToKill.pid, 'SIGTERM', (err) => {
-        if (err) {
-            logger.error(`Failed to stop ${serverName}: ${err}`);
-        } else {
-            logger.info(`${serverName} stopped successfully.`);
-            serverProcesses[serverName] = null;
-        }
-    });
-}
-
-// Start the server scripts
-startServer(receiveImageScript, 'receiveImageServer');
-startServer(serverScript, 'backendServer');
+// Start both backend and image receiver servers
+const backendServer = startServer(serverScript, 'Backend Server');
+const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server');
 
 // Clean up servers on application termination
 process.on('SIGINT', async () => {
     logger.info('Closing servers...');
-    await stopServers([serverProcesses.backendServer, serverProcesses.receiveImageServer]);
+    await stopServers([backendServer, receiveImageServer]);
     logger.info('All servers closed. Exiting application.');
     process.exit(0);
 });

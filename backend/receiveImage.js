@@ -1,118 +1,48 @@
+// promptSender.js
 import net from 'net';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import { v4 as uuidv4 } from 'uuid';
-import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
-import logger from './logger.js';
-import EventEmitter from 'events';
-import { WebSocketServer } from 'ws';
-import portfinder from 'portfinder';
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
+import validator from 'validator';
 
-// Get the directory name
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const receiveImageEmitter = new EventEmitter();
-
-let serverStarted = false;
-let server; // Ensure the variable `server` is declared here
-
-async function startServer() {
-    if (serverStarted) {
-        logger.info('Server is already running.');
-        return;
+// Function to validate and sanitize the prompt
+const validateAndSanitizePrompt = (prompt) => {
+    if (typeof prompt !== 'string' || validator.isEmpty(prompt)) {
+        throw new Error('Invalid prompt: Prompt must be a non-empty string.');
     }
-    serverStarted = true;
+    return validator.escape(prompt);
+};
 
-    try {
-        const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
-        const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
-        logger.info(`WebSocket Server running on port ${WEBSOCKET_PORT}`);
+// Function to send prompt to friend
+const sendPromptToFriend = (prompt) => {
+    return new Promise((resolve, reject) => {
+        try {
+            const sanitizedPrompt = validateAndSanitizePrompt(prompt);
+            const client = new net.Socket();
 
-        server = net.createServer((socket) => { // Initialize the variable `server` here
-            logger.info('Connected to image sender');
-
-            let dataBuffer = Buffer.alloc(0);
-
-            socket.on('data', (data) => {
-                logger.info(`Receiving image data chunk of size ${data.length} bytes...`);
-                dataBuffer = Buffer.concat([dataBuffer, data]);
-                logger.info(`Current buffer size: ${dataBuffer.length} bytes`);
+            client.connect(RECEIVE_PROMPT_PORT, RECEIVE_PROMPT_HOST, () => {
+                console.log('Connected to friend, sending prompt...');
+                client.write(sanitizedPrompt);
             });
 
-            socket.on('end', async () => {
-                logger.info('Image data received completely.');
-                logger.info(`Total received data size: ${dataBuffer.length} bytes`);
-
-                const imagesDir = 'C:\\Apps\\LazyEnder\\images';
-                const activeDir = path.join(imagesDir, 'active');
-                const archiveDir = path.join(imagesDir, 'archive');
-
-                try {
-                    if (!fs.existsSync(activeDir)) {
-                        fs.mkdirSync(activeDir, { recursive: true });
-                        logger.info(`Created directory: ${activeDir}`);
-                    }
-
-                    if (!fs.existsSync(archiveDir)) {
-                        fs.mkdirSync(archiveDir, { recursive: true });
-                        logger.info(`Created directory: ${archiveDir}`);
-                    }
-
-                    // Move the current active image to the archive
-                    const activeImagePath = path.join(activeDir, 'received_image.jpg');
-                    if (fs.existsSync(activeImagePath)) {
-                        const uniqueFilename = `received_image_${uuidv4()}.jpg`;
-                        const archiveImagePath = path.join(archiveDir, uniqueFilename);
-                        fs.renameSync(activeImagePath, archiveImagePath);
-                        logger.info(`Moved ${activeImagePath} to ${archiveImagePath}`);
-                    }
-
-                    // Save the new image as received_image.jpg in the active directory
-                    await fs.promises.writeFile(activeImagePath, dataBuffer);
-                    logger.info(`Image saved to ${activeImagePath} (Binary)`);
-
-                    // Send WebSocket message to notify clients
-                    wss.clients.forEach(client => {
-                        if (client.readyState === WebSocket.OPEN) {
-                            client.send(JSON.stringify({ imagePath: '/images/active/received_image.jpg' }));
-                            logger.info(`Sent image path to client: /images/active/received_image.jpg`);
-                        } else {
-                            logger.info(`Client not ready to receive message.`);
-                        }
-                    });
-                } catch (err) {
-                    logger.error('Error handling the image directory or file:', err);
-                }
+            client.on('data', (data) => {
+                console.log('Prompt successfully sent:', data.toString());
+                resolve(data.toString());
+                // Do not close the connection immediately
+                // client.destroy(); // Close the connection
             });
 
-            socket.on('close', () => {
-                logger.info('Image sender disconnected');
+            client.on('error', (err) => {
+                console.error('Failed to connect to friend:', err.message);
+                reject(new Error('Connection error: ' + err.message));
+                client.destroy();
             });
 
-            socket.on('error', (err) => {
-                logger.error('Socket error:', err);
+            client.on('close', () => {
+                console.log('Connection closed');
             });
-        });
+        } catch (error) {
+            reject(error.message);
+        }
+    });
+};
 
-        server.listen(RECEIVE_IMAGE_PORT, RECEIVE_IMAGE_HOST, () => {
-            logger.info(`Image Receiver running on ${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
-        });
-
-        server.on('error', (err) => {
-            if (err.code === 'EADDRINUSE') {
-                logger.error(`Port ${RECEIVE_IMAGE_PORT} is already in use.`);
-            } else {
-                logger.error('Error starting the server:', err);
-            }
-        });
-    } catch (err) {
-        logger.error('Error starting the server:', err);
-    }
-}
-
-startServer();
-
-export default receiveImageEmitter;
+export default sendPromptToFriend;

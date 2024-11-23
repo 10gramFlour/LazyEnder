@@ -46,8 +46,7 @@ const logger = createLogger({
     ),
     defaultMeta: { service: 'user-service' },
     transports: [
-        new transports.File({ filename: path.join(logDirectory, 'error.log'), level: 'error' }),
-        new transports.File({ filename: path.join(logDirectory, 'combined.log') }),
+        new transports.File({ filename: path.join(logDirectory, 'application.log') }),
         new DailyRotateFile({
             filename: path.join(logDirectory, 'application-%DATE%.log'),
             datePattern: 'YYYY-MM-DD',

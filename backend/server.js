@@ -10,11 +10,11 @@ import sendPromptToFriend from './promptSender.js';
 import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
-import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
 
 const app = express();
-let server; // Ensure the variable `server` is declared here
+let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
 let io;
+let WEBSOCKET_PORT;
 
 // Get the directory of the current script file
 const __filename = fileURLToPath(import.meta.url);
@@ -22,14 +22,11 @@ const __dirname = dirname(__filename);
 
 // Automatically find an available port
 async function startServer() {
-    logger.info('Starting server setup...');
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
-    const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
-    logger.info(`Found available ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
+    WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
 
-    server = http.createServer(app); // Initialize the variable `server` here
+    server = http.createServer(app); // Initialisieren Sie die Variable `server` hier
     io = new Server(server);
-    logger.info('HTTP and WebSocket servers created.');
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
         .on('error', (err) => {
@@ -39,12 +36,10 @@ async function startServer() {
 
     // Middleware to parse JSON bodies
     app.use(express.json());
-    logger.info('JSON body parser middleware added.');
 
     // Serve static files (CSS, JS, images)
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
     app.use('/images', express.static(path.join(__dirname, '../images')));
-    logger.info('Static file serving middleware added.');
 
     // Serve index.html
     app.get('/', (req, res) => {
@@ -94,7 +89,6 @@ async function startServer() {
 
     // Error handler middleware
     app.use(errorHandler);
-    logger.info('Error handler middleware added.');
 
     // Gracefully shutdown server
     process.on('SIGINT', () => {
