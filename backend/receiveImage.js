@@ -4,10 +4,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
+import { RECEIVE_IMAGE_HOST } from './config/settings.js';
 import logger from './logger.js';
 import EventEmitter from 'events';
 import { WebSocketServer } from 'ws';
+import portfinder from 'portfinder';
 
 // Get the directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -24,9 +25,12 @@ async function startServer() {
     }
     serverStarted = true;
 
-    const wss = new WebSocketServer({ port: 8080 });
-
     try {
+        const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
+        const RECEIVE_IMAGE_PORT = await portfinder.getPortPromise({ port: 5002, stopPort: 5999 });
+        const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
+        logger.info(`WebSocket Server running on port ${WEBSOCKET_PORT}`);
+
         const server = net.createServer((socket) => {
             logger.info('Connected to image sender');
 

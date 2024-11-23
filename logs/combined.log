@@ -13180,3 +13180,239 @@ Emitted 'error' event on WebSocketServer instance at:
 Node.js v22.11.0
 
 2024-11-23 13:41:56 [user-service] info: Backend Server exited with code 1
+2024-11-23 13:43:37 [user-service] info: Closing servers...
+2024-11-23 13:43:37 [user-service] info: undefined has already exited.
+2024-11-23 13:43:37 [user-service] info: Attempting to kill undefined (PID: 9912)...
+2024-11-23 13:43:37 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:43:38 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 9912 /T /F
+ERROR: The process "9912" not found.
+
+2024-11-23 13:43:44 [user-service] info: Starting Backend Server...
+2024-11-23 13:43:44 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:43:44 [user-service] info: Receive Image Server stdout: 2024-11-23 13:43:44 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:43:44 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:43:44 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:27:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v22.11.0
+
+2024-11-23 13:43:44 [user-service] info: Backend Server exited with code 1
+2024-11-23 13:44:13 [user-service] info: Closing servers...
+2024-11-23 13:44:13 [user-service] info: undefined has already exited.
+2024-11-23 13:44:13 [user-service] info: Attempting to kill undefined (PID: 14444)...
+2024-11-23 13:44:13 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:44:13 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 14444 /T /F
+ERROR: The process "14444" not found.
+
+2024-11-23 13:44:38 [user-service] info: Starting Backend Server...
+2024-11-23 13:44:38 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:44:38 [user-service] info: Receive Image Server stdout: 2024-11-23 13:44:38 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:44:38 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:44:38 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:27:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v22.11.0
+
+2024-11-23 13:44:38 [user-service] info: Backend Server exited with code 1
+2024-11-23 13:46:30 [user-service] info: Closing servers...
+2024-11-23 13:46:30 [user-service] info: undefined has already exited.
+2024-11-23 13:46:30 [user-service] info: Attempting to kill undefined (PID: 9088)...
+2024-11-23 13:46:30 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:46:30 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 9088 /T /F
+ERROR: The process "9088" not found.
+
+2024-11-23 13:46:33 [user-service] info: Starting Backend Server...
+2024-11-23 13:46:33 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:46:33 [user-service] info: Receive Image Server stdout: 2024-11-23 13:46:33 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:46:33 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:46:33 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8082
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:27:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8082
+}
+
+Node.js v22.11.0
+
+2024-11-23 13:46:33 [user-service] info: Backend Server exited with code 1
+2024-11-23 13:49:34 [user-service] info: Closing servers...
+2024-11-23 13:49:34 [user-service] info: undefined has already exited.
+2024-11-23 13:49:34 [user-service] info: Attempting to kill undefined (PID: 14596)...
+2024-11-23 13:49:34 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:49:34 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 14596 /T /F
+ERROR: The process "14596" not found.
+
+2024-11-23 13:49:37 [user-service] info: Starting Backend Server...
+2024-11-23 13:49:37 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:49:37 [user-service] info: Receive Image Server stdout: 2024-11-23 13:49:37 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:49:37 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:49:38 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8082
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:28:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:106:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8082
+}
+
+Node.js v22.11.0
+
+2024-11-23 13:49:38 [user-service] info: Backend Server exited with code 1
+2024-11-23 13:51:49 [user-service] info: Closing servers...
+2024-11-23 13:51:49 [user-service] info: undefined has already exited.
+2024-11-23 13:51:49 [user-service] info: Attempting to kill undefined (PID: 10020)...
+2024-11-23 13:51:49 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:51:49 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 10020 /T /F
+ERROR: The process "10020" not found.
+
+2024-11-23 13:51:53 [user-service] info: Starting Backend Server...
+2024-11-23 13:51:53 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:51:53 [user-service] info: Receive Image Server stdout: 2024-11-23 13:51:53 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 13:51:53 [user-service] info: Receive Image Server stdout: 2024-11-23 13:51:53 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:51:53 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 13:51:53 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:51:54 [user-service] info: Backend Server stdout: 2024-11-23 13:51:54 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 13:51:54 [user-service] info: Backend Server stdout: 2024-11-23 13:51:54 [user-service] [31merror[39m: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+
+2024-11-23 13:51:54 [user-service] info: Backend Server stdout: 2024-11-23 13:51:54 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:51:54 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 13:51:54 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 13:51:54 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:51:55 [user-service] info: Frontend connected.
+2024-11-23 13:51:55 [user-service] info: Backend Server stdout: 2024-11-23 13:51:55 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 13:52:14 [user-service] info: Frontend disconnected.
+2024-11-23 13:52:14 [user-service] info: Backend Server stdout: 2024-11-23 13:52:14 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 13:52:14 [user-service] info: Serving index.html
+2024-11-23 13:52:14 [user-service] info: Backend Server stdout: 2024-11-23 13:52:14 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:52:31 [user-service] info: Serving index.html
+2024-11-23 13:52:31 [user-service] info: Backend Server stdout: 2024-11-23 13:52:31 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:53:10 [user-service] info: Closing servers...
+2024-11-23 13:53:10 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 13:53:10 [user-service] info: Attempting to kill undefined (PID: 1396)...
+2024-11-23 13:53:10 [user-service] info: Backend Server stdout: 2024-11-23 13:53:10 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 13:53:10 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 13:53:10 [user-service] info: Backend Server exited with code 0
+2024-11-23 13:53:10 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:53:10 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 1396 /T /F
+ERROR: The process "1396" not found.
+
+2024-11-23 13:53:33 [user-service] info: Starting Backend Server...
+2024-11-23 13:53:33 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:53:34 [user-service] info: Receive Image Server stdout: 2024-11-23 13:53:34 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 13:53:34 [user-service] info: Receive Image Server stdout: 2024-11-23 13:53:34 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 13:53:34 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 13:53:34 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 13:53:34 [user-service] info: Backend Server stdout: 2024-11-23 13:53:34 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 13:53:34 [user-service] info: Backend Server stdout: 2024-11-23 13:53:34 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:53:34 [user-service] info: Backend Server stdout: 2024-11-23 13:53:34 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 13:53:34 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 13:53:34 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:53:34 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 13:53:42 [user-service] info: Serving index.html
+2024-11-23 13:53:42 [user-service] info: Backend Server stdout: 2024-11-23 13:53:42 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:53:43 [user-service] info: Serving index.html
+2024-11-23 13:53:43 [user-service] info: Backend Server stdout: 2024-11-23 13:53:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:53:43 [user-service] info: Serving index.html
+2024-11-23 13:53:43 [user-service] info: Backend Server stdout: 2024-11-23 13:53:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:53:43 [user-service] info: Serving index.html
+2024-11-23 13:53:43 [user-service] info: Backend Server stdout: 2024-11-23 13:53:43 [user-service] [32minfo[39m: Serving index.html
+

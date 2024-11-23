@@ -14,6 +14,7 @@ import logger from './logger.js';
 const app = express();
 let server;
 let io;
+let WEBSOCKET_PORT;
 
 // Get the directory of the current script file
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +23,7 @@ const __dirname = dirname(__filename);
 // Automatically find an available port
 async function startServer() {
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
+    WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
 
     server = http.createServer(app);
     io = new Server(server);
@@ -68,7 +70,7 @@ async function startServer() {
                     logger.info(`Image received from friend: ${filePath}`);
                     const imagePath = `/images/active/received_image.jpg`;
                     logger.info(`Sending image path to frontend: ${imagePath}`);
-                    res.json({ imagePath }); // Send the image path to the frontend
+                    res.json({ imagePath, websocketPort: WEBSOCKET_PORT }); // Send the image path and WebSocket port to the frontend
                 });
             } else {
                 logger.warn('Listener for imageReceived event already exists.');

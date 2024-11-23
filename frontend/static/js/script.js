@@ -1,3 +1,5 @@
+import { WEBSOCKET_PORT } from './config/websocket.js';
+
 // Establish WebSocket connection
 const socket = io();  // Production environment
 
@@ -69,6 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
                             a.click();
                             console.log('Download initiated for:', activeImage.src);
                         };
+
+                        // WebSocket connection to receive updates
+                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
+
+                        socket.addEventListener('open', () => {
+                            console.log('WebSocket connection established');
+                        });
+
+                        socket.addEventListener('message', (event) => {
+                            const data = JSON.parse(event.data);
+                            console.log('WebSocket message received:', data);
+
+                            if (data.imagePath) {
+                                const activeImage = document.getElementById('activeImage');
+                                activeImage.src = data.imagePath;
+                                console.log('Active image updated via WebSocket:', activeImage.src);
+                            }
+                        });
+
+                        socket.addEventListener('error', (error) => {
+                            console.error('WebSocket error:', error);
+                            document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
+                        });
+
+                        socket.addEventListener('close', () => {
+                            console.log('WebSocket connection closed');
+                        });
                     } else {
                         console.error('Error from server:', result.error);
                         document.getElementById('error').textContent = result.error;
@@ -85,33 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('promptForm element not found');
     }
-
-    // WebSocket connection to receive updates
-    const socket = new WebSocket('ws://localhost:8080');
-
-    socket.addEventListener('open', () => {
-        console.log('WebSocket connection established');
-    });
-
-    socket.addEventListener('message', (event) => {
-        const data = JSON.parse(event.data);
-        console.log('WebSocket message received:', data);
-
-        if (data.imagePath) {
-            const activeImage = document.getElementById('activeImage');
-            activeImage.src = data.imagePath;
-            console.log('Active image updated via WebSocket:', activeImage.src);
-        }
-    });
-
-    socket.addEventListener('error', (error) => {
-        console.error('WebSocket error:', error);
-        document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
-    });
-
-    socket.addEventListener('close', () => {
-        console.log('WebSocket connection closed');
-    });
 });
 
 // Handle WebSocket errors
