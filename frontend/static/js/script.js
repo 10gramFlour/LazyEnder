@@ -16,63 +16,74 @@ socket.on('disconnect', () => {
 });
 
 // Handle form submission
-document.getElementById('promptForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const prompt = document.getElementById('prompt').value.trim();
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
 
-    if (prompt) {
-        console.log('Sending prompt to server:', prompt);
-        // Show loading indicator
-        document.getElementById('loading').style.display = 'block';
-        document.getElementById('error').textContent = ''; // Clear previous error messages
+    const promptForm = document.getElementById('promptForm');
+    if (promptForm) {
+        console.log('Found promptForm element:', promptForm);
 
-        try {
-            const response = await fetch('/sendPrompt', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ prompt })
-            });
+        promptForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const prompt = document.getElementById('prompt').value.trim();
 
-            const result = await response.json();
-            if (response.ok) {
-                console.log('Received image path from server:', result.imagePath);
-                // Hide loading indicator
-                document.getElementById('loading').style.display = 'none';
+            if (prompt) {
+                console.log('Sending prompt to server:', prompt);
+                // Show loading indicator
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').textContent = ''; // Clear previous error messages
 
-                // Create and display new image
-                const img = document.createElement('img');
-                img.src = result.imagePath; // Assuming the image path is returned
-                img.alt = 'Generated Image';
-                img.id = 'generatedImage';
+                try {
+                    const response = await fetch('/sendPrompt', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ prompt })
+                    });
 
-                const imageContainer = document.getElementById('imageContainer');
-                imageContainer.innerHTML = ''; // Remove previous image
-                imageContainer.appendChild(img);
-                console.log('Image displayed:', img.src);
+                    const result = await response.json();
+                    if (response.ok) {
+                        console.log('Received image path from server:', result.imagePath);
+                        // Hide loading indicator
+                        document.getElementById('loading').style.display = 'none';
 
-                // Show download button
-                const downloadButton = document.getElementById('downloadButton');
-                downloadButton.style.display = 'block';
-                downloadButton.onclick = () => {
-                    const a = document.createElement('a');
-                    a.href = img.src;
-                    a.download = 'generated_image.jpg';
-                    a.click();
-                    console.log('Download initiated for:', img.src);
-                };
+                        // Create and display new image
+                        const img = document.createElement('img');
+                        img.src = result.imagePath; // Assuming the image path is returned
+                        img.alt = 'Generated Image';
+                        img.id = 'generatedImage';
+
+                        const imageContainer = document.getElementById('imageContainer');
+                        imageContainer.innerHTML = ''; // Remove previous image
+                        imageContainer.appendChild(img);
+                        console.log('Image displayed:', img.src);
+
+                        // Show download button
+                        const downloadButton = document.getElementById('downloadButton');
+                        downloadButton.style.display = 'block';
+                        downloadButton.onclick = () => {
+                            const a = document.createElement('a');
+                            a.href = img.src;
+                            a.download = 'generated_image.jpg';
+                            a.click();
+                            console.log('Download initiated for:', img.src);
+                        };
+                    } else {
+                        console.error('Error from server:', result.error);
+                        document.getElementById('error').textContent = result.error;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    document.getElementById('error').textContent = 'An error occurred. Please try again later.';
+                }
             } else {
-                console.error('Error from server:', result.error);
-                document.getElementById('error').textContent = result.error;
+                console.error('Prompt cannot be empty.');
+                document.getElementById('error').textContent = 'Prompt cannot be empty.';
             }
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('error').textContent = 'An error occurred. Please try again later.';
-        }
+        });
     } else {
-        console.error('Prompt cannot be empty.');
-        document.getElementById('error').textContent = 'Prompt cannot be empty.';
+        console.error('promptForm element not found');
     }
 });
 
