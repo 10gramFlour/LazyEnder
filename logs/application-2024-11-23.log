@@ -8365,3 +8365,722 @@ Attempting to connect to 25.28.81.126:5002...
 2024-11-23 23:36:00 [user-service] info: Image saved to C:\Apps\LazyEnder\images\received_image_f499ffd0-8f75-4ccc-b637-5d06ad9ba386.jpg (Binary)
 2024-11-23 23:36:00 [user-service] info: Receive Image Server stdout: 2024-11-23 23:36:00 [user-service] [32minfo[39m: Image saved to C:\Apps\LazyEnder\images\received_image_f499ffd0-8f75-4ccc-b637-5d06ad9ba386.jpg (Binary)
 
+2024-11-23 23:37:46 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 23:37:46 [user-service] info: Closing servers...
+2024-11-23 23:37:46 [user-service] info: Frontend disconnected.
+2024-11-23 23:37:46 [user-service] info: Attempting to kill undefined (PID: 12000)...
+2024-11-23 23:37:46 [user-service] info: Backend Server stdout: 2024-11-23 23:37:46 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 23:37:46 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:37:46 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 23:37:46 [user-service] info: undefined successfully terminated.
+2024-11-23 23:37:51 [user-service] info: Starting Backend Server...
+2024-11-23 23:37:51 [user-service] info: Starting Receive Image Server...
+2024-11-23 23:37:51 [user-service] info: Receive Image Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 23:37:51 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: Using fixed ports: HTTP - 5002, WebSocket - 8081
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [32minfo[39m: HTTP server running at http://25.28.81.126:5002
+
+2024-11-23 23:37:51 [user-service] info: Backend Server stdout: 2024-11-23 23:37:51 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 23:37:51 [user-service] info: Starting server setup...
+2024-11-23 23:37:51 [user-service] info: Using fixed ports: HTTP - 5002, WebSocket - 8081
+2024-11-23 23:37:51 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 23:37:51 [user-service] info: JSON body parser middleware added.
+2024-11-23 23:37:51 [user-service] info: Static file serving middleware added.
+2024-11-23 23:37:51 [user-service] info: Error handler middleware added.
+2024-11-23 23:37:51 [user-service] info: HTTP server running at http://25.28.81.126:5002
+2024-11-23 23:37:51 [user-service] error: Port 5003 is already in use.
+2024-11-23 23:37:53 [user-service] info: Frontend connected.
+2024-11-23 23:37:53 [user-service] info: Backend Server stdout: 2024-11-23 23:37:53 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:38:09 [user-service] info: Closing servers...
+2024-11-23 23:38:09 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 23:38:09 [user-service] info: Frontend disconnected.
+2024-11-23 23:38:09 [user-service] info: Attempting to kill undefined (PID: 2012)...
+2024-11-23 23:38:09 [user-service] info: Backend Server stdout: 2024-11-23 23:38:09 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 23:38:09 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:38:09 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 23:38:09 [user-service] info: undefined successfully terminated.
+2024-11-23 23:38:14 [user-service] info: Starting Backend Server...
+2024-11-23 23:38:14 [user-service] info: Starting Receive Image Server...
+2024-11-23 23:38:14 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 23:38:14 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: Using fixed ports: HTTP - 5002, WebSocket - 8081
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [32minfo[39m: HTTP server running at http://25.28.81.126:5002
+
+2024-11-23 23:38:14 [user-service] info: Backend Server stdout: 2024-11-23 23:38:14 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 23:38:14 [user-service] info: Starting server setup...
+2024-11-23 23:38:14 [user-service] info: Using fixed ports: HTTP - 5002, WebSocket - 8081
+2024-11-23 23:38:14 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 23:38:14 [user-service] info: JSON body parser middleware added.
+2024-11-23 23:38:14 [user-service] info: Static file serving middleware added.
+2024-11-23 23:38:14 [user-service] info: Error handler middleware added.
+2024-11-23 23:38:14 [user-service] info: HTTP server running at http://25.28.81.126:5002
+2024-11-23 23:38:14 [user-service] error: Port 5003 is already in use.
+2024-11-23 23:38:15 [user-service] info: Frontend connected.
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: 2024-11-23 23:38:15 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:38:15 [user-service] info: Received prompt: a big tree on a mountain with a nice sunset
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: 2024-11-23 23:38:15 [user-service] [32minfo[39m: Received prompt: a big tree on a mountain with a nice sunset
+
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: Starting to send prompt to friend...
+Validating and sanitizing prompt: a big tree on a mountain with a nice sunset
+Sanitized prompt: a big tree on a mountain with a nice sunset
+
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: Attempting to connect to 25.28.81.126:5002...
+
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 23:38:15 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 23:38:29 [user-service] info: Connected to image sender
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Connected to image sender
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 2728 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 2728 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 8184 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 8184 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 10912 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 10912 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 15004 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 17732 bytes
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 15004 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 17732 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 19096 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 20460 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 19096 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 20460 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 23188 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 23188 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 24552 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 27280 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 24552 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 27280 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 34100 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 35464 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 34100 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 35464 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 36828 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 9548 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 46376 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 36828 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 9548 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 46376 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 50468 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 50468 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 54560 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 54560 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 57288 bytes
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 57288 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 64108 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 64108 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 66836 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 66836 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 72292 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 72292 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 77748 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 77748 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 84568 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 84568 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 87296 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 90024 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 87296 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 90024 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 95480 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 95480 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 100936 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 100936 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 106392 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 106392 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 8184 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 8184 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 114576 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 114576 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 120032 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 120032 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 125488 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 126852 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 125488 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 126852 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 129580 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 136400 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 129580 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 136400 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 141856 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 141856 bytes
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 143220 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 147312 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 143220 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 147312 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 154132 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 154132 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 158224 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 159588 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 165044 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 166408 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 171864 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 6820 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 158224 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 159588 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 165044 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 166408 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 171864 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 6820 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 178684 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 178684 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 192324 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 192324 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 4092 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 4092 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 196416 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 197780 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 196416 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 197780 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 200508 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 20460 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 220968 bytes
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 200508 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 20460 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 220968 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 226424 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 226424 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 8082 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 8082 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 234506 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 235870 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 234506 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 1364 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 235870 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 238598 bytes
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 238598 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 65536 bytes...
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 65536 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 304134 bytes
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Receiving image data chunk of size 23124 bytes...
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Current buffer size: 327258 bytes
+
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Image data received completely.
+2024-11-23 23:38:29 [user-service] [32minfo[39m: Total received data size: 327258 bytes
+
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 304134 bytes
+2024-11-23 23:38:29 [user-service] info: Receiving image data chunk of size 23124 bytes...
+2024-11-23 23:38:29 [user-service] info: Current buffer size: 327258 bytes
+2024-11-23 23:38:29 [user-service] info: Image data received completely.
+2024-11-23 23:38:29 [user-service] info: Total received data size: 327258 bytes
+2024-11-23 23:38:29 [user-service] info: Image sender disconnected
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Image sender disconnected
+
+2024-11-23 23:38:29 [user-service] info: Image saved to C:\Apps\LazyEnder\images\received_image_999e4987-fbce-48b4-8344-b8d1f6c4e971.jpg (Binary)
+2024-11-23 23:38:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:38:29 [user-service] [32minfo[39m: Image saved to C:\Apps\LazyEnder\images\received_image_999e4987-fbce-48b4-8344-b8d1f6c4e971.jpg (Binary)
+
+2024-11-23 23:41:27 [user-service] info: Closing servers...
+2024-11-23 23:41:27 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 23:41:27 [user-service] info: Frontend disconnected.
+2024-11-23 23:41:27 [user-service] info: Attempting to kill undefined (PID: 16224)...
+2024-11-23 23:41:27 [user-service] info: Backend Server stdout: 2024-11-23 23:41:27 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 23:41:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:41:27 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 23:41:27 [user-service] info: undefined successfully terminated.
+2024-11-23 23:41:29 [user-service] info: Starting Backend Server...
+2024-11-23 23:41:29 [user-service] info: Starting Receive Image Server...
+2024-11-23 23:41:29 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:29 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 23:41:29 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: Using fixed ports: HTTP - 5002, WebSocket - 8081
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [32minfo[39m: HTTP server running at http://25.28.81.126:5002
+
+2024-11-23 23:41:30 [user-service] info: Backend Server stdout: 2024-11-23 23:41:30 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 23:41:30 [user-service] info: Starting server setup...
+2024-11-23 23:41:30 [user-service] info: Using fixed ports: HTTP - 5002, WebSocket - 8081
+2024-11-23 23:41:30 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 23:41:30 [user-service] info: JSON body parser middleware added.
+2024-11-23 23:41:30 [user-service] info: Static file serving middleware added.
+2024-11-23 23:41:30 [user-service] info: Error handler middleware added.
+2024-11-23 23:41:30 [user-service] info: HTTP server running at http://25.28.81.126:5002
+2024-11-23 23:41:30 [user-service] error: Port 5003 is already in use.
+2024-11-23 23:41:31 [user-service] info: Frontend connected.
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: 2024-11-23 23:41:31 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:41:31 [user-service] info: Received prompt: a big tree on a mountain with a nice sunset
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: 2024-11-23 23:41:31 [user-service] [32minfo[39m: Received prompt: a big tree on a mountain with a nice sunset
+
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: Starting to send prompt to friend...
+Validating and sanitizing prompt: a big tree on a mountain with a nice sunset
+Sanitized prompt: a big tree on a mountain with a nice sunset
+
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: Attempting to connect to 25.28.81.126:5002...
+
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 23:41:31 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 23:41:36 [user-service] info: Serving index.html
+2024-11-23 23:41:36 [user-service] info: Backend Server stdout: 2024-11-23 23:41:36 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 23:41:36 [user-service] info: Frontend disconnected.
+2024-11-23 23:41:36 [user-service] info: Backend Server stdout: 2024-11-23 23:41:36 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:41:36 [user-service] info: Frontend connected.
+2024-11-23 23:41:36 [user-service] info: Backend Server stdout: 2024-11-23 23:41:36 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:41:36 [user-service] info: Frontend connected.
+2024-11-23 23:41:36 [user-service] info: Backend Server stdout: 2024-11-23 23:41:36 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:41:45 [user-service] info: Connected to image sender
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Connected to image sender
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 2728 bytes
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 2728 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 8184 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 8184 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 10912 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 10912 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 24552 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 24552 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 30008 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 35464 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 30008 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 35464 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 40920 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 10912 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 51832 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 40920 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 10912 bytes...
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 51832 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 8184 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 8184 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 60016 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 60016 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 16368 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 16368 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 76384 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 76384 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 5456 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 5456 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 81840 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 19096 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 100936 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 81840 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 19096 bytes...
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 100936 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 114576 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 114576 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 128216 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 128216 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 141856 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 141856 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 155496 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 155496 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 12276 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 12276 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 167772 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 167772 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 181412 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 181412 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 195052 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 195052 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 208692 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 10912 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 208692 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 10912 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 219604 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 219604 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 233244 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 10912 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 244156 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 233244 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 10912 bytes...
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 244156 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 257796 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 24552 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 282348 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 257796 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 24552 bytes...
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 282348 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 13640 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 13640 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 295988 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 43648 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 295988 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 43648 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 339636 bytes
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 339636 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 2728 bytes...
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 2728 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 342364 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 16368 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 358732 bytes
+2024-11-23 23:41:45 [user-service] [32minfo[39m: Receiving image data chunk of size 8867 bytes...
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Current buffer size: 367599 bytes
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Image data received completely.
+
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Total received data size: 367599 bytes
+
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 342364 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 16368 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 358732 bytes
+2024-11-23 23:41:45 [user-service] info: Receiving image data chunk of size 8867 bytes...
+2024-11-23 23:41:45 [user-service] info: Current buffer size: 367599 bytes
+2024-11-23 23:41:45 [user-service] info: Image data received completely.
+2024-11-23 23:41:45 [user-service] info: Total received data size: 367599 bytes
+2024-11-23 23:41:45 [user-service] info: Image sender disconnected
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Image sender disconnected
+
+2024-11-23 23:41:45 [user-service] info: Image saved to C:\Apps\LazyEnder\images\received_image_d8a71461-13ea-4940-ba3e-4c0f8695be77.jpg (Binary)
+2024-11-23 23:41:45 [user-service] info: Receive Image Server stdout: 2024-11-23 23:41:45 [user-service] [32minfo[39m: Image saved to C:\Apps\LazyEnder\images\received_image_d8a71461-13ea-4940-ba3e-4c0f8695be77.jpg (Binary)
+
+2024-11-23 23:41:50 [user-service] info: Serving index.html
+2024-11-23 23:41:50 [user-service] info: Backend Server stdout: 2024-11-23 23:41:50 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 23:41:50 [user-service] info: Frontend disconnected.
+2024-11-23 23:41:50 [user-service] info: Backend Server stdout: 2024-11-23 23:41:50 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:41:50 [user-service] info: Frontend disconnected.
+2024-11-23 23:41:50 [user-service] info: Backend Server stdout: 2024-11-23 23:41:50 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:41:50 [user-service] info: Frontend connected.
+2024-11-23 23:41:50 [user-service] info: Backend Server stdout: 2024-11-23 23:41:50 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:41:50 [user-service] info: Frontend connected.
+2024-11-23 23:41:50 [user-service] info: Backend Server stdout: 2024-11-23 23:41:50 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:42:01 [user-service] info: Closing servers...
+2024-11-23 23:42:01 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 23:42:01 [user-service] info: Frontend disconnected.
+2024-11-23 23:42:01 [user-service] info: Frontend disconnected.
+2024-11-23 23:42:01 [user-service] info: Attempting to kill undefined (PID: 18804)...
+2024-11-23 23:42:01 [user-service] info: Backend Server stdout: 2024-11-23 23:42:01 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 23:42:01 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 23:42:01 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:42:01 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 23:42:01 [user-service] info: Backend Server exited with code 1
+2024-11-23 23:42:01 [user-service] info: undefined successfully terminated.
+2024-11-23 23:42:34 [user-service] info: Starting Backend Server...
+2024-11-23 23:42:34 [user-service] info: Starting Receive Image Server...
+2024-11-23 23:42:35 [user-service] info: Receive Image Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 23:42:35 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Using fixed ports: HTTP - 5002, WebSocket - 8081
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: HTTP server running at http://25.28.81.126:5002
+
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 23:42:35 [user-service] info: Starting server setup...
+2024-11-23 23:42:35 [user-service] info: Using fixed ports: HTTP - 5002, WebSocket - 8081
+2024-11-23 23:42:35 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 23:42:35 [user-service] info: JSON body parser middleware added.
+2024-11-23 23:42:35 [user-service] info: Static file serving middleware added.
+2024-11-23 23:42:35 [user-service] info: Error handler middleware added.
+2024-11-23 23:42:35 [user-service] info: HTTP server running at http://25.28.81.126:5002
+2024-11-23 23:42:35 [user-service] error: Port 5003 is already in use.
+2024-11-23 23:42:35 [user-service] info: Frontend connected.
+2024-11-23 23:42:35 [user-service] info: Backend Server stdout: 2024-11-23 23:42:35 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:42:38 [user-service] info: Serving index.html
+2024-11-23 23:42:38 [user-service] info: Backend Server stdout: 2024-11-23 23:42:38 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 23:42:38 [user-service] info: Frontend disconnected.
+2024-11-23 23:42:38 [user-service] info: Backend Server stdout: 2024-11-23 23:42:38 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 23:42:38 [user-service] info: Frontend connected.
+2024-11-23 23:42:38 [user-service] info: Backend Server stdout: 2024-11-23 23:42:38 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:42:38 [user-service] info: Frontend connected.
+2024-11-23 23:42:38 [user-service] info: Backend Server stdout: 2024-11-23 23:42:38 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 23:42:44 [user-service] info: Received prompt: a big tree on a mountain with a nice sunset
+2024-11-23 23:42:44 [user-service] info: Backend Server stdout: 2024-11-23 23:42:44 [user-service] [32minfo[39m: Received prompt: a big tree on a mountain with a nice sunset
+
+2024-11-23 23:42:44 [user-service] info: Backend Server stdout: Starting to send prompt to friend...
+Validating and sanitizing prompt: a big tree on a mountain with a nice sunset
+Sanitized prompt: a big tree on a mountain with a nice sunset
+Attempting to connect to 25.28.81.126:5002...
+
+2024-11-23 23:42:44 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 23:42:44 [user-service] info: Backend Server stdout: Connection closed
+
