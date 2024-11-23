@@ -25,7 +25,7 @@ app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
 
 // Serve index.html
-app.get('/', (req, res) => {
+app.get('/', (res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
