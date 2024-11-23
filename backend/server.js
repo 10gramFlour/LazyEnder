@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 async function startServer() {
     logger.info('Starting server setup...');
     const PORT = RECEIVE_PROMPT_PORT; // Fixed HTTP port for sending prompts
-    const WEBSOCKET_PORT = 8080; // Fixed WebSocket port
+    const WEBSOCKET_PORT = 8081; // Changed WebSocket port to avoid conflict
     logger.info(`Using fixed ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
 
     server = http.createServer(app);
