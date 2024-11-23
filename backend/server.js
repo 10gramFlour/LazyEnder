@@ -10,6 +10,7 @@ import sendPromptToFriend from './promptSender.js';
 import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
 
 const app = express();
 let server; // Ensure the variable `server` is declared here

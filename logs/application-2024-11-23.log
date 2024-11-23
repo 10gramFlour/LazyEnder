@@ -33502,3 +33502,69 @@ ERROR: The process "16756" not found.
 2024-11-23 17:23:54 [user-service] info: Frontend connected.
 2024-11-23 17:23:55 [user-service] info: Received prompt: a professional glowing 3D logo with Text &quot;LE&quot;, modern, neuronal design, strong colors, complex, png background
 2024-11-23 17:23:55 [user-service] info: Frontend connected.
+2024-11-23 17:25:47 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 17:25:47 [user-service] info: Closing servers...
+2024-11-23 17:25:47 [user-service] info: Frontend disconnected.
+2024-11-23 17:25:47 [user-service] info: Frontend disconnected.
+2024-11-23 17:25:47 [user-service] info: Attempting to kill undefined (PID: 23400)...
+2024-11-23 17:25:47 [user-service] info: receiveImageServer exited with code 3221225786
+2024-11-23 17:25:47 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:25:48 [user-service] info: backendServer exited with code 1
+2024-11-23 17:25:48 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:25:48 [user-service] info: undefined successfully terminated.
+2024-11-23 17:25:53 [user-service] info: receiveImageServer started with PID: 196
+2024-11-23 17:25:53 [user-service] info: backendServer started with PID: 19152
+2024-11-23 17:25:54 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 17:25:54 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 17:25:54 [user-service] info: Starting server setup...
+2024-11-23 17:25:54 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 17:25:54 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:25:54 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 17:25:54 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 17:25:54 [user-service] info: JSON body parser middleware added.
+2024-11-23 17:25:54 [user-service] info: Static file serving middleware added.
+2024-11-23 17:25:54 [user-service] info: Error handler middleware added.
+2024-11-23 17:25:54 [user-service] info: Server running at http://localhost:3002
+2024-11-23 17:25:54 [user-service] info: Frontend connected.
+2024-11-23 17:25:54 [user-service] info: Frontend connected.
+2024-11-23 17:25:56 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 17:25:56 [user-service] info: Closing servers...
+2024-11-23 17:25:56 [user-service] info: Frontend disconnected.
+2024-11-23 17:25:56 [user-service] info: Frontend disconnected.
+2024-11-23 17:25:56 [user-service] info: Attempting to kill undefined (PID: 19152)...
+2024-11-23 17:25:56 [user-service] info: receiveImageServer exited with code 3221225786
+2024-11-23 17:25:56 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:25:56 [user-service] info: backendServer exited with code 1
+2024-11-23 17:25:56 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:25:56 [user-service] info: undefined successfully terminated.
+2024-11-23 17:30:36 [user-service] info: receiveImageServer started with PID: 15384
+2024-11-23 17:30:36 [user-service] info: backendServer started with PID: 3768
+2024-11-23 17:30:36 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 17:30:36 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 17:30:37 [user-service] info: Starting server setup...
+2024-11-23 17:30:37 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 17:30:37 [user-service] error: Port 5003 is already in use.
+2024-11-23 17:30:37 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 17:30:37 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 17:30:37 [user-service] info: JSON body parser middleware added.
+2024-11-23 17:30:37 [user-service] info: Static file serving middleware added.
+2024-11-23 17:30:37 [user-service] info: Error handler middleware added.
+2024-11-23 17:30:37 [user-service] info: Server running at http://localhost:3002
+2024-11-23 17:30:38 [user-service] info: Frontend connected.
+2024-11-23 17:30:39 [user-service] info: Frontend connected.
+2024-11-23 17:30:40 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 17:30:40 [user-service] info: Closing servers...
+2024-11-23 17:30:40 [user-service] info: Frontend disconnected.
+2024-11-23 17:30:40 [user-service] info: Frontend disconnected.
+2024-11-23 17:30:40 [user-service] info: Attempting to kill undefined (PID: 3768)...
+2024-11-23 17:30:40 [user-service] info: receiveImageServer exited with code 3221225786
+2024-11-23 17:30:40 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:30:40 [user-service] info: backendServer exited with code 1
+2024-11-23 17:30:40 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:30:40 [user-service] info: undefined successfully terminated.

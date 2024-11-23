@@ -669,3 +669,17 @@ ERROR: The process "16756" not found.
 2024-11-23 17:23:48 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
 
 2024-11-23 17:23:53 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:25:47 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:25:48 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:25:54 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:25:56 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:25:56 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:30:37 [user-service] error: Port 5003 is already in use.
+2024-11-23 17:30:40 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:30:40 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
