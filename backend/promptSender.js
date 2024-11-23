@@ -26,7 +26,8 @@ const sendPromptToFriend = (prompt) => {
             client.on('data', (data) => {
                 console.log('Prompt successfully sent:', data.toString());
                 resolve(data.toString());
-                client.destroy(); // Close the connection
+                // Do not close the connection immediately
+                // client.destroy(); // Close the connection
             });
 
             client.on('error', (err) => {

@@ -880,3 +880,32 @@ ERROR: The process "13056" not found.
 2024-11-23 11:33:37 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 11628 /T /F
 ERROR: The process "11628" not found.
 
+2024-11-23 11:35:59 [user-service] info: Starting Backend Server...
+2024-11-23 11:35:59 [user-service] info: Starting Receive Image Server...
+2024-11-23 11:35:59 [user-service] info: Receive Image Server stdout: 2024-11-23 11:35:59 [user-service] [32minfo[39m: Image Receiver running on ws://localhost:5001
+
+2024-11-23 11:35:59 [user-service] info: Image Receiver running on ws://localhost:5001
+2024-11-23 11:35:59 [user-service] info: Backend Server stdout: 2024-11-23 11:35:59 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 11:35:59 [user-service] info: Server running at http://localhost:3002
+2024-11-23 11:36:01 [user-service] info: Frontend connected.
+2024-11-23 11:36:01 [user-service] info: Backend Server stdout: 2024-11-23 11:36:01 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:36:01 [user-service] info: Frontend disconnected.
+2024-11-23 11:36:01 [user-service] info: Backend Server stdout: 2024-11-23 11:36:01 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:36:02 [user-service] info: Frontend connected.
+2024-11-23 11:36:02 [user-service] info: Backend Server stdout: 2024-11-23 11:36:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:36:13 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 11:36:13 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:37:35 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 11:37:35 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:37:48 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 11:37:48 [user-service] info: Backend Server stdout: Connection closed
+
