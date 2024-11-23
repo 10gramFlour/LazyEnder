@@ -3351,3 +3351,87 @@ ERROR: The process "12960" not found.
 
 2024-11-23 12:09:36 [user-service] info: Receive Image Server exited with code 3221225786
 2024-11-23 12:09:36 [user-service] info: undefined successfully terminated.
+2024-11-23 12:10:53 [user-service] info: Starting Backend Server...
+2024-11-23 12:10:53 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:10:53 [user-service] info: Receive Image Server stdout: 2024-11-23 12:10:53 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:10:53 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:10:54 [user-service] info: Backend Server stdout: 2024-11-23 12:10:54 [user-service] [31merror[39m: Port 3001 is already in use.
+
+2024-11-23 12:10:54 [user-service] info: Backend Server exited with code 1
+2024-11-23 12:11:01 [user-service] info: Closing servers...
+2024-11-23 12:11:01 [user-service] info: undefined has already exited.
+2024-11-23 12:11:01 [user-service] info: Attempting to kill undefined (PID: 7248)...
+2024-11-23 12:11:01 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 12:11:01 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 7248 /T /F
+ERROR: The process "7248" not found.
+
+2024-11-23 12:11:07 [user-service] info: Starting Backend Server...
+2024-11-23 12:11:07 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:11:07 [user-service] info: Receive Image Server stdout: 2024-11-23 12:11:07 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:11:07 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:11:07 [user-service] info: Backend Server stdout: 2024-11-23 12:11:07 [user-service] [31merror[39m: Port 3001 is already in use.
+
+2024-11-23 12:11:07 [user-service] info: Backend Server exited with code 1
+2024-11-23 12:12:30 [user-service] info: Closing servers...
+2024-11-23 12:12:30 [user-service] info: undefined has already exited.
+2024-11-23 12:12:30 [user-service] info: Attempting to kill undefined (PID: 12072)...
+2024-11-23 12:12:30 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 12:12:30 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 12072 /T /F
+ERROR: The process "12072" not found.
+
+2024-11-23 12:12:32 [user-service] info: Starting Backend Server...
+2024-11-23 12:12:32 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:12:32 [user-service] info: Receive Image Server stdout: 2024-11-23 12:12:32 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:12:32 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:12:32 [user-service] info: Backend Server stdout: 2024-11-23 12:12:32 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 12:12:32 [user-service] info: Backend Server stdout: 2024-11-23 12:12:32 [user-service] [31merror[39m: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+
+2024-11-23 12:12:32 [user-service] info: Server running at http://localhost:3002
+2024-11-23 12:12:32 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:12:54 [user-service] info: Closing servers...
+2024-11-23 12:12:54 [user-service] info: Received SIGINT. Closing server gracefully...
+2024-11-23 12:12:54 [user-service] info: Attempting to kill undefined (PID: 21400)...
+2024-11-23 12:12:54 [user-service] info: Backend Server stdout: 2024-11-23 12:12:54 [user-service] [32minfo[39m: Received SIGINT. Closing server gracefully...
+2024-11-23 12:12:54 [user-service] [32minfo[39m: WebSocket server closed.
+2024-11-23 12:12:54 [user-service] [32minfo[39m: HTTP server closed.
+
+2024-11-23 12:12:54 [user-service] info: Backend Server exited with code 0
+2024-11-23 12:12:54 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 12:12:54 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 21400 /T /F
+ERROR: The process "21400" not found.
+
+2024-11-23 12:12:57 [user-service] info: Starting Backend Server...
+2024-11-23 12:12:57 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:12:57 [user-service] info: Receive Image Server stdout: 2024-11-23 12:12:57 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:12:57 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:12:57 [user-service] info: Backend Server stdout: 2024-11-23 12:12:57 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 12:12:57 [user-service] info: Backend Server stdout: 2024-11-23 12:12:57 [user-service] [31merror[39m: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+
+2024-11-23 12:12:57 [user-service] info: Server running at http://localhost:3002
+2024-11-23 12:12:57 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:14:24 [user-service] info: Closing servers...
+2024-11-23 12:14:24 [user-service] info: Received SIGINT. Closing server gracefully...
+2024-11-23 12:14:24 [user-service] info: Attempting to kill undefined (PID: 18632)...
+2024-11-23 12:14:24 [user-service] info: Backend Server stdout: 2024-11-23 12:14:24 [user-service] [32minfo[39m: Received SIGINT. Closing server gracefully...
+2024-11-23 12:14:24 [user-service] [32minfo[39m: WebSocket server closed.
+2024-11-23 12:14:24 [user-service] [32minfo[39m: HTTP server closed.
+
+2024-11-23 12:14:24 [user-service] info: Backend Server exited with code 0
+2024-11-23 12:14:24 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 12:14:24 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 18632 /T /F
+ERROR: The process "18632" not found.
+
+2024-11-23 12:15:12 [user-service] info: Starting Backend Server...
+2024-11-23 12:15:12 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:15:12 [user-service] info: Receive Image Server stdout: 2024-11-23 12:15:12 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:15:12 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:15:13 [user-service] info: Backend Server stdout: 2024-11-23 12:15:13 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 12:15:13 [user-service] info: Server running at http://localhost:3002
