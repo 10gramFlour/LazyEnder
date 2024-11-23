@@ -55,26 +55,17 @@ async function startServer() {
                     }
 
                     // Move the current active image to the archive
-                    const activeFiles = fs.readdirSync(activeDir);
-                    for (const file of activeFiles) {
-                        const oldPath = path.join(activeDir, file);
-                        const newPath = path.join(archiveDir, file);
-                        fs.renameSync(oldPath, newPath);
-                        logger.info(`Moved ${file} to archive`);
+                    const activeImagePath = path.join(activeDir, 'received_image.jpg');
+                    if (fs.existsSync(activeImagePath)) {
+                        const uniqueFilename = `received_image_${uuidv4()}.jpg`;
+                        const archiveImagePath = path.join(archiveDir, uniqueFilename);
+                        fs.renameSync(activeImagePath, archiveImagePath);
+                        logger.info(`Moved ${activeImagePath} to ${archiveImagePath}`);
                     }
 
-                    // Generate a unique filename for the received image
-                    const uniqueFilename = `received_image_${uuidv4()}.jpg`;
-                    let filePath = path.join(activeDir, uniqueFilename);
-
-                    // Validate and sanitize incoming data
-                    if (!Buffer.isBuffer(dataBuffer)) {
-                        throw new Error('Invalid data format');
-                    }
-
-                    // Assume binary data and write it to the file
-                    await fs.promises.writeFile(filePath, dataBuffer);
-                    logger.info(`Image saved to ${filePath} (Binary)`);
+                    // Save the new image as received_image.jpg in the active directory
+                    await fs.promises.writeFile(activeImagePath, dataBuffer);
+                    logger.info(`Image saved to ${activeImagePath} (Binary)`);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }
