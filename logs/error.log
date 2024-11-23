@@ -204,3 +204,6 @@ ERROR: The process "6304" not found.
 2024-11-23 14:04:50 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 13428 /T /F
 ERROR: The process "13428" not found.
 
+2024-11-23 14:37:13 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 17620 /T /F
+ERROR: The process "17620" not found.
+
