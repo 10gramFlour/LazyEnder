@@ -1367,3 +1367,34 @@ ERROR: The process "19888" not found.
 
 2024-11-23 12:39:50 [user-service] info: Receive Image Server exited with code 3221225786
 2024-11-23 12:39:50 [user-service] info: undefined successfully terminated.
+2024-11-23 12:43:37 [user-service] info: Starting Backend Server...
+2024-11-23 12:43:38 [user-service] info: Starting Receive Image Server...
+2024-11-23 12:43:38 [user-service] info: Receive Image Server stdout: 2024-11-23 12:43:38 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 12:43:38 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 12:43:38 [user-service] info: Backend Server stdout: 2024-11-23 12:43:38 [user-service] [31merror[39m: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+
+2024-11-23 12:43:38 [user-service] info: Backend Server stdout: 2024-11-23 12:43:38 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 12:43:38 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:43:38 [user-service] info: Server running at http://localhost:3002
+2024-11-23 12:43:38 [user-service] info: Frontend connected.
+2024-11-23 12:43:38 [user-service] info: Backend Server stdout: 2024-11-23 12:43:38 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 12:43:41 [user-service] info: Frontend connected.
+2024-11-23 12:43:41 [user-service] info: Backend Server stdout: 2024-11-23 12:43:41 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 12:43:42 [user-service] info: Frontend disconnected.
+2024-11-23 12:43:42 [user-service] info: Backend Server stdout: 2024-11-23 12:43:42 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 12:43:42 [user-service] info: Frontend connected.
+2024-11-23 12:43:42 [user-service] info: Backend Server stdout: 2024-11-23 12:43:42 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 12:44:00 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 12:44:01 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 12:44:12 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 12:44:12 [user-service] info: Backend Server stdout: Connection closed
+
