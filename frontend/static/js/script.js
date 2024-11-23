@@ -85,6 +85,33 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('promptForm element not found');
     }
+
+    // WebSocket connection to receive updates
+    const socket = new WebSocket('ws://localhost:8080');
+
+    socket.addEventListener('open', () => {
+        console.log('WebSocket connection established');
+    });
+
+    socket.addEventListener('message', (event) => {
+        const data = JSON.parse(event.data);
+        console.log('WebSocket message received:', data);
+
+        if (data.imagePath) {
+            const activeImage = document.getElementById('activeImage');
+            activeImage.src = data.imagePath;
+            console.log('Active image updated via WebSocket:', activeImage.src);
+        }
+    });
+
+    socket.addEventListener('error', (error) => {
+        console.error('WebSocket error:', error);
+        document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
+    });
+
+    socket.addEventListener('close', () => {
+        console.log('WebSocket connection closed');
+    });
 });
 
 // Handle WebSocket errors

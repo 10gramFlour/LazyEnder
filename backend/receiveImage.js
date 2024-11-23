@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 import EventEmitter from 'events';
+import WebSocket from 'ws';
 
 // Get the directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +23,8 @@ async function startServer() {
         return;
     }
     serverStarted = true;
+
+    const wss = new WebSocket.Server({ port: 8080 });
 
     try {
         const server = net.createServer((socket) => {
@@ -66,6 +69,13 @@ async function startServer() {
                     // Save the new image as received_image.jpg in the active directory
                     await fs.promises.writeFile(activeImagePath, dataBuffer);
                     logger.info(`Image saved to ${activeImagePath} (Binary)`);
+
+                    // Send WebSocket message to notify clients
+                    wss.clients.forEach(client => {
+                        if (client.readyState === WebSocket.OPEN) {
+                            client.send(JSON.stringify({ imagePath: '/images/active/received_image.jpg' }));
+                        }
+                    });
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }

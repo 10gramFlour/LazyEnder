@@ -66,7 +66,7 @@ async function startServer() {
             if (receiveImage.listenerCount('imageReceived') === 0) {
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info(`Image received from friend: ${filePath}`);
-                    const imagePath = `/images/${path.basename(filePath)}`;
+                    const imagePath = `/images/active/received_image.jpg`;
                     logger.info(`Sending image path to frontend: ${imagePath}`);
                     res.json({ imagePath }); // Send the image path to the frontend
                 });
