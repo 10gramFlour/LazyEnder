@@ -16853,3 +16853,1102 @@ ERROR: The process "1396" not found.
 2024-11-23 13:53:43 [user-service] info: Serving index.html
 2024-11-23 13:53:43 [user-service] info: Backend Server stdout: 2024-11-23 13:53:43 [user-service] [32minfo[39m: Serving index.html
 
+2024-11-23 13:55:09 [user-service] info: Serving index.html
+2024-11-23 13:55:09 [user-service] info: Backend Server stdout: 2024-11-23 13:55:09 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:55:12 [user-service] info: Closing servers...
+2024-11-23 13:55:12 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 13:55:12 [user-service] info: Attempting to kill undefined (PID: 320)...
+2024-11-23 13:55:12 [user-service] info: Backend Server stdout: 2024-11-23 13:55:12 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 13:55:12 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 13:55:12 [user-service] info: Backend Server exited with code 0
+2024-11-23 13:55:12 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:55:12 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 320 /T /F
+ERROR: The process "320" not found.
+
+2024-11-23 13:55:59 [user-service] info: Starting Backend Server...
+2024-11-23 13:55:59 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:55:59 [user-service] info: Receive Image Server stdout: 2024-11-23 13:55:59 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 13:55:59 [user-service] info: Receive Image Server stdout: 2024-11-23 13:55:59 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 13:55:59 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 13:55:59 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 13:55:59 [user-service] info: Backend Server stdout: 2024-11-23 13:55:59 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 13:55:59 [user-service] info: Backend Server stdout: 2024-11-23 13:55:59 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:55:59 [user-service] info: Backend Server stdout: 2024-11-23 13:55:59 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 13:55:59 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 13:55:59 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:55:59 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 13:57:41 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 13:57:41 [user-service] info: Closing servers...
+2024-11-23 13:57:41 [user-service] info: Attempting to kill undefined (PID: 6304)...
+2024-11-23 13:57:41 [user-service] info: Backend Server stdout: 2024-11-23 13:57:41 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 13:57:41 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 13:57:41 [user-service] info: Backend Server exited with code 0
+2024-11-23 13:57:41 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:57:42 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 6304 /T /F
+ERROR: The process "6304" not found.
+
+2024-11-23 13:57:44 [user-service] info: Starting Backend Server...
+2024-11-23 13:57:44 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:57:44 [user-service] info: Receive Image Server stdout: 2024-11-23 13:57:44 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 13:57:44 [user-service] info: Receive Image Server stdout: 2024-11-23 13:57:44 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 13:57:44 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 13:57:44 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 13:57:45 [user-service] info: Backend Server stdout: 2024-11-23 13:57:45 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 13:57:45 [user-service] info: Backend Server stdout: 2024-11-23 13:57:45 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:57:45 [user-service] info: Backend Server stdout: 2024-11-23 13:57:45 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 13:57:45 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 13:57:45 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:57:45 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 13:57:46 [user-service] info: Serving index.html
+2024-11-23 13:57:46 [user-service] info: Backend Server stdout: 2024-11-23 13:57:46 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:57:49 [user-service] info: Serving index.html
+2024-11-23 13:57:49 [user-service] info: Backend Server stdout: 2024-11-23 13:57:49 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:58:37 [user-service] info: Closing servers...
+2024-11-23 13:58:37 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 13:58:37 [user-service] info: Attempting to kill undefined (PID: 9588)...
+2024-11-23 13:58:37 [user-service] info: Backend Server stdout: 2024-11-23 13:58:37 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+
+2024-11-23 13:58:37 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 13:58:37 [user-service] info: undefined successfully terminated.
+2024-11-23 13:59:04 [user-service] info: Starting Backend Server...
+2024-11-23 13:59:04 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:59:04 [user-service] info: Receive Image Server stdout: 2024-11-23 13:59:04 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 13:59:04 [user-service] info: Receive Image Server stdout: 2024-11-23 13:59:04 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 13:59:04 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 13:59:04 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 13:59:04 [user-service] info: Backend Server stdout: 2024-11-23 13:59:04 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 13:59:04 [user-service] info: Backend Server stdout: 2024-11-23 13:59:04 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:59:04 [user-service] info: Backend Server stdout: 2024-11-23 13:59:04 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 13:59:04 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 13:59:04 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:59:04 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 13:59:08 [user-service] info: Serving index.html
+2024-11-23 13:59:08 [user-service] info: Backend Server stdout: 2024-11-23 13:59:08 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:59:08 [user-service] info: Frontend connected.
+2024-11-23 13:59:08 [user-service] info: Backend Server stdout: 2024-11-23 13:59:08 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 13:59:17 [user-service] info: Serving index.html
+2024-11-23 13:59:17 [user-service] info: Backend Server stdout: 2024-11-23 13:59:17 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 13:59:18 [user-service] info: Frontend connected.
+2024-11-23 13:59:18 [user-service] info: Backend Server stdout: 2024-11-23 13:59:18 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 13:59:51 [user-service] info: Received prompt: black man in a pool
+2024-11-23 13:59:51 [user-service] info: Backend Server stdout: 2024-11-23 13:59:51 [user-service] [32minfo[39m: Received prompt: black man in a pool
+
+2024-11-23 13:59:51 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 13:59:51 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 13:59:52 [user-service] info: Received prompt: black man in a pool
+2024-11-23 13:59:52 [user-service] info: Backend Server stdout: 2024-11-23 13:59:52 [user-service] [32minfo[39m: Received prompt: black man in a pool
+
+2024-11-23 13:59:52 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 13:59:52 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 14:00:14 [user-service] info: Serving index.html
+2024-11-23 14:00:14 [user-service] info: Backend Server stdout: 2024-11-23 14:00:14 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:14 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:14 [user-service] info: Backend Server stdout: 2024-11-23 14:00:14 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:14 [user-service] info: Frontend connected.
+2024-11-23 14:00:14 [user-service] info: Backend Server stdout: 2024-11-23 14:00:14 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:39 [user-service] info: Serving index.html
+2024-11-23 14:00:39 [user-service] info: Backend Server stdout: 2024-11-23 14:00:39 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:39 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:39 [user-service] info: Backend Server stdout: 2024-11-23 14:00:39 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:39 [user-service] info: Frontend connected.
+2024-11-23 14:00:39 [user-service] info: Backend Server stdout: 2024-11-23 14:00:39 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:41 [user-service] info: Serving index.html
+2024-11-23 14:00:41 [user-service] info: Backend Server stdout: 2024-11-23 14:00:41 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:41 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:41 [user-service] info: Backend Server stdout: 2024-11-23 14:00:41 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:41 [user-service] info: Frontend connected.
+2024-11-23 14:00:41 [user-service] info: Backend Server stdout: 2024-11-23 14:00:41 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:42 [user-service] info: Serving index.html
+2024-11-23 14:00:42 [user-service] info: Backend Server stdout: 2024-11-23 14:00:42 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:42 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:42 [user-service] info: Backend Server stdout: 2024-11-23 14:00:42 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:42 [user-service] info: Frontend connected.
+2024-11-23 14:00:42 [user-service] info: Backend Server stdout: 2024-11-23 14:00:42 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:43 [user-service] info: Serving index.html
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:43 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:43 [user-service] info: Frontend connected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:43 [user-service] info: Serving index.html
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:43 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:43 [user-service] info: Frontend connected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:43 [user-service] info: Serving index.html
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:43 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:43 [user-service] info: Frontend connected.
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:43 [user-service] info: Serving index.html
+2024-11-23 14:00:43 [user-service] info: Backend Server stdout: 2024-11-23 14:00:43 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:44 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:44 [user-service] info: Frontend connected.
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:44 [user-service] info: Serving index.html
+2024-11-23 14:00:44 [user-service] info: Backend Server stdout: 2024-11-23 14:00:44 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:45 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:45 [user-service] info: Backend Server stdout: 2024-11-23 14:00:45 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:45 [user-service] info: Frontend connected.
+2024-11-23 14:00:45 [user-service] info: Backend Server stdout: 2024-11-23 14:00:45 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:45 [user-service] info: Serving index.html
+2024-11-23 14:00:45 [user-service] info: Backend Server stdout: 2024-11-23 14:00:45 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:45 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:45 [user-service] info: Backend Server stdout: 2024-11-23 14:00:45 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:45 [user-service] info: Frontend connected.
+2024-11-23 14:00:45 [user-service] info: Backend Server stdout: 2024-11-23 14:00:45 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:00:57 [user-service] info: Serving index.html
+2024-11-23 14:00:57 [user-service] info: Backend Server stdout: 2024-11-23 14:00:57 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:57 [user-service] info: Frontend disconnected.
+2024-11-23 14:00:57 [user-service] info: Backend Server stdout: 2024-11-23 14:00:57 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:00:58 [user-service] info: Serving index.html
+2024-11-23 14:00:58 [user-service] info: Backend Server stdout: 2024-11-23 14:00:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:58 [user-service] info: Serving index.html
+2024-11-23 14:00:58 [user-service] info: Backend Server stdout: 2024-11-23 14:00:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:58 [user-service] info: Serving index.html
+2024-11-23 14:00:58 [user-service] info: Backend Server stdout: 2024-11-23 14:00:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:00:58 [user-service] info: Serving index.html
+2024-11-23 14:00:58 [user-service] info: Backend Server stdout: 2024-11-23 14:00:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:02 [user-service] info: Serving index.html
+2024-11-23 14:01:02 [user-service] info: Backend Server stdout: 2024-11-23 14:01:02 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:02 [user-service] info: Frontend connected.
+2024-11-23 14:01:02 [user-service] info: Backend Server stdout: 2024-11-23 14:01:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:24 [user-service] info: Serving index.html
+2024-11-23 14:01:24 [user-service] info: Backend Server stdout: 2024-11-23 14:01:24 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:24 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:24 [user-service] info: Backend Server stdout: 2024-11-23 14:01:24 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:24 [user-service] info: Frontend connected.
+2024-11-23 14:01:24 [user-service] info: Backend Server stdout: 2024-11-23 14:01:24 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:28 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:28 [user-service] info: Backend Server stdout: 2024-11-23 14:01:28 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:54 [user-service] info: Serving index.html
+2024-11-23 14:01:54 [user-service] info: Backend Server stdout: 2024-11-23 14:01:54 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:54 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:54 [user-service] info: Backend Server stdout: 2024-11-23 14:01:54 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:54 [user-service] info: Frontend connected.
+2024-11-23 14:01:54 [user-service] info: Backend Server stdout: 2024-11-23 14:01:54 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:55 [user-service] info: Serving index.html
+2024-11-23 14:01:55 [user-service] info: Backend Server stdout: 2024-11-23 14:01:55 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:55 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:55 [user-service] info: Backend Server stdout: 2024-11-23 14:01:55 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:55 [user-service] info: Frontend connected.
+2024-11-23 14:01:55 [user-service] info: Backend Server stdout: 2024-11-23 14:01:55 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:57 [user-service] info: Serving index.html
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:57 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:57 [user-service] info: Frontend connected.
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:57 [user-service] info: Serving index.html
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:57 [user-service] info: Frontend connected.
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:57 [user-service] info: Serving index.html
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:57 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:57 [user-service] info: Frontend connected.
+2024-11-23 14:01:57 [user-service] info: Backend Server stdout: 2024-11-23 14:01:57 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:58 [user-service] info: Serving index.html
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:58 [user-service] info: Frontend connected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:58 [user-service] info: Serving index.html
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:58 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:58 [user-service] info: Frontend connected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:58 [user-service] info: Serving index.html
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:58 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:58 [user-service] info: Frontend connected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:58 [user-service] info: Serving index.html
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:58 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:58 [user-service] info: Frontend connected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:58 [user-service] info: Serving index.html
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:58 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:58 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:59 [user-service] info: Frontend connected.
+2024-11-23 14:01:58 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:59 [user-service] info: Serving index.html
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:59 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:59 [user-service] info: Frontend connected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:59 [user-service] info: Serving index.html
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:59 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:59 [user-service] info: Frontend connected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:59 [user-service] info: Serving index.html
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:59 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:59 [user-service] info: Frontend connected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:59 [user-service] info: Serving index.html
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:59 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:01:59 [user-service] info: Frontend connected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:01:59 [user-service] info: Serving index.html
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:01:59 [user-service] info: Frontend disconnected.
+2024-11-23 14:01:59 [user-service] info: Backend Server stdout: 2024-11-23 14:01:59 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:00 [user-service] info: Frontend connected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:00 [user-service] info: Serving index.html
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:00 [user-service] info: Frontend connected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:00 [user-service] info: Serving index.html
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:00 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:00 [user-service] info: Frontend connected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:00 [user-service] info: Serving index.html
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:00 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:00 [user-service] info: Frontend connected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:00 [user-service] info: Serving index.html
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:00 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:00 [user-service] info: Frontend connected.
+2024-11-23 14:02:00 [user-service] info: Backend Server stdout: 2024-11-23 14:02:00 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:01 [user-service] info: Serving index.html
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:01 [user-service] info: Frontend connected.
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:01 [user-service] info: Serving index.html
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:01 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:01 [user-service] info: Frontend connected.
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:01 [user-service] info: Serving index.html
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:01 [user-service] info: Frontend connected.
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:01 [user-service] info: Serving index.html
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:01 [user-service] info: Frontend connected.
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:01 [user-service] info: Serving index.html
+2024-11-23 14:02:01 [user-service] info: Backend Server stdout: 2024-11-23 14:02:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:02 [user-service] info: Frontend connected.
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:02 [user-service] info: Serving index.html
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:02 [user-service] info: Frontend connected.
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:02 [user-service] info: Serving index.html
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:02 [user-service] info: Frontend connected.
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:02 [user-service] info: Serving index.html
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:02 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:02 [user-service] info: Frontend connected.
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:02 [user-service] info: Serving index.html
+2024-11-23 14:02:02 [user-service] info: Backend Server stdout: 2024-11-23 14:02:02 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:03 [user-service] info: Frontend connected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:03 [user-service] info: Serving index.html
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:03 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:03 [user-service] info: Frontend connected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:03 [user-service] info: Serving index.html
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:03 [user-service] info: Frontend connected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:03 [user-service] info: Serving index.html
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:03 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:03 [user-service] info: Frontend connected.
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:03 [user-service] info: Serving index.html
+2024-11-23 14:02:03 [user-service] info: Backend Server stdout: 2024-11-23 14:02:03 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:04 [user-service] info: Frontend connected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:04 [user-service] info: Serving index.html
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:04 [user-service] info: Frontend connected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:04 [user-service] info: Serving index.html
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:04 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:04 [user-service] info: Frontend connected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:04 [user-service] info: Serving index.html
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:04 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:04 [user-service] info: Frontend connected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:04 [user-service] info: Serving index.html
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:04 [user-service] info: Frontend connected.
+2024-11-23 14:02:04 [user-service] info: Backend Server stdout: 2024-11-23 14:02:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:05 [user-service] info: Serving index.html
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:05 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:05 [user-service] info: Frontend connected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:05 [user-service] info: Serving index.html
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:05 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:05 [user-service] info: Frontend connected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:05 [user-service] info: Serving index.html
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:05 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:05 [user-service] info: Frontend connected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:05 [user-service] info: Serving index.html
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:05 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:05 [user-service] info: Frontend connected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:05 [user-service] info: Serving index.html
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:05 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:05 [user-service] info: Backend Server stdout: 2024-11-23 14:02:05 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:06 [user-service] info: Frontend connected.
+2024-11-23 14:02:06 [user-service] info: Backend Server stdout: 2024-11-23 14:02:06 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:07 [user-service] info: Serving index.html
+2024-11-23 14:02:07 [user-service] info: Backend Server stdout: 2024-11-23 14:02:07 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:07 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:07 [user-service] info: Backend Server stdout: 2024-11-23 14:02:07 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:07 [user-service] info: Frontend connected.
+2024-11-23 14:02:07 [user-service] info: Backend Server stdout: 2024-11-23 14:02:07 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:08 [user-service] info: Serving index.html
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:08 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:08 [user-service] info: Frontend connected.
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:08 [user-service] info: Serving index.html
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:08 [user-service] info: Serving index.html
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:08 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:08 [user-service] info: Frontend connected.
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:08 [user-service] info: Serving index.html
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:08 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:08 [user-service] info: Backend Server stdout: 2024-11-23 14:02:08 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:09 [user-service] info: Serving index.html
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:09 [user-service] info: Frontend connected.
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:09 [user-service] info: Frontend connected.
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:09 [user-service] info: Serving index.html
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:09 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:09 [user-service] info: Frontend connected.
+2024-11-23 14:02:09 [user-service] info: Backend Server stdout: 2024-11-23 14:02:09 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:10 [user-service] info: Serving index.html
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:10 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:10 [user-service] info: Frontend connected.
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:10 [user-service] info: Serving index.html
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:10 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:10 [user-service] info: Frontend connected.
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:10 [user-service] info: Serving index.html
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:10 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:10 [user-service] info: Backend Server stdout: 2024-11-23 14:02:10 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:11 [user-service] info: Frontend connected.
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:11 [user-service] info: Serving index.html
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:11 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:11 [user-service] info: Frontend connected.
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:11 [user-service] info: Serving index.html
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:11 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:11 [user-service] info: Backend Server stdout: 2024-11-23 14:02:11 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:12 [user-service] info: Frontend connected.
+2024-11-23 14:02:12 [user-service] info: Backend Server stdout: 2024-11-23 14:02:12 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:12 [user-service] info: Serving index.html
+2024-11-23 14:02:12 [user-service] info: Backend Server stdout: 2024-11-23 14:02:12 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:12 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:12 [user-service] info: Backend Server stdout: 2024-11-23 14:02:12 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:12 [user-service] info: Frontend connected.
+2024-11-23 14:02:12 [user-service] info: Backend Server stdout: 2024-11-23 14:02:12 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:17 [user-service] info: Serving index.html
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:17 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:17 [user-service] info: Frontend connected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:17 [user-service] info: Serving index.html
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:17 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:17 [user-service] info: Frontend connected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:17 [user-service] info: Serving index.html
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:17 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:17 [user-service] info: Frontend connected.
+2024-11-23 14:02:17 [user-service] info: Backend Server stdout: 2024-11-23 14:02:17 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:18 [user-service] info: Serving index.html
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:18 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:18 [user-service] info: Frontend connected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:18 [user-service] info: Serving index.html
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:18 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:18 [user-service] info: Frontend connected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:18 [user-service] info: Serving index.html
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:18 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:18 [user-service] info: Frontend connected.
+2024-11-23 14:02:18 [user-service] info: Backend Server stdout: 2024-11-23 14:02:18 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:19 [user-service] info: Serving index.html
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:19 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:19 [user-service] info: Frontend connected.
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:19 [user-service] info: Serving index.html
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:19 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:19 [user-service] info: Frontend connected.
+2024-11-23 14:02:19 [user-service] info: Backend Server stdout: 2024-11-23 14:02:19 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:20 [user-service] info: Serving index.html
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:20 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:20 [user-service] info: Frontend connected.
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:20 [user-service] info: Serving index.html
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:20 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:20 [user-service] info: Frontend connected.
+2024-11-23 14:02:20 [user-service] info: Backend Server stdout: 2024-11-23 14:02:20 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:21 [user-service] info: Serving index.html
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:21 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:21 [user-service] info: Frontend connected.
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:21 [user-service] info: Serving index.html
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:21 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:21 [user-service] info: Frontend connected.
+2024-11-23 14:02:21 [user-service] info: Backend Server stdout: 2024-11-23 14:02:21 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:22 [user-service] info: Serving index.html
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:22 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:22 [user-service] info: Frontend connected.
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:22 [user-service] info: Serving index.html
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:22 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:22 [user-service] info: Frontend connected.
+2024-11-23 14:02:22 [user-service] info: Backend Server stdout: 2024-11-23 14:02:22 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:23 [user-service] info: Serving index.html
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:23 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:23 [user-service] info: Frontend connected.
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:23 [user-service] info: Serving index.html
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:23 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:23 [user-service] info: Frontend connected.
+2024-11-23 14:02:23 [user-service] info: Backend Server stdout: 2024-11-23 14:02:23 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:24 [user-service] info: Serving index.html
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:24 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:24 [user-service] info: Frontend connected.
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:24 [user-service] info: Serving index.html
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:24 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:24 [user-service] info: Frontend connected.
+2024-11-23 14:02:24 [user-service] info: Backend Server stdout: 2024-11-23 14:02:24 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:25 [user-service] info: Serving index.html
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:25 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:25 [user-service] info: Frontend connected.
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:25 [user-service] info: Serving index.html
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:25 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:25 [user-service] info: Frontend connected.
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:25 [user-service] info: Serving index.html
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:25 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:25 [user-service] info: Backend Server stdout: 2024-11-23 14:02:25 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:26 [user-service] info: Frontend connected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:26 [user-service] info: Serving index.html
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:26 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:26 [user-service] info: Frontend connected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:26 [user-service] info: Serving index.html
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:26 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:26 [user-service] info: Frontend connected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:26 [user-service] info: Serving index.html
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:26 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:26 [user-service] info: Frontend connected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:26 [user-service] info: Serving index.html
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:26 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:26 [user-service] info: Backend Server stdout: 2024-11-23 14:02:26 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:27 [user-service] info: Frontend connected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:27 [user-service] info: Serving index.html
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:27 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:27 [user-service] info: Frontend connected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:27 [user-service] info: Serving index.html
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:27 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:27 [user-service] info: Frontend connected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:27 [user-service] info: Serving index.html
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:27 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:27 [user-service] info: Frontend connected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:27 [user-service] info: Serving index.html
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:27 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:27 [user-service] info: Frontend connected.
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:27 [user-service] info: Serving index.html
+2024-11-23 14:02:27 [user-service] info: Backend Server stdout: 2024-11-23 14:02:27 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:28 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:28 [user-service] info: Serving index.html
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:28 [user-service] info: Frontend connected.
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:28 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:28 [user-service] info: Serving index.html
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:02:28 [user-service] info: Frontend connected.
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:02:28 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:28 [user-service] info: Backend Server stdout: 2024-11-23 14:02:28 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:29 [user-service] info: Closing servers...
+2024-11-23 14:02:29 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] info: Attempting to kill undefined (PID: 10908)...
+2024-11-23 14:02:29 [user-service] info: Backend Server stdout: 2024-11-23 14:02:29 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 14:02:29 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:02:29 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 14:02:29 [user-service] info: undefined successfully terminated.
+2024-11-23 14:04:37 [user-service] info: Starting Backend Server...
+2024-11-23 14:04:37 [user-service] info: Starting Receive Image Server...
+2024-11-23 14:04:38 [user-service] info: Receive Image Server stdout: 2024-11-23 14:04:38 [user-service] [31merror[39m: Error starting the server: Cannot access 'server' before initialization
+
+2024-11-23 14:04:38 [user-service] error: Error starting the server: Cannot access 'server' before initialization
+2024-11-23 14:04:38 [user-service] info: Backend Server stdout: 2024-11-23 14:04:38 [user-service] [32minfo[39m: Server running at http://localhost:3003
+
+2024-11-23 14:04:38 [user-service] info: Receive Image Server exited with code 0
+2024-11-23 14:04:38 [user-service] info: Backend Server stdout: 2024-11-23 14:04:38 [user-service] [31merror[39m: Error starting the server: Cannot access 'server' before initialization
+
+2024-11-23 14:04:38 [user-service] info: Server running at http://localhost:3003
+2024-11-23 14:04:38 [user-service] error: Error starting the server: Cannot access 'server' before initialization
+2024-11-23 14:04:50 [user-service] info: Closing servers...
+2024-11-23 14:04:50 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 14:04:50 [user-service] info: Attempting to kill undefined (PID: 13428)...
+2024-11-23 14:04:50 [user-service] info: Backend Server stdout: 2024-11-23 14:04:50 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 14:04:50 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 14:04:50 [user-service] info: Backend Server exited with code 0
+2024-11-23 14:04:50 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 13428 /T /F
+ERROR: The process "13428" not found.
+
+2024-11-23 14:05:54 [user-service] info: Starting Backend Server...
+2024-11-23 14:05:54 [user-service] info: Starting Receive Image Server...
+2024-11-23 14:05:54 [user-service] info: Receive Image Server stdout: 2024-11-23 14:05:54 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 14:05:54 [user-service] info: Receive Image Server stdout: 2024-11-23 14:05:54 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 14:05:54 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 14:05:54 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 14:05:55 [user-service] info: Backend Server stdout: 2024-11-23 14:05:55 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 14:05:55 [user-service] info: Backend Server stdout: 2024-11-23 14:05:55 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 14:05:55 [user-service] info: Backend Server stdout: 2024-11-23 14:05:55 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 14:05:55 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 14:05:55 [user-service] info: Server running at http://localhost:3002
+2024-11-23 14:05:55 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 14:05:55 [user-service] info: Frontend connected.
+2024-11-23 14:05:55 [user-service] info: Backend Server stdout: 2024-11-23 14:05:55 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:05:58 [user-service] info: Serving index.html
+2024-11-23 14:05:58 [user-service] info: Backend Server stdout: 2024-11-23 14:05:58 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:05:58 [user-service] info: Frontend disconnected.
+2024-11-23 14:05:58 [user-service] info: Backend Server stdout: 2024-11-23 14:05:58 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 14:05:58 [user-service] info: Frontend connected.
+2024-11-23 14:05:58 [user-service] info: Backend Server stdout: 2024-11-23 14:05:58 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 14:06:01 [user-service] info: Serving index.html
+2024-11-23 14:06:01 [user-service] info: Backend Server stdout: 2024-11-23 14:06:01 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 14:06:01 [user-service] info: Frontend connected.
+2024-11-23 14:06:01 [user-service] info: Backend Server stdout: 2024-11-23 14:06:01 [user-service] [32minfo[39m: Frontend connected.
+

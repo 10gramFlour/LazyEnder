@@ -17,6 +17,7 @@ const __dirname = dirname(__filename);
 const receiveImageEmitter = new EventEmitter();
 
 let serverStarted = false;
+let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
 
 async function startServer() {
     if (serverStarted) {
@@ -31,7 +32,7 @@ async function startServer() {
         const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
         logger.info(`WebSocket Server running on port ${WEBSOCKET_PORT}`);
 
-        const server = net.createServer((socket) => {
+        server = net.createServer((socket) => { // Initialisieren Sie die Variable `server` hier
             logger.info('Connected to image sender');
 
             let dataBuffer = Buffer.alloc(0);

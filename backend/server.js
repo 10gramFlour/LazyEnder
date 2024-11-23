@@ -12,7 +12,7 @@ import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 
 const app = express();
-let server;
+let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
 let io;
 let WEBSOCKET_PORT;
 
@@ -25,7 +25,7 @@ async function startServer() {
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
     WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
 
-    server = http.createServer(app);
+    server = http.createServer(app); // Initialisieren Sie die Variable `server` hier
     io = new Server(server);
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))

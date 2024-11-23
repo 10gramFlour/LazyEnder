@@ -193,3 +193,14 @@ ERROR: The process "10020" not found.
 2024-11-23 13:53:10 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 1396 /T /F
 ERROR: The process "1396" not found.
 
+2024-11-23 13:55:12 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 320 /T /F
+ERROR: The process "320" not found.
+
+2024-11-23 13:57:42 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 6304 /T /F
+ERROR: The process "6304" not found.
+
+2024-11-23 14:04:38 [user-service] error: Error starting the server: Cannot access 'server' before initialization
+2024-11-23 14:04:38 [user-service] error: Error starting the server: Cannot access 'server' before initialization
+2024-11-23 14:04:50 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 13428 /T /F
+ERROR: The process "13428" not found.
+

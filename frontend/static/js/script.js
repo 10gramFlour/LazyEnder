@@ -1,5 +1,3 @@
-import { WEBSOCKET_PORT } from './config/websocket.js';
-
 // Establish WebSocket connection
 const socket = io();  // Production environment
 
