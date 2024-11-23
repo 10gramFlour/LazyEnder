@@ -21,7 +21,7 @@ const __dirname = dirname(__filename);
 
 // Automatically find an available port
 async function startServer() {
-    const PORT = await portfinder.getPortPromise({ port: 3001, stopPort: 3999 });
+    const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
 
     server = http.createServer(app);
     io = new Server(server);
@@ -39,7 +39,7 @@ async function startServer() {
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
 
     // Serve index.html
-    app.get('/', (req, res) => {
+    app.get('/', (_req, res) => {
         res.sendFile(path.join(__dirname, '../frontend/index.html'));
     });
 
