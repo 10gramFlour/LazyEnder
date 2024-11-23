@@ -1,8 +1,8 @@
-import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
+import { exec } from 'child_process';
 import kill from 'tree-kill';
 
 // Get the directory of the current script file
@@ -20,6 +20,7 @@ function validateScriptPath(scriptPath) {
 // Define paths for the backend and receive image server scripts
 const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js'));
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
+const findFreePortScript = validateScriptPath(path.join(__dirname, 'backend', 'findFreePort.js'));
 
 let backendServerStarted = false;
 let receiveImageServerStarted = false;
@@ -32,60 +33,34 @@ function startServer(scriptPath, serverName) {
         return null;
     }
 
-    logger.info(`Starting ${serverName}...`);
-    const server = spawn('node', [scriptPath]);
-
-    server.stdout.on('data', (data) => {
-        logger.info(`${serverName} stdout: ${data}`);
-    });
-
-    server.stderr.on('data', (data) => {
-        logger.error(`${serverName} stderr: ${data}`);
-    });
-
-    server.on('error', (err) => {
-        logger.error(`${serverName} failed to start: ${err}`);
-    });
-
-    server.on('close', (code) => {
-        logger.info(`${serverName} exited with code ${code}`);
-    });
-
-    if (serverName === 'Backend Server') backendServerStarted = true;
-    if (serverName === 'Receive Image Server') receiveImageServerStarted = true;
-
-    return server;
-}
-
-// Start both backend and image receiver servers
-const backendServer = startServer(serverScript, 'Backend Server');
-const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server');
-
-// Clean up servers on application termination
-process.on('SIGINT', async () => {
-    logger.info('Closing servers...');
-    await stopServers([backendServer, receiveImageServer]);
-    logger.info('All servers closed. Exiting application.');
-    process.exit(0);
-});
-
-// Function to terminate running servers
-async function stopServers(servers) {
-    for (const server of servers) {
-        if (server && server.pid) {
-            if (server.exitCode !== null) {
-                logger.info(`${server.serverName} has already exited.`);
-                continue;
-            }
-            try {
-                await killProcess(server.pid, server.serverName);
-            } catch (err) {
-                logger.error(`Error stopping ${server.serverName}:`, err);
-            }
-        } else {
-            logger.info(`Process ${server?.serverName || 'unknown'} is not running.`);
+    const serverProcess = exec(`node ${scriptPath}`, (error, stdout, stderr) => {
+        if (error) {
+            logger.error(`Error starting ${serverName}: ${error}`);
+            return;
         }
+        if (stderr) {
+            logger.error(`${serverName} stderr: ${stderr}`);
+            return;
+        }
+        logger.info(`${serverName} stdout: ${stdout}`);
+    });
+
+    serverProcess.on('exit', (code) => {
+        logger.info(`${serverName} exited with code ${code}`);
+        if (serverName === 'Backend Server') {
+            backendServerStarted = false;
+        } else if (serverName === 'Receive Image Server') {
+            receiveImageServerStarted = false;
+        }
+    });
+
+    if (serverName === 'Backend Server') {
+        backendServerStarted = true;
+    } else if (serverName === 'Receive Image Server') {
+        receiveImageServerStarted = true;
     }
+
+    return serverProcess;
 }
 
 // Helper function to kill a process by PID
@@ -101,3 +76,20 @@ function killProcess(pid, serverName) {
         });
     });
 }
+
+// Call findFreePort.js to find a free port and write it to the configuration file
+exec(`node ${findFreePortScript}`, (error, stdout, stderr) => {
+    if (error) {
+        logger.error(`Error executing findFreePort.js: ${error}`);
+        return;
+    }
+    if (stderr) {
+        logger.error(`stderr: ${stderr}`);
+        return;
+    }
+    logger.info(`stdout: ${stdout}`);
+
+    // Start the other server scripts after finding a free port
+    startServer(receiveImageScript, 'Receive Image Server');
+    startServer(serverScript, 'Backend Server');
+});

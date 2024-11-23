@@ -2,6 +2,12 @@
 import fs from 'fs';
 import path from 'path';
 import portfinder from 'portfinder';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const configPath = path.join(__dirname, 'config', 'websocket.js');
 
