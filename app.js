@@ -15,7 +15,16 @@ function validateScriptPath(scriptPath) {
 const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js')); // Backend server (Express + WebSocket)
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js')); // Image receiver
 
+let backendServerStarted = false;
+let receiveImageServerStarted = false;
+
 function startServer(scriptPath, serverName) {
+    if ((serverName === 'Backend Server' && backendServerStarted) || 
+        (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
+        logger.warn(`${serverName} is already started.`);
+        return null;
+    }
+
     logger.info(`Starting ${serverName}...`);
     const server = spawn('node', [scriptPath]);
 
@@ -37,6 +46,12 @@ function startServer(scriptPath, serverName) {
 
     server.serverName = serverName;
     server.pid = server.pid;
+
+    if (serverName === 'Backend Server') {
+        backendServerStarted = true;
+    } else if (serverName === 'Receive Image Server') {
+        receiveImageServerStarted = true;
+    }
 
     return server;
 }
