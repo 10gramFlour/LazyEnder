@@ -1,17 +1,22 @@
-// server.js 
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-import sendPromptToFriend from './promptSender';
-import receiveImage from './receiveImage';
-import path from 'path';
-import errorHandler from './middleware/errorHandler';
-import logger from './backend/logger.js';
 import { body, validationResult } from 'express-validator';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import sendPromptToFriend from './promptSender.js';
+import receiveImage from './receiveImage.js';
+import errorHandler from './middleware/errorHandler.js';
+import logger from './logger.js';
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -20,7 +25,7 @@ app.use(express.json());
 app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
 
 // Serve index.html
-app.get('/', (_req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
@@ -65,7 +70,7 @@ io.on('connection', (socket) => {
 // Use the error handling middleware
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`));
 
 // Graceful shutdown on SIGINT (Ctrl+C)

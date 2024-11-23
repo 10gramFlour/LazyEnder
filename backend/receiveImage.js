@@ -1,10 +1,16 @@
 import fs from 'fs';
 import WebSocket from 'ws';
 import EventEmitter from 'events';
-import settings from './config/settings';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import logger from './logger';
+import settings from './config/settings.js';
+import logger from './logger.js';
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
 
@@ -82,7 +88,4 @@ async function startServer() {
 
 startServer();
 
-module.exports = receiveImageEmitter;
-receiveImageEmitter.on('imageReceived', (imageData) => {
-    logger.info('Image received and processed');
-});
+export default receiveImageEmitter;

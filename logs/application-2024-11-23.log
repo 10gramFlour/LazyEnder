@@ -160,3 +160,71 @@ Emitted 'error' event on Server instance at:
 Node.js v22.11.0
 
 2024-11-23 10:30:24 [user-service] info: Backend Server exited with code 1
+2024-11-23 10:46:29 [user-service] info: Starting Backend Server...
+2024-11-23 10:46:29 [user-service] info: Starting Receive Image Server...
+2024-11-23 10:46:29 [user-service] error: Receive Image Server stderr: node:internal/modules/esm/resolve:257
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Apps\LazyEnder\backend\config\settings' imported from C:\Apps\LazyEnder\backend\receiveImage.js
+    at finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    at moduleResolve (node:internal/modules/esm/resolve:913:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:132:49) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Apps/LazyEnder/backend/config/settings'
+}
+
+Node.js v22.11.0
+
+2024-11-23 10:46:29 [user-service] info: Receive Image Server exited with code 1
+2024-11-23 10:46:29 [user-service] error: Backend Server stderr: node:internal/modules/esm/resolve:257
+    throw new ERR_MODULE_NOT_FOUND(
+          ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'C:\Apps\LazyEnder\backend\promptSender' imported from C:\Apps\LazyEnder\backend\server.js
+    at finalizeResolution (node:internal/modules/esm/resolve:257:11)
+    at moduleResolve (node:internal/modules/esm/resolve:913:10)
+    at defaultResolve (node:internal/modules/esm/resolve:1037:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:650:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:599:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:582:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:241:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:132:49) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///C:/Apps/LazyEnder/backend/promptSender'
+}
+
+Node.js v22.11.0
+
+2024-11-23 10:46:29 [user-service] info: Backend Server exited with code 1
+2024-11-23 10:48:00 [user-service] info: Starting Backend Server...
+2024-11-23 10:48:00 [user-service] info: Starting Receive Image Server...
+2024-11-23 10:48:00 [user-service] error: Receive Image Server stderr: file:///C:/Apps/LazyEnder/backend/receiveImage.js:8
+import settings from './config/settings.js';
+       ^^^^^^^^
+SyntaxError: The requested module './config/settings.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:177:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:260:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+
+Node.js v22.11.0
+
+2024-11-23 10:48:00 [user-service] info: Receive Image Server exited with code 1
+2024-11-23 10:48:00 [user-service] error: Backend Server stderr: file:///C:/Apps/LazyEnder/backend/receiveImage.js:8
+import settings from './config/settings.js';
+       ^^^^^^^^
+SyntaxError: The requested module './config/settings.js' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:177:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:260:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+
+Node.js v22.11.0
+
+2024-11-23 10:48:00 [user-service] info: Backend Server exited with code 1
