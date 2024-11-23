@@ -78,7 +78,14 @@ function startServer() {
     if (serverStarted) return;
     serverStarted = true;
 
-    server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`));
+    server.listen(PORT, (err) => {
+        if (err) {
+            logger.error(`Error starting server: ${err.message}`);
+            process.exit(1);
+        } else {
+            logger.info(`Server running at http://localhost:${PORT}`);
+        }
+    });
 
     // Graceful shutdown on SIGINT (Ctrl+C)
     process.on('SIGINT', () => {

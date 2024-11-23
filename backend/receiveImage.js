@@ -1,32 +1,27 @@
 import fs from 'fs';
-import WebSocket, { WebSocketServer } from 'ws';
+import { WebSocketServer } from 'ws';
 import EventEmitter from 'events';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 
-// Get the directory name
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
 let serverStarted = false;
 let imageServer;
 
-async function startServer() {
+async function startServer(port = RECEIVE_IMAGE_PORT) {
     if (serverStarted) {
         logger.info('Server is already running.');
         return;
     }
 
     try {
-        imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
+        imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port });
         serverStarted = true;
 
-        logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
+        logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${port}`);
 
         imageServer.on('connection', (socket) => {
             logger.info('Connected to image sender');
@@ -86,7 +81,12 @@ async function startServer() {
         });
 
         imageServer.on('error', (err) => {
-            logger.error('Error starting the server:', err);
+            if (err.code === 'EADDRINUSE') {
+                logger.error(`Address in use, retrying with a different port...`);
+                startServer(port + 1);
+            } else {
+                logger.error('Error starting the server:', err);
+            }
         });
 
         process.on('SIGINT', shutdownServer);
