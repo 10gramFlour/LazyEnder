@@ -29,7 +29,11 @@ async function startServer() {
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
         .on('error', (err) => {
-            logger.error('Error starting server:', err);
+            if (err.code === 'EADDRINUSE') {
+                logger.error(`Port ${PORT} is already in use.`);
+            } else {
+                logger.error('Error starting server:', err);
+            }
             process.exit(1);
         });
 
@@ -37,10 +41,10 @@ async function startServer() {
     app.use(express.json());
 
     // Serve static files (CSS, JS, images)
-    app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
-    app.use('/images', express.static(path.join(__dirname, '../images')));
-
-    // Serve index.html
+    app.get('/', (res) => {
+        logger.info('Serving index.html');
+        res.sendFile(path.join(__dirname, '../frontend/index.html'));
+    });
     app.get('/', (req, res) => {
         logger.info('Serving index.html');
         res.sendFile(path.join(__dirname, '../frontend/index.html'));
