@@ -14,3 +14,586 @@
 2024-11-23 17:54:59 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
 
 2024-11-23 17:54:59 [user-service] info: undefined successfully terminated.
+2024-11-23 17:55:15 [user-service] info: Starting Backend Server...
+2024-11-23 17:55:15 [user-service] info: Starting Receive Image Server...
+2024-11-23 17:55:15 [user-service] info: Receive Image Server exited with code 0
+2024-11-23 17:55:15 [user-service] info: Backend Server stdout: 2024-11-23 17:55:15 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 17:55:15 [user-service] info: Server running at http://localhost:3002
+2024-11-23 17:55:16 [user-service] info: Frontend connected.
+2024-11-23 17:55:16 [user-service] info: Backend Server stdout: 2024-11-23 17:55:16 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 17:55:19 [user-service] info: Frontend connected.
+2024-11-23 17:55:19 [user-service] info: Backend Server stdout: 2024-11-23 17:55:19 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 17:56:23 [user-service] info: Serving index.html
+2024-11-23 17:56:23 [user-service] info: Backend Server stdout: 2024-11-23 17:56:23 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 17:56:23 [user-service] info: Frontend disconnected.
+2024-11-23 17:56:23 [user-service] info: Backend Server stdout: 2024-11-23 17:56:23 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 17:56:23 [user-service] info: Frontend connected.
+2024-11-23 17:56:23 [user-service] info: Backend Server stdout: 2024-11-23 17:56:23 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 17:56:26 [user-service] info: Received prompt: A beautiful sunset over the ocean
+2024-11-23 17:56:26 [user-service] info: Backend Server stdout: 2024-11-23 17:56:26 [user-service] [32minfo[39m: Received prompt: A beautiful sunset over the ocean
+
+2024-11-23 17:56:26 [user-service] info: Backend Server stdout: Starting to send prompt to friend...
+Validating and sanitizing prompt: A beautiful sunset over the ocean
+Sanitized prompt: A beautiful sunset over the ocean
+Attempting to connect to 25.28.81.126:5002...
+
+2024-11-23 17:56:26 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 17:56:26 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 17:58:24 [user-service] info: Received prompt: A beautiful sunset over the ocean
+2024-11-23 17:58:24 [user-service] info: Backend Server stdout: 2024-11-23 17:58:24 [user-service] [32minfo[39m: Received prompt: A beautiful sunset over the ocean
+
+2024-11-23 17:58:24 [user-service] info: Backend Server stdout: Starting to send prompt to friend...
+Validating and sanitizing prompt: A beautiful sunset over the ocean
+Sanitized prompt: A beautiful sunset over the ocean
+Attempting to connect to 25.28.81.126:5002...
+
+2024-11-23 17:58:24 [user-service] info: Backend Server stdout: Connected to friend, sending prompt...
+
+2024-11-23 17:58:24 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 17:58:33 [user-service] info: Serving index.html
+2024-11-23 17:58:33 [user-service] info: Backend Server stdout: 2024-11-23 17:58:33 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 17:58:33 [user-service] info: Frontend disconnected.
+2024-11-23 17:58:33 [user-service] info: Backend Server stdout: 2024-11-23 17:58:33 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 17:58:33 [user-service] info: Frontend connected.
+2024-11-23 17:58:33 [user-service] info: Backend Server stdout: 2024-11-23 17:58:33 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 17:58:53 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 17:58:53 [user-service] info: Closing servers...
+2024-11-23 17:58:53 [user-service] info: Frontend disconnected.
+2024-11-23 17:58:53 [user-service] info: Frontend disconnected.
+2024-11-23 17:58:53 [user-service] info: Attempting to kill undefined (PID: 14368)...
+2024-11-23 17:58:53 [user-service] info: Backend Server stdout: 2024-11-23 17:58:53 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 17:58:53 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 17:58:53 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 17:58:53 [user-service] info: Server closed.
+2024-11-23 17:58:53 [user-service] info: Backend Server stdout: 2024-11-23 17:58:53 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 17:58:53 [user-service] info: Backend Server exited with code 0
+2024-11-23 17:58:53 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 14368 /T /F
+ERROR: The process "14368" not found.
+
+2024-11-23 18:00:09 [user-service] info: Starting Backend Server...
+2024-11-23 18:00:09 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:00:09 [user-service] info: Receive Image Server exited with code 0
+2024-11-23 18:00:10 [user-service] info: Backend Server stdout: 2024-11-23 18:00:10 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:00:10 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:00:10 [user-service] info: Frontend connected.
+2024-11-23 18:00:10 [user-service] info: Backend Server stdout: 2024-11-23 18:00:10 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:00:10 [user-service] info: Frontend connected.
+2024-11-23 18:00:10 [user-service] info: Backend Server stdout: 2024-11-23 18:00:10 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:01:08 [user-service] info: Closing servers...
+2024-11-23 18:01:08 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:01:08 [user-service] info: Frontend disconnected.
+2024-11-23 18:01:08 [user-service] info: Frontend disconnected.
+2024-11-23 18:01:08 [user-service] info: Attempting to kill undefined (PID: 21416)...
+2024-11-23 18:01:08 [user-service] info: Backend Server stdout: 2024-11-23 18:01:08 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:01:08 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:01:08 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:01:08 [user-service] info: Server closed.
+2024-11-23 18:01:08 [user-service] info: Backend Server stdout: 2024-11-23 18:01:08 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:01:08 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:01:08 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 21416 /T /F
+ERROR: The process "21416" not found.
+
+2024-11-23 18:01:11 [user-service] info: Starting Backend Server...
+2024-11-23 18:01:11 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:01:11 [user-service] info: Receive Image Server stdout: 2024-11-23 18:01:11 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:01:11 [user-service] info: Receive Image Server stdout: 2024-11-23 18:01:11 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5002
+
+2024-11-23 18:01:11 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:01:11 [user-service] info: Image Receiver running on 25.39.138.224:5002
+2024-11-23 18:01:11 [user-service] info: Backend Server stdout: 2024-11-23 18:01:11 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:01:11 [user-service] info: Backend Server stdout: 2024-11-23 18:01:11 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:01:11 [user-service] info: Backend Server stdout: 2024-11-23 18:01:11 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:01:11 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:01:11 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:01:11 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:01:12 [user-service] info: Frontend connected.
+2024-11-23 18:01:12 [user-service] info: Backend Server stdout: 2024-11-23 18:01:12 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:01:15 [user-service] info: Frontend connected.
+2024-11-23 18:01:15 [user-service] info: Backend Server stdout: 2024-11-23 18:01:15 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:03:53 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:03:53 [user-service] info: Closing servers...
+2024-11-23 18:03:53 [user-service] info: Frontend disconnected.
+2024-11-23 18:03:53 [user-service] info: Frontend disconnected.
+2024-11-23 18:03:53 [user-service] info: Attempting to kill undefined (PID: 10096)...
+2024-11-23 18:03:53 [user-service] info: Backend Server stdout: 2024-11-23 18:03:53 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:03:53 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:03:53 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:03:53 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:03:53 [user-service] info: Server closed.
+2024-11-23 18:03:53 [user-service] info: Backend Server stdout: 2024-11-23 18:03:53 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:03:53 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:03:53 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 10096 /T /F
+ERROR: The process "10096" not found.
+
+2024-11-23 18:03:56 [user-service] info: Starting Backend Server...
+2024-11-23 18:03:56 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:03:56 [user-service] info: Receive Image Server stdout: 2024-11-23 18:03:56 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:03:56 [user-service] info: Receive Image Server stdout: 2024-11-23 18:03:56 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:03:56 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:03:56 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:03:56 [user-service] info: Backend Server stdout: 2024-11-23 18:03:56 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:03:56 [user-service] info: Backend Server stdout: 2024-11-23 18:03:56 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 18:03:56 [user-service] info: Backend Server stdout: 2024-11-23 18:03:56 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:03:56 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:03:56 [user-service] error: Port 5003 is already in use.
+2024-11-23 18:03:56 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:03:56 [user-service] info: Frontend connected.
+2024-11-23 18:03:56 [user-service] info: Backend Server stdout: 2024-11-23 18:03:56 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:03:57 [user-service] info: Frontend connected.
+2024-11-23 18:03:57 [user-service] info: Backend Server stdout: 2024-11-23 18:03:57 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:04:53 [user-service] info: Serving index.html
+2024-11-23 18:04:53 [user-service] info: Backend Server stdout: 2024-11-23 18:04:53 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 18:04:53 [user-service] info: Frontend disconnected.
+2024-11-23 18:04:53 [user-service] info: Backend Server stdout: 2024-11-23 18:04:53 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:04:53 [user-service] info: Frontend connected.
+2024-11-23 18:04:53 [user-service] info: Backend Server stdout: 2024-11-23 18:04:53 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:06:03 [user-service] info: Closing servers...
+2024-11-23 18:06:03 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:06:03 [user-service] info: Frontend disconnected.
+2024-11-23 18:06:03 [user-service] info: Frontend disconnected.
+2024-11-23 18:06:03 [user-service] info: Attempting to kill undefined (PID: 17896)...
+2024-11-23 18:06:03 [user-service] info: Backend Server stdout: 2024-11-23 18:06:03 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:06:03 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:06:03 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:06:03 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:06:03 [user-service] info: Server closed.
+2024-11-23 18:06:03 [user-service] info: Backend Server stdout: 2024-11-23 18:06:03 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:06:03 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:06:03 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 17896 /T /F
+ERROR: The process "17896" not found.
+
+2024-11-23 18:06:07 [user-service] info: Starting Backend Server...
+2024-11-23 18:06:07 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:06:07 [user-service] info: Receive Image Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:06:07 [user-service] info: Receive Image Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:06:07 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:06:07 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:06:07 [user-service] info: Backend Server stdout: 2024-11-23 18:06:07 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:06:07 [user-service] info: Starting server setup...
+2024-11-23 18:06:07 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:06:07 [user-service] error: Port 5003 is already in use.
+2024-11-23 18:06:07 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:06:07 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:06:07 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:06:07 [user-service] info: Static file serving middleware added.
+2024-11-23 18:06:07 [user-service] info: Error handler middleware added.
+2024-11-23 18:06:07 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:06:08 [user-service] info: Frontend connected.
+2024-11-23 18:06:08 [user-service] info: Backend Server stdout: 2024-11-23 18:06:08 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:06:11 [user-service] info: Frontend connected.
+2024-11-23 18:06:11 [user-service] info: Backend Server stdout: 2024-11-23 18:06:11 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:08:47 [user-service] info: Serving index.html
+2024-11-23 18:08:47 [user-service] info: Backend Server stdout: 2024-11-23 18:08:47 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 18:08:47 [user-service] info: Frontend disconnected.
+2024-11-23 18:08:47 [user-service] info: Backend Server stdout: 2024-11-23 18:08:47 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:08:47 [user-service] info: Frontend connected.
+2024-11-23 18:08:47 [user-service] info: Backend Server stdout: 2024-11-23 18:08:47 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:08:51 [user-service] info: Closing servers...
+2024-11-23 18:08:51 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:08:51 [user-service] info: Frontend disconnected.
+2024-11-23 18:08:51 [user-service] info: Frontend disconnected.
+2024-11-23 18:08:51 [user-service] info: Attempting to kill undefined (PID: 22616)...
+2024-11-23 18:08:51 [user-service] info: Backend Server stdout: 2024-11-23 18:08:51 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:08:51 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:08:51 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:08:51 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:08:51 [user-service] info: Server closed.
+2024-11-23 18:08:51 [user-service] info: Backend Server stdout: 2024-11-23 18:08:51 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:08:51 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:08:51 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 22616 /T /F
+ERROR: The process "22616" not found.
+
+2024-11-23 18:10:07 [user-service] info: Starting Backend Server...
+2024-11-23 18:10:07 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:10:07 [user-service] info: Receive Image Server stdout: 2024-11-23 18:10:07 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:10:07 [user-service] info: Receive Image Server stdout: 2024-11-23 18:10:07 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:10:07 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:10:07 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:10:08 [user-service] info: Starting server setup...
+2024-11-23 18:10:08 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:10:08 [user-service] error: Port 5003 is already in use.
+2024-11-23 18:10:08 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:10:08 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:10:08 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:10:08 [user-service] info: Static file serving middleware added.
+2024-11-23 18:10:08 [user-service] info: Error handler middleware added.
+2024-11-23 18:10:08 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:10:08 [user-service] info: Frontend connected.
+2024-11-23 18:10:08 [user-service] info: Backend Server stdout: 2024-11-23 18:10:08 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:10:09 [user-service] info: Frontend connected.
+2024-11-23 18:10:09 [user-service] info: Backend Server stdout: 2024-11-23 18:10:09 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:11:22 [user-service] info: Closing servers...
+2024-11-23 18:11:22 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:11:22 [user-service] info: Frontend disconnected.
+2024-11-23 18:11:22 [user-service] info: Frontend disconnected.
+2024-11-23 18:11:22 [user-service] info: Attempting to kill undefined (PID: 8000)...
+2024-11-23 18:11:22 [user-service] info: Backend Server stdout: 2024-11-23 18:11:22 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:11:22 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:11:22 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:11:22 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:11:22 [user-service] info: Server closed.
+2024-11-23 18:11:22 [user-service] info: Backend Server stdout: 2024-11-23 18:11:22 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:11:22 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:11:23 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 8000 /T /F
+ERROR: The process "8000" not found.
+
+2024-11-23 18:11:42 [user-service] info: Starting Backend Server...
+2024-11-23 18:11:42 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:11:42 [user-service] info: Receive Image Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:11:42 [user-service] info: Receive Image Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:11:42 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:11:42 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [31merror[39m: Port 5003 is already in use.
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:11:42 [user-service] info: Backend Server stdout: 2024-11-23 18:11:42 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:11:42 [user-service] info: Starting server setup...
+2024-11-23 18:11:42 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:11:42 [user-service] error: Port 5003 is already in use.
+2024-11-23 18:11:42 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:11:42 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:11:42 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:11:42 [user-service] info: Static file serving middleware added.
+2024-11-23 18:11:42 [user-service] info: Error handler middleware added.
+2024-11-23 18:11:42 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:11:46 [user-service] info: Frontend connected.
+2024-11-23 18:11:46 [user-service] info: Backend Server stdout: 2024-11-23 18:11:46 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:11:47 [user-service] info: Frontend connected.
+2024-11-23 18:11:47 [user-service] info: Backend Server stdout: 2024-11-23 18:11:47 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:11:50 [user-service] info: Serving index.html
+2024-11-23 18:11:50 [user-service] info: Backend Server stdout: 2024-11-23 18:11:50 [user-service] [32minfo[39m: Serving index.html
+
+2024-11-23 18:11:50 [user-service] info: Frontend disconnected.
+2024-11-23 18:11:50 [user-service] info: Backend Server stdout: 2024-11-23 18:11:50 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:11:51 [user-service] info: Frontend connected.
+2024-11-23 18:11:51 [user-service] info: Backend Server stdout: 2024-11-23 18:11:51 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:12:01 [user-service] info: Closing servers...
+2024-11-23 18:12:01 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:12:01 [user-service] info: Frontend disconnected.
+2024-11-23 18:12:01 [user-service] info: Frontend disconnected.
+2024-11-23 18:12:01 [user-service] info: Attempting to kill undefined (PID: 24144)...
+2024-11-23 18:12:01 [user-service] info: Backend Server stdout: 2024-11-23 18:12:01 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:12:01 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:12:01 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:12:01 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:12:01 [user-service] info: Server closed.
+2024-11-23 18:12:01 [user-service] info: Backend Server stdout: 2024-11-23 18:12:01 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:12:01 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:12:01 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 24144 /T /F
+ERROR: The process "24144" not found.
+
+2024-11-23 18:12:21 [user-service] info: Starting Backend Server...
+2024-11-23 18:12:21 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:12:21 [user-service] info: Receive Image Server stdout: 2024-11-23 18:12:21 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:12:21 [user-service] info: Receive Image Server stdout: 2024-11-23 18:12:21 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:12:21 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:12:21 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:12:21 [user-service] info: Backend Server stdout: 2024-11-23 18:12:21 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:12:21 [user-service] info: Backend Server stdout: 2024-11-23 18:12:21 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:12:22 [user-service] info: Backend Server stdout: 2024-11-23 18:12:22 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5004
+
+2024-11-23 18:12:21 [user-service] info: Starting server setup...
+2024-11-23 18:12:21 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:12:22 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:12:22 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:12:22 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:12:22 [user-service] info: Static file serving middleware added.
+2024-11-23 18:12:22 [user-service] info: Error handler middleware added.
+2024-11-23 18:12:22 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:12:22 [user-service] info: Image Receiver running on 25.39.138.224:5004
+2024-11-23 18:12:26 [user-service] info: Frontend connected.
+2024-11-23 18:12:26 [user-service] info: Backend Server stdout: 2024-11-23 18:12:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:12:26 [user-service] info: Frontend connected.
+2024-11-23 18:12:26 [user-service] info: Backend Server stdout: 2024-11-23 18:12:26 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:13:34 [user-service] info: Closing servers...
+2024-11-23 18:13:34 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:13:34 [user-service] info: Frontend disconnected.
+2024-11-23 18:13:34 [user-service] info: Frontend disconnected.
+2024-11-23 18:13:34 [user-service] info: Attempting to kill undefined (PID: 20324)...
+2024-11-23 18:13:34 [user-service] info: Backend Server stdout: 2024-11-23 18:13:34 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:13:34 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:13:34 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:13:34 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:13:34 [user-service] info: Server closed.
+2024-11-23 18:13:34 [user-service] info: Backend Server stdout: 2024-11-23 18:13:34 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:13:34 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:13:34 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 20324 /T /F
+ERROR: The process "20324" not found.
+
+2024-11-23 18:13:37 [user-service] info: Starting Backend Server...
+2024-11-23 18:13:37 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:13:37 [user-service] info: Receive Image Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:13:37 [user-service] info: Receive Image Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:13:37 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:13:37 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:13:37 [user-service] info: Backend Server stdout: 2024-11-23 18:13:37 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5004
+
+2024-11-23 18:13:37 [user-service] info: Starting server setup...
+2024-11-23 18:13:37 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:13:37 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:13:37 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:13:37 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:13:37 [user-service] info: Static file serving middleware added.
+2024-11-23 18:13:37 [user-service] info: Error handler middleware added.
+2024-11-23 18:13:37 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:13:37 [user-service] info: Image Receiver running on 25.39.138.224:5004
+2024-11-23 18:13:38 [user-service] info: Frontend connected.
+2024-11-23 18:13:38 [user-service] info: Backend Server stdout: 2024-11-23 18:13:38 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:13:38 [user-service] info: Frontend connected.
+2024-11-23 18:13:38 [user-service] info: Backend Server stdout: 2024-11-23 18:13:38 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:15:57 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 18:15:57 [user-service] info: Closing servers...
+2024-11-23 18:15:57 [user-service] info: Frontend disconnected.
+2024-11-23 18:15:57 [user-service] info: Frontend disconnected.
+2024-11-23 18:15:57 [user-service] info: Attempting to kill undefined (PID: 12776)...
+2024-11-23 18:15:57 [user-service] info: Backend Server stdout: 2024-11-23 18:15:57 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 18:15:57 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 18:15:57 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 18:15:57 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:15:57 [user-service] info: Server closed.
+2024-11-23 18:15:57 [user-service] info: Backend Server stdout: 2024-11-23 18:15:57 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 18:15:57 [user-service] info: Backend Server exited with code 0
+2024-11-23 18:15:57 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 12776 /T /F
+ERROR: The process "12776" not found.
+
+2024-11-23 18:16:00 [user-service] info: Starting Backend Server...
+2024-11-23 18:16:00 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:16:00 [user-service] info: Receive Image Server stdout: 2024-11-23 18:16:00 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:16:00 [user-service] info: Receive Image Server stdout: 2024-11-23 18:16:00 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:16:00 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:16:00 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:16:00 [user-service] info: Backend Server stdout: 2024-11-23 18:16:00 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:16:00 [user-service] info: Backend Server stdout: 2024-11-23 18:16:00 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:16:00 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:30:21)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:115:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+
+Node.js v22.11.0
+
+2024-11-23 18:16:00 [user-service] info: Backend Server exited with code 1
+2024-11-23 18:16:11 [user-service] info: Closing servers...
+2024-11-23 18:16:11 [user-service] info: undefined has already exited.
+2024-11-23 18:16:11 [user-service] info: Attempting to kill undefined (PID: 2320)...
+2024-11-23 18:16:11 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 18:16:11 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 2320 /T /F
+ERROR: The process "2320" not found.
+
+2024-11-23 18:16:14 [user-service] info: Starting Backend Server...
+2024-11-23 18:16:14 [user-service] info: Starting Receive Image Server...
+2024-11-23 18:16:14 [user-service] info: Receive Image Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: WebSocket Server running on port 8080
+
+2024-11-23 18:16:14 [user-service] info: Receive Image Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5003
+
+2024-11-23 18:16:14 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 18:16:14 [user-service] info: Image Receiver running on 25.39.138.224:5003
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Starting server setup...
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: WebSocket Server running on port 8081
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Found available ports: HTTP - 3002, WebSocket - 8082
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: HTTP and WebSocket servers created.
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: JSON body parser middleware added.
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Static file serving middleware added.
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Error handler middleware added.
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5004
+
+2024-11-23 18:16:14 [user-service] info: Starting server setup...
+2024-11-23 18:16:14 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 18:16:14 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 18:16:14 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 18:16:14 [user-service] info: JSON body parser middleware added.
+2024-11-23 18:16:14 [user-service] info: Static file serving middleware added.
+2024-11-23 18:16:14 [user-service] info: Error handler middleware added.
+2024-11-23 18:16:14 [user-service] info: Server running at http://localhost:3002
+2024-11-23 18:16:14 [user-service] info: Image Receiver running on 25.39.138.224:5004
+2024-11-23 18:16:14 [user-service] info: Frontend connected.
+2024-11-23 18:16:14 [user-service] info: Backend Server stdout: 2024-11-23 18:16:14 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 18:16:19 [user-service] info: Frontend connected.
+2024-11-23 18:16:19 [user-service] info: Backend Server stdout: 2024-11-23 18:16:19 [user-service] [32minfo[39m: Frontend connected.
+

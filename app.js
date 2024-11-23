@@ -1,8 +1,8 @@
-import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
+import { spawn } from 'child_process';
 import kill from 'tree-kill';
 
 // Get the directory of the current script file
@@ -49,6 +49,8 @@ function startServer(scriptPath, serverName) {
 
     server.on('close', (code) => {
         logger.info(`${serverName} exited with code ${code}`);
+        if (serverName === 'Backend Server') backendServerStarted = false;
+        if (serverName === 'Receive Image Server') receiveImageServerStarted = false;
     });
 
     if (serverName === 'Backend Server') backendServerStarted = true;

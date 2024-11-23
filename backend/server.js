@@ -12,21 +12,21 @@ import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 
 const app = express();
-let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
+let server;
 let io;
-let WEBSOCKET_PORT;
 
-// Get the directory of the current script file
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Automatically find an available port
 async function startServer() {
+    logger.info('Starting server setup...');
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
-    WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
+    const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8081, stopPort: 8999 });
+    logger.info(`Found available ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
 
-    server = http.createServer(app); // Initialisieren Sie die Variable `server` hier
-    io = new Server(server);
+    server = http.createServer(app);
+    io = new Server(server, { port: WEBSOCKET_PORT });
+    logger.info('HTTP and WebSocket servers created.');
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
         .on('error', (err) => {
@@ -34,20 +34,18 @@ async function startServer() {
             process.exit(1);
         });
 
-    // Middleware to parse JSON bodies
     app.use(express.json());
+    logger.info('JSON body parser middleware added.');
 
-    // Serve static files (CSS, JS, images)
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
     app.use('/images', express.static(path.join(__dirname, '../images')));
+    logger.info('Static file serving middleware added.');
 
-    // Serve index.html
-    app.get('/', (req, res) => {
+    app.get('/', (_, res) => {
         logger.info('Serving index.html');
         res.sendFile(path.join(__dirname, '../frontend/index.html'));
     });
 
-    // Endpoint to receive prompt from frontend
     app.post('/sendPrompt', [
         body('prompt').isString().trim().escape()
     ], async (req, res) => {
@@ -64,13 +62,12 @@ async function startServer() {
             await sendPromptToFriend(prompt);
             logger.info('Prompt forwarded to friend.');
 
-            // Listen for the image from receiveImage.js
             if (receiveImage.listenerCount('imageReceived') === 0) {
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info(`Image received from friend: ${filePath}`);
                     const imagePath = `/images/active/received_image.jpg`;
                     logger.info(`Sending image path to frontend: ${imagePath}`);
-                    res.json({ imagePath, websocketPort: WEBSOCKET_PORT }); // Send the image path and WebSocket port to the frontend
+                    res.json({ imagePath, websocketPort: WEBSOCKET_PORT });
                 });
             } else {
                 logger.warn('Listener for imageReceived event already exists.');
@@ -81,16 +78,14 @@ async function startServer() {
         }
     });
 
-    // WebSocket event listeners
     io.on('connection', (socket) => {
         logger.info('Frontend connected.');
         socket.on('disconnect', () => logger.info('Frontend disconnected.'));
     });
 
-    // Error handler middleware
     app.use(errorHandler);
+    logger.info('Error handler middleware added.');
 
-    // Gracefully shutdown server
     process.on('SIGINT', () => {
         logger.info('Received SIGINT. Closing server...');
         io.close(() => {
