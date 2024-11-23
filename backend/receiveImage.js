@@ -1,16 +1,10 @@
 import net from 'net';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 import EventEmitter from 'events';
-
-// Get the directory name
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
 
@@ -27,8 +21,15 @@ async function startServer() {
         const server = net.createServer((socket) => {
             logger.info('Connected to image sender');
 
-            socket.on('data', async (data) => {
-                logger.info('Image received');
+            let dataBuffer = Buffer.alloc(0);
+
+            socket.on('data', (data) => {
+                logger.info('Receiving image data...');
+                dataBuffer = Buffer.concat([dataBuffer, data]);
+            });
+
+            socket.on('end', async () => {
+                logger.info('Image data received completely');
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
                 try {
@@ -42,14 +43,14 @@ async function startServer() {
                     let filePath = path.join(imagesDir, uniqueFilename);
 
                     // Validate and sanitize incoming data
-                    if (!Buffer.isBuffer(data)) {
+                    if (!Buffer.isBuffer(dataBuffer)) {
                         throw new Error('Invalid data format');
                     }
 
                     // Assume binary data and write it to the file
-                    await fs.promises.writeFile(filePath, data);
+                    await fs.promises.writeFile(filePath, dataBuffer);
                     logger.info(`Image saved to ${filePath} (Binary)`);
-                    receiveImageEmitter.emit('imageReceived', data.toString('base64'));
+                    receiveImageEmitter.emit('imageReceived', dataBuffer.toString('base64'));
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }
@@ -69,7 +70,15 @@ async function startServer() {
         });
 
         server.on('error', (err) => {
-            logger.error('Error starting the server:', err);
+            if (err.code === 'EADDRINUSE') {
+                logger.error(`Address in use, retrying...`);
+                setTimeout(() => {
+                    server.close();
+                    server.listen(RECEIVE_IMAGE_PORT + 1, RECEIVE_IMAGE_HOST);
+                }, 1000);
+            } else {
+                logger.error('Error starting the server:', err);
+            }
         });
     } catch (err) {
         logger.error('Error starting the server:', err);
