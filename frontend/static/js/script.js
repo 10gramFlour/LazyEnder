@@ -21,6 +21,7 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
     const prompt = document.getElementById('prompt').value.trim();
 
     if (prompt) {
+        console.log('Sending prompt to server:', prompt);
         // Show loading indicator
         document.getElementById('loading').style.display = 'block';
         document.getElementById('error').textContent = ''; // Clear previous error messages
@@ -36,6 +37,7 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
 
             const result = await response.json();
             if (response.ok) {
+                console.log('Received image path from server:', result.imagePath);
                 // Hide loading indicator
                 document.getElementById('loading').style.display = 'none';
 
@@ -48,6 +50,7 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
                 const imageContainer = document.getElementById('imageContainer');
                 imageContainer.innerHTML = ''; // Remove previous image
                 imageContainer.appendChild(img);
+                console.log('Image displayed:', img.src);
 
                 // Show download button
                 const downloadButton = document.getElementById('downloadButton');
@@ -57,8 +60,10 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
                     a.href = img.src;
                     a.download = 'generated_image.jpg';
                     a.click();
+                    console.log('Download initiated for:', img.src);
                 };
             } else {
+                console.error('Error from server:', result.error);
                 document.getElementById('error').textContent = result.error;
             }
         } catch (error) {
@@ -66,6 +71,7 @@ document.getElementById('promptForm').addEventListener('submit', async (event) =
             document.getElementById('error').textContent = 'An error occurred. Please try again later.';
         }
     } else {
+        console.error('Prompt cannot be empty.');
         document.getElementById('error').textContent = 'Prompt cannot be empty.';
     }
 });

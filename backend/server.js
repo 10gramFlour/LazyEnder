@@ -41,6 +41,7 @@ async function startServer() {
 
     // Serve index.html
     app.get('/', (req, res) => {
+        logger.info('Serving index.html');
         res.sendFile(path.join(__dirname, '../frontend/index.html'));
     });
 
@@ -57,15 +58,20 @@ async function startServer() {
 
         const { prompt } = req.body;
         try {
+            logger.info(`Received prompt: ${prompt}`);
             await sendPromptToFriend(prompt);
             logger.info('Prompt forwarded to friend.');
 
             // Listen for the image from receiveImage.js
             if (receiveImage.listenerCount('imageReceived') === 0) {
                 receiveImage.once('imageReceived', (filePath) => {
-                    logger.info('Image received from friend.');
-                    res.json({ imagePath: `/images/${path.basename(filePath)}` }); // Send the image path to the frontend
+                    logger.info(`Image received from friend: ${filePath}`);
+                    const imagePath = `/images/${path.basename(filePath)}`;
+                    logger.info(`Sending image path to frontend: ${imagePath}`);
+                    res.json({ imagePath }); // Send the image path to the frontend
                 });
+            } else {
+                logger.warn('Listener for imageReceived event already exists.');
             }
         } catch (error) {
             logger.error('Error sending prompt:', error);

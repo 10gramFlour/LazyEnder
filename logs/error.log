@@ -9,3 +9,11 @@ ERROR: The process "19888" not found.
 
 2024-11-23 12:36:08 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
 2024-11-23 12:43:38 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:52:03 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:56:46 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 18548 /T /F
+ERROR: The process "18548" not found.
+
+2024-11-23 12:58:05 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5001
+2024-11-23 12:58:59 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 13972 /T /F
+ERROR: The process "13972" not found.
+

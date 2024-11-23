@@ -30,12 +30,14 @@ async function startServer() {
             let dataBuffer = Buffer.alloc(0);
 
             socket.on('data', (data) => {
-                logger.info('Receiving image data...');
+                logger.info(`Receiving image data chunk of size ${data.length} bytes...`);
                 dataBuffer = Buffer.concat([dataBuffer, data]);
+                logger.info(`Current buffer size: ${dataBuffer.length} bytes`);
             });
 
             socket.on('end', async () => {
                 logger.info('Image data received completely.');
+                logger.info(`Total received data size: ${dataBuffer.length} bytes`);
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
                 try {
