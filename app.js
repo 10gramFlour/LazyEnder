@@ -22,14 +22,15 @@ const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
 const findFreePortScript = validateScriptPath(path.join(__dirname, 'backend', 'findFreePort.js'));
 
-let backendServerStarted = false;
-let receiveImageServerStarted = false;
+let serverProcesses = {
+    backendServer: null,
+    receiveImageServer: null,
+};
 
 // Function to start a server using Node.js child process
 function startServer(scriptPath, serverName) {
-    if ((serverName === 'Backend Server' && backendServerStarted) || 
-        (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
-        logger.warn(`${serverName} is already started.`);
+    if (serverProcesses[serverName]) {
+        logger.warn(`${serverName} is already running (PID: ${serverProcesses[serverName].pid}).`);
         return null;
     }
 
@@ -47,33 +48,29 @@ function startServer(scriptPath, serverName) {
 
     serverProcess.on('exit', (code) => {
         logger.info(`${serverName} exited with code ${code}`);
-        if (serverName === 'Backend Server') {
-            backendServerStarted = false;
-        } else if (serverName === 'Receive Image Server') {
-            receiveImageServerStarted = false;
-        }
+        serverProcesses[serverName] = null;
     });
 
-    if (serverName === 'Backend Server') {
-        backendServerStarted = true;
-    } else if (serverName === 'Receive Image Server') {
-        receiveImageServerStarted = true;
-    }
-
+    serverProcesses[serverName] = serverProcess;
+    logger.info(`${serverName} started with PID: ${serverProcess.pid}`);
     return serverProcess;
 }
 
-// Helper function to kill a process by PID
-function killProcess(pid, serverName) {
-    return new Promise((resolve, reject) => {
-        logger.info(`Attempting to kill ${serverName} (PID: ${pid})...`);
-        kill(pid, 'SIGTERM', async (err) => {
-            if (!err) {
-                logger.info(`${serverName} successfully terminated.`);
-                return resolve();
-            }
-            reject(err);
-        });
+// Stop a server by its process
+function stopServer(serverName) {
+    const processToKill = serverProcesses[serverName];
+    if (!processToKill) {
+        logger.warn(`${serverName} is not running.`);
+        return;
+    }
+
+    kill(processToKill.pid, 'SIGTERM', (err) => {
+        if (err) {
+            logger.error(`Failed to stop ${serverName}: ${err}`);
+        } else {
+            logger.info(`${serverName} stopped successfully.`);
+            serverProcesses[serverName] = null;
+        }
     });
 }
 
@@ -89,7 +86,52 @@ exec(`node ${findFreePortScript}`, (error, stdout, stderr) => {
     }
     logger.info(`stdout: ${stdout}`);
 
+    // Stop existing servers before starting new ones
+    stopServer('backendServer');
+    stopServer('receiveImageServer');
+
     // Start the other server scripts after finding a free port
-    startServer(receiveImageScript, 'Receive Image Server');
-    startServer(serverScript, 'Backend Server');
+    startServer(receiveImageScript, 'receiveImageServer');
+    startServer(serverScript, 'backendServer');
 });
+
+// Clean up servers on application termination
+process.on('SIGINT', async () => {
+    logger.info('Closing servers...');
+    await stopServers([serverProcesses.backendServer, serverProcesses.receiveImageServer]);
+    logger.info('All servers closed. Exiting application.');
+    process.exit(0);
+});
+
+// Function to terminate running servers
+async function stopServers(servers) {
+    for (const server of servers) {
+        if (server && server.pid) {
+            if (server.exitCode !== null) {
+                logger.info(`${server.serverName} has already exited.`);
+                continue;
+            }
+            try {
+                await killProcess(server.pid, server.serverName);
+            } catch (err) {
+                logger.error(`Error stopping ${server.serverName}:`, err);
+            }
+        } else {
+            logger.info(`Process ${server?.serverName || 'unknown'} is not running.`);
+        }
+    }
+}
+
+// Helper function to kill a process by PID
+function killProcess(pid, serverName) {
+    return new Promise((resolve, reject) => {
+        logger.info(`Attempting to kill ${serverName} (PID: ${pid})...`);
+        kill(pid, 'SIGTERM', async (err) => {
+            if (!err) {
+                logger.info(`${serverName} successfully terminated.`);
+                return resolve();
+            }
+            reject(err);
+        });
+    });
+}

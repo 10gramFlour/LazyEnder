@@ -98,7 +98,11 @@ async function startServer() {
         });
 
         server.on('error', (err) => {
-            logger.error('Error starting the server:', err);
+            if (err.code === 'EADDRINUSE') {
+                logger.error(`Port ${WEBSOCKET_PORT} is already in use.`);
+            } else {
+                logger.error('Error starting the server:', err);
+            }
         });
     } catch (err) {
         logger.error('Error starting the server:', err);
