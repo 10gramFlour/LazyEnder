@@ -1,10 +1,8 @@
 import fs from 'fs';
-import WebSocket, { WebSocketServer } from 'ws';
+import { WebSocketServer } from 'ws';
 import portfinder from 'portfinder';
 import EventEmitter from 'events';
 import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import logger from './logger.js';
 

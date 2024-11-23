@@ -909,3 +909,23 @@ ERROR: The process "11628" not found.
 
 2024-11-23 11:37:48 [user-service] info: Backend Server stdout: Connection closed
 
+2024-11-23 11:40:39 [user-service] info: Frontend disconnected.
+2024-11-23 11:40:39 [user-service] info: Backend Server stdout: 2024-11-23 11:40:39 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:40:39 [user-service] info: Frontend connected.
+2024-11-23 11:40:39 [user-service] info: Backend Server stdout: 2024-11-23 11:40:39 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:41:26 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 11:41:26 [user-service] info: Closing servers...
+2024-11-23 11:41:26 [user-service] info: Frontend disconnected.
+2024-11-23 11:41:26 [user-service] info: Server closed.
+2024-11-23 11:41:26 [user-service] info: Attempting to kill undefined (PID: 22188)...
+2024-11-23 11:41:26 [user-service] info: Backend Server stdout: 2024-11-23 11:41:26 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 11:41:26 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 11:41:26 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 11:41:26 [user-service] info: Backend Server exited with code 0
+2024-11-23 11:41:26 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 11:41:26 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 22188 /T /F
+ERROR: The process "22188" not found.
+
