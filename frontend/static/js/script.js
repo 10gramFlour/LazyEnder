@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // WebSocket connection to receive updates
-                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); 
+                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
 
                         socket.addEventListener('open', () => {
                             console.log('WebSocket connection established');

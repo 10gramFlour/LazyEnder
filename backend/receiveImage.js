@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { RECEIVE_IMAGE_HOST } from './config/settings.js';
+import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import { WEBSOCKET_PORT } from './config/websocket.js'; // Importieren Sie den WebSocket-Port
 import logger from './logger.js';
 import EventEmitter from 'events';
