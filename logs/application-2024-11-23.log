@@ -33400,3 +33400,14 @@ ERROR: The process "16756" not found.
 2024-11-23 17:11:38 [user-service] info: Received prompt: In a floating city above the clouds, a herd of enormous, feathered turtles with iridescent, glass-like shells glide through the air, their wings flapping like massive sails. Below, a forest of towerin
 2024-11-23 17:11:39 [user-service] info: Received prompt: In a floating city above the clouds, a herd of enormous, feathered turtles with iridescent, glass-like shells glide through the air, their wings flapping like massive sails. Below, a forest of towerin
 2024-11-23 17:11:45 [user-service] info: Received prompt: In a floating city above the clouds, a herd of enormous, feathered turtles with iridescent, glass-like shells glide through the air, their wings flapping like massive sails. Below, a forest of towerin
+2024-11-23 17:14:02 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 17:14:02 [user-service] info: Closing servers...
+2024-11-23 17:14:02 [user-service] info: Frontend disconnected.
+2024-11-23 17:14:02 [user-service] info: Attempting to kill undefined (PID: 8896)...
+2024-11-23 17:14:02 [user-service] info: receiveImageServer exited with code 3221225786
+2024-11-23 17:14:02 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:14:02 [user-service] info: backendServer exited with code 1
+2024-11-23 17:14:02 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:14:02 [user-service] info: undefined successfully terminated.

@@ -12,7 +12,7 @@ import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 
 const app = express();
-let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
+let server; // Ensure the variable `server` is declared here
 let io;
 
 // Get the directory of the current script file
@@ -21,11 +21,14 @@ const __dirname = dirname(__filename);
 
 // Automatically find an available port
 async function startServer() {
+    logger.info('Starting server setup...');
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
     const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
+    logger.info(`Found available ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
 
-    server = http.createServer(app); // Initialisieren Sie die Variable `server` hier
+    server = http.createServer(app); // Initialize the variable `server` here
     io = new Server(server);
+    logger.info('HTTP and WebSocket servers created.');
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
         .on('error', (err) => {
@@ -35,21 +38,31 @@ async function startServer() {
 
     // Middleware to parse JSON bodies
     app.use(express.json());
+    logger.info('JSON body parser middleware added.');
 
     // Serve static files (CSS, JS, images)
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
     app.use('/images', express.static(path.join(__dirname, '../images')));
+    logger.info('Static file serving middleware added.');
 
     // Serve index.html
     app.get('/', (req, res) => {
-        logger.info('Serving index.html');
-        res.sendFile(path.join(__dirname, '../frontend/index.html'));
+        logger.info('Received request for index.html');
+        res.sendFile(path.join(__dirname, '../frontend/index.html'), (err) => {
+            if (err) {
+                logger.error('Error sending index.html:', err);
+                res.status(500).send('Error loading index.html');
+            } else {
+                logger.info('index.html served successfully.');
+            }
+        });
     });
 
     // Endpoint to receive prompt from frontend
     app.post('/sendPrompt', [
         body('prompt').isString().trim().escape()
     ], async (req, res) => {
+        logger.info('Received POST request to /sendPrompt');
         const errors = validationResult(req);
         
         if (!errors.isEmpty()) {
@@ -65,6 +78,7 @@ async function startServer() {
 
             // Listen for the image from receiveImage.js
             if (receiveImage.listenerCount('imageReceived') === 0) {
+                logger.info('Setting up listener for imageReceived event.');
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info(`Image received from friend: ${filePath}`);
                     const imagePath = `/images/active/received_image.jpg`;
@@ -82,19 +96,21 @@ async function startServer() {
 
     // WebSocket event listeners
     io.on('connection', (socket) => {
-        logger.info('Frontend connected.');
-        socket.on('disconnect', () => logger.info('Frontend disconnected.'));
+        logger.info('Frontend connected via WebSocket.');
+        socket.on('disconnect', () => logger.info('Frontend disconnected from WebSocket.'));
     });
 
     // Error handler middleware
     app.use(errorHandler);
+    logger.info('Error handler middleware added.');
 
     // Gracefully shutdown server
     process.on('SIGINT', () => {
-        logger.info('Received SIGINT. Closing server...');
+        logger.info('Received SIGINT. Initiating graceful shutdown...');
         io.close(() => {
+            logger.info('WebSocket server closed.');
             server.close(() => {
-                logger.info('Server closed.');
+                logger.info('HTTP server closed.');
                 process.exit(0);
             });
         });

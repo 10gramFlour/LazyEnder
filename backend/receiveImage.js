@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 const receiveImageEmitter = new EventEmitter();
 
 let serverStarted = false;
-let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
+let server; // Ensure the variable `server` is declared here
 
 async function startServer() {
     if (serverStarted) {
@@ -31,7 +31,7 @@ async function startServer() {
         const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
         logger.info(`WebSocket Server running on port ${WEBSOCKET_PORT}`);
 
-        server = net.createServer((socket) => { // Initialisieren Sie die Variable `server` hier
+        server = net.createServer((socket) => { // Initialize the variable `server` here
             logger.info('Connected to image sender');
 
             let dataBuffer = Buffer.alloc(0);
@@ -54,11 +54,15 @@ async function startServer() {
                     if (!fs.existsSync(activeDir)) {
                         fs.mkdirSync(activeDir, { recursive: true });
                         logger.info(`Created directory: ${activeDir}`);
+                    } else {
+                        logger.info(`Directory already exists: ${activeDir}`);
                     }
 
                     if (!fs.existsSync(archiveDir)) {
                         fs.mkdirSync(archiveDir, { recursive: true });
                         logger.info(`Created directory: ${archiveDir}`);
+                    } else {
+                        logger.info(`Directory already exists: ${archiveDir}`);
                     }
 
                     // Move the current active image to the archive
@@ -68,6 +72,8 @@ async function startServer() {
                         const archiveImagePath = path.join(archiveDir, uniqueFilename);
                         fs.renameSync(activeImagePath, archiveImagePath);
                         logger.info(`Moved ${activeImagePath} to ${archiveImagePath}`);
+                    } else {
+                        logger.info(`No existing active image to move.`);
                     }
 
                     // Save the new image as received_image.jpg in the active directory
@@ -78,6 +84,9 @@ async function startServer() {
                     wss.clients.forEach(client => {
                         if (client.readyState === WebSocket.OPEN) {
                             client.send(JSON.stringify({ imagePath: '/images/active/received_image.jpg' }));
+                            logger.info(`Sent image path to client: /images/active/received_image.jpg`);
+                        } else {
+                            logger.info(`Client not ready to receive message.`);
                         }
                     });
                 } catch (err) {

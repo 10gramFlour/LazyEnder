@@ -659,3 +659,7 @@ Node.js v22.11.0
 ERROR: The process "16756" not found.
 
 2024-11-23 17:10:10 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:14:02 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:14:02 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+

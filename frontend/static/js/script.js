@@ -1,8 +1,10 @@
 // Establish WebSocket connection
 const socket = io();  // Production environment
+console.log('Attempting to establish WebSocket connection...');
 
 // Update status badge on connection
 socket.on('connect', () => {
+    console.log('WebSocket connection established successfully.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Connected';
     statusBadge.className = 'connected';
@@ -10,6 +12,7 @@ socket.on('connect', () => {
 
 // Update status badge on disconnection
 socket.on('disconnect', () => {
+    console.log('WebSocket connection lost.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Disconnected';
     statusBadge.className = 'disconnected';
@@ -17,7 +20,7 @@ socket.on('disconnect', () => {
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
+    console.log('DOM fully loaded and parsed.');
 
     const promptForm = document.getElementById('promptForm');
     if (promptForm) {
@@ -25,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         promptForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            console.log('Form submit event triggered');
+            console.log('Form submit event triggered.');
 
             const prompt = document.getElementById('prompt').value.trim();
             console.log('Prompt value:', prompt);
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('error').textContent = ''; // Clear previous error messages
 
                 try {
+                    console.log('Initiating fetch request to /sendPrompt endpoint.');
                     const response = await fetch('/sendPrompt', {
                         method: 'POST',
                         headers: {
@@ -45,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         body: JSON.stringify({ prompt })
                     });
 
-                    console.log('Response received from server');
+                    console.log('Response received from server.');
                     const result = await response.json();
                     console.log('Result from server:', result);
 
@@ -71,13 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // WebSocket connection to receive updates
-                        const dynamicSocket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
+                        console.log('Establishing WebSocket connection to receive updates.');
+                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Use the dynamic WebSocket port
 
-                        dynamicSocket.addEventListener('open', () => {
-                            console.log('WebSocket connection established');
+                        socket.addEventListener('open', () => {
+                            console.log('WebSocket connection established for updates.');
                         });
 
-                        dynamicSocket.addEventListener('message', (event) => {
+                        socket.addEventListener('message', (event) => {
                             const data = JSON.parse(event.data);
                             console.log('WebSocket message received:', data);
 
@@ -88,20 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         });
 
-                        dynamicSocket.addEventListener('error', (error) => {
+                        socket.addEventListener('error', (error) => {
                             console.error('WebSocket error:', error);
                             document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
                         });
 
-                        dynamicSocket.addEventListener('close', () => {
-                            console.log('WebSocket connection closed');
+                        socket.addEventListener('close', () => {
+                            console.log('WebSocket connection closed.');
                         });
                     } else {
                         console.error('Error from server:', result.error);
                         document.getElementById('error').textContent = result.error;
                     }
                 } catch (error) {
-                    console.error('Error:', error);
+                    console.error('Error occurred during fetch request:', error);
                     document.getElementById('error').textContent = 'An error occurred. Please try again later.';
                 }
             } else {
@@ -110,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else {
-        console.error('promptForm element not found');
+        console.error('promptForm element not found.');
     }
 });
 
@@ -128,6 +133,7 @@ socket.on('connect_error', (error) => {
 
 // Handle WebSocket reconnection attempts
 socket.on('reconnect_attempt', () => {
+    console.log('Attempting to reconnect WebSocket...');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnecting...';
     statusBadge.className = 'reconnecting';
@@ -135,6 +141,7 @@ socket.on('reconnect_attempt', () => {
 
 // Handle WebSocket reconnection success
 socket.on('reconnect', () => {
+    console.log('WebSocket reconnected successfully.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnected';
     statusBadge.className = 'connected';
@@ -142,6 +149,7 @@ socket.on('reconnect', () => {
 
 // Handle WebSocket reconnection failure
 socket.on('reconnect_failed', () => {
+    console.error('WebSocket reconnection failed.');
     const statusBadge = document.getElementById('statusBadge');
     statusBadge.textContent = 'Reconnection Failed';
     statusBadge.className = 'disconnected';
