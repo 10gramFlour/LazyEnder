@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('loading').style.display = 'block';
                 document.getElementById('error').textContent = ''; // Clear previous error messages
 
-                // WebSocket connection to receive updates
-                const socket = io('http://localhost:8080'); // Use the fixed WebSocket port
+                console.log('Using existing WebSocket connection');
 
                 socket.on('connect', async () => {
                     console.log('WebSocket connection established');

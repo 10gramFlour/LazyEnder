@@ -2,7 +2,7 @@ import net from 'net';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
@@ -10,7 +10,7 @@ import EventEmitter from 'events';
 
 // Get the directory name
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
 

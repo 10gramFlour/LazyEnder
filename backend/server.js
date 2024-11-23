@@ -70,17 +70,13 @@ async function startServer() {
 
             const socketId = req.headers['socket-id']; // Get the socket ID from the request headers
 
-            if (receiveImage.listenerCount('imageReceived') === 0) {
-                receiveImage.once('imageReceived', (filePath) => {
-                    logger.info(`Image received from friend: ${filePath}`);
-                    const imagePath = `/images/${path.basename(filePath)}`;
-                    logger.info(`Sending image path to frontend: ${imagePath}`);
-                    res.json({ imagePath });
-                    io.to(socketId).emit('imageUpdated', { imagePath }); // Notify the specific client via WebSocket
-                });
-            } else {
-                logger.warn('Listener for imageReceived event already exists.');
-            }
+            receiveImage.once('imageReceived', (filePath) => {
+                logger.info(`Image received from friend: ${filePath}`);
+                const imagePath = `/images/${path.basename(filePath)}`;
+                logger.info(`Sending image path to frontend: ${imagePath}`);
+                res.json({ imagePath });
+                io.to(socketId).emit('imageUpdated', { imagePath }); // Notify the specific client via WebSocket
+            });
         } catch (error) {
             logger.error('Error sending prompt:', error);
             res.status(500).json({ error: 'Error sending prompt.' });
