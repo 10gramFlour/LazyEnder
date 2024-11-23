@@ -1,15 +1,15 @@
-import { spawn, exec } from 'child_process';
+import { spawn } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
 import kill from 'tree-kill';
 
-// Get the directory name
+// Get the directory of the current script file
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Validate and sanitize script paths
+// Function to validate and sanitize script paths
 function validateScriptPath(scriptPath) {
     if (!path.isAbsolute(scriptPath)) {
         throw new Error(`Invalid script path: ${scriptPath}`);
@@ -17,13 +17,14 @@ function validateScriptPath(scriptPath) {
     return scriptPath;
 }
 
-// Start the individual scripts
-const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js')); // Backend server (Express + WebSocket)
-const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js')); // Image receiver
+// Define paths for the backend and receive image server scripts
+const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js'));
+const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
 
 let backendServerStarted = false;
 let receiveImageServerStarted = false;
 
+// Function to start a server using Node.js child process
 function startServer(scriptPath, serverName) {
     if ((serverName === 'Backend Server' && backendServerStarted) || 
         (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
@@ -50,22 +51,17 @@ function startServer(scriptPath, serverName) {
         logger.info(`${serverName} exited with code ${code}`);
     });
 
-    server.serverName = serverName;
-    server.pid = server.pid;
-
-    if (serverName === 'Backend Server') {
-        backendServerStarted = true;
-    } else if (serverName === 'Receive Image Server') {
-        receiveImageServerStarted = true;
-    }
+    if (serverName === 'Backend Server') backendServerStarted = true;
+    if (serverName === 'Receive Image Server') receiveImageServerStarted = true;
 
     return server;
 }
 
+// Start both backend and image receiver servers
 const backendServer = startServer(serverScript, 'Backend Server');
 const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server');
 
-// Stop all servers on application exit
+// Clean up servers on application termination
 process.on('SIGINT', async () => {
     logger.info('Closing servers...');
     await stopServers([backendServer, receiveImageServer]);
@@ -73,6 +69,7 @@ process.on('SIGINT', async () => {
     process.exit(0);
 });
 
+// Function to terminate running servers
 async function stopServers(servers) {
     for (const server of servers) {
         if (server && server.pid) {
@@ -80,7 +77,6 @@ async function stopServers(servers) {
                 logger.info(`${server.serverName} has already exited.`);
                 continue;
             }
-
             try {
                 await killProcess(server.pid, server.serverName);
             } catch (err) {
@@ -92,33 +88,16 @@ async function stopServers(servers) {
     }
 }
 
+// Helper function to kill a process by PID
 function killProcess(pid, serverName) {
     return new Promise((resolve, reject) => {
         logger.info(`Attempting to kill ${serverName} (PID: ${pid})...`);
-
-        // Use tree-kill for a graceful shutdown
         kill(pid, 'SIGTERM', async (err) => {
             if (!err) {
                 logger.info(`${serverName} successfully terminated.`);
                 return resolve();
             }
-
-            // Fallback to taskkill on Windows if tree-kill fails
-            if (process.platform === 'win32') {
-                logger.warn(`tree-kill failed for ${serverName}, attempting taskkill...`);
-                exec(`taskkill /PID ${pid} /T /F`, (taskKillErr, _stdout, stderr) => {
-                    if (taskKillErr) {
-                        logger.error(`Failed to kill ${serverName} with taskkill:`, stderr);        
-                        return reject(taskKillErr);
-                    }
-
-                    logger.info(`${serverName} successfully killed using taskkill.`);
-                    resolve();
-                });
-            } else {
-                logger.error(`Failed to kill ${serverName}:`, err);
-                reject(err);
-            }
+            reject(err);
         });
     });
 }

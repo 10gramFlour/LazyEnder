@@ -1,18 +1,16 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
+import portfinder from 'portfinder';
 import { body, validationResult } from 'express-validator';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import sendPromptToFriend from './promptSender.js';
-import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-
 let server;
 let io;
 
@@ -20,39 +18,27 @@ let io;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-function startServer() {
-    if (server) return;
+// Find an available port
+async function startServer() {
+    const PORT = await portfinder.getPortPromise({ port: 3001, stopPort: 3999 });
 
     server = http.createServer(app);
     io = new Server(server);
 
     server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
         .on('error', (err) => {
-            if (err.code === 'EADDRINUSE') {
-                logger.error(`Port ${PORT} is already in use.`);
-                process.exit(1);
-            } else {
-                throw err;
-            }
+            logger.error('Error starting server:', err);
+            process.exit(1);
         });
 
-    // Middleware to parse JSON bodies
     app.use(express.json());
-
-    // Serve static files (CSS, JS, images)
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
+    app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../frontend/index.html')));
 
-    // Serve index.html
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../frontend/index.html'));
-    });
-
-    // Endpoint to receive prompt from frontend
     app.post('/sendPrompt', [
         body('prompt').isString().trim().escape()
     ], async (req, res) => {
         const errors = validationResult(req);
-        
         if (!errors.isEmpty()) {
             logger.error('Validation error:', errors.array());
             return res.status(400).json({ error: 'Invalid input.' });
@@ -62,43 +48,26 @@ function startServer() {
         try {
             await sendPromptToFriend(prompt);
             logger.info('Prompt forwarded to friend.');
-
-            // Listen for the image from receiveImage.js
-            if (receiveImage.listenerCount('imageReceived') === 0) {
-                receiveImage.once('imageReceived', (base64Image) => {
-                    logger.info('Image received from friend.');
-                    res.json({ image: base64Image }); // Send the image to the frontend
-                });
-            }
+            res.json({ status: 'Prompt sent successfully.' });
         } catch (error) {
             logger.error('Error sending prompt:', error);
             res.status(500).json({ error: 'Error sending prompt.' });
         }
     });
 
-    // WebSocket Connection
     io.on('connection', (socket) => {
-        // Log when a frontend client connects
         logger.info('Frontend connected.');
-
-        // Event listener for client disconnection
-        socket.on('disconnect', () => {
-            // Log when a frontend client disconnects
-            logger.info('Frontend disconnected.');
-        });
+        socket.on('disconnect', () => logger.info('Frontend disconnected.'));
     });
 
-    // Use the error handling middleware
     app.use(errorHandler);
 
-    // Graceful shutdown on SIGINT (Ctrl+C)
     process.on('SIGINT', () => {
-        logger.info('Received SIGINT. Closing server gracefully...');
+        logger.info('Received SIGINT. Closing server...');
         io.close(() => {
-            logger.info('WebSocket server closed.');
             server.close(() => {
-                logger.info('HTTP server closed.');
-                process.exit(0); // Exit the process
+                logger.info('Server closed.');
+                process.exit(0);
             });
         });
     });
