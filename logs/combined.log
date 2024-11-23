@@ -1317,3 +1317,126 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'portfinder' imported from C:\
 Node.js v22.11.0
 
 2024-11-23 11:18:25 [user-service] info: Backend Server exited with code 1
+2024-11-23 11:19:28 [user-service] info: Starting Backend Server...
+2024-11-23 11:19:28 [user-service] info: Starting Receive Image Server...
+2024-11-23 11:19:28 [user-service] info: Receive Image Server stdout: 2024-11-23 11:19:28 [user-service] [32minfo[39m: Image Receiver running on ws://localhost:5001
+
+2024-11-23 11:19:28 [user-service] info: Image Receiver running on ws://localhost:5001
+2024-11-23 11:19:28 [user-service] info: Backend Server stdout: 2024-11-23 11:19:28 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 11:19:28 [user-service] info: Server running at http://localhost:3002
+2024-11-23 11:24:04 [user-service] info: Frontend connected.
+2024-11-23 11:24:04 [user-service] info: Backend Server stdout: 2024-11-23 11:24:04 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:24:32 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5001
+
+2024-11-23 11:24:32 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+2024-11-23 11:24:32 [user-service] info: Backend Server stdout: 2024-11-23 11:24:32 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+
+2024-11-23 11:24:32 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:24:41 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5001
+
+2024-11-23 11:24:41 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+2024-11-23 11:24:41 [user-service] info: Backend Server stdout: 2024-11-23 11:24:41 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+Connection closed
+
+2024-11-23 11:24:44 [user-service] info: Frontend disconnected.
+2024-11-23 11:24:44 [user-service] info: Backend Server stdout: 2024-11-23 11:24:44 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:24:44 [user-service] info: Frontend connected.
+2024-11-23 11:24:44 [user-service] info: Backend Server stdout: 2024-11-23 11:24:44 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:25:48 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 11:25:48 [user-service] info: Closing servers...
+2024-11-23 11:25:48 [user-service] info: Frontend disconnected.
+2024-11-23 11:25:48 [user-service] info: Attempting to kill undefined (PID: 22160)...
+2024-11-23 11:25:48 [user-service] info: Backend Server stdout: 2024-11-23 11:25:48 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 11:25:48 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:25:48 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 11:25:48 [user-service] info: undefined successfully terminated.
+2024-11-23 11:25:54 [user-service] info: Starting Backend Server...
+2024-11-23 11:25:54 [user-service] info: Starting Receive Image Server...
+2024-11-23 11:25:54 [user-service] info: Receive Image Server stdout: 2024-11-23 11:25:54 [user-service] [32minfo[39m: Image Receiver running on ws://localhost:5001
+
+2024-11-23 11:25:54 [user-service] info: Image Receiver running on ws://localhost:5001
+2024-11-23 11:25:54 [user-service] info: Backend Server stdout: 2024-11-23 11:25:54 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 11:25:54 [user-service] info: Server running at http://localhost:3002
+2024-11-23 11:25:55 [user-service] info: Frontend connected.
+2024-11-23 11:25:55 [user-service] info: Backend Server stdout: 2024-11-23 11:25:55 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:26:27 [user-service] info: Closing servers...
+2024-11-23 11:26:27 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 11:26:27 [user-service] info: Frontend disconnected.
+2024-11-23 11:26:27 [user-service] info: Attempting to kill undefined (PID: 17044)...
+2024-11-23 11:26:27 [user-service] info: Backend Server stdout: 2024-11-23 11:26:27 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 11:26:27 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:26:27 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 11:26:27 [user-service] info: undefined successfully terminated.
+2024-11-23 11:26:32 [user-service] info: Starting Backend Server...
+2024-11-23 11:26:32 [user-service] info: Starting Receive Image Server...
+2024-11-23 11:26:32 [user-service] info: Receive Image Server stdout: 2024-11-23 11:26:32 [user-service] [32minfo[39m: Image Receiver running on ws://localhost:5001
+
+2024-11-23 11:26:32 [user-service] info: Image Receiver running on ws://localhost:5001
+2024-11-23 11:26:33 [user-service] info: Backend Server stdout: 2024-11-23 11:26:33 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 11:26:33 [user-service] info: Server running at http://localhost:3002
+2024-11-23 11:26:33 [user-service] info: Frontend connected.
+2024-11-23 11:26:33 [user-service] info: Backend Server stdout: 2024-11-23 11:26:33 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:26:48 [user-service] info: Frontend disconnected.
+2024-11-23 11:26:48 [user-service] info: Backend Server stdout: 2024-11-23 11:26:48 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:26:48 [user-service] info: Frontend connected.
+2024-11-23 11:26:48 [user-service] info: Backend Server stdout: 2024-11-23 11:26:48 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:27:02 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:02 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:02 [user-service] info: Backend Server stdout: 2024-11-23 11:27:02 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:02 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:27:18 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:18 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:18 [user-service] info: Backend Server stdout: 2024-11-23 11:27:18 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:18 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:27:24 [user-service] info: Frontend disconnected.
+2024-11-23 11:27:24 [user-service] info: Backend Server stdout: 2024-11-23 11:27:24 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 11:27:24 [user-service] info: Frontend connected.
+2024-11-23 11:27:24 [user-service] info: Backend Server stdout: 2024-11-23 11:27:24 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 11:27:47 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:47 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:47 [user-service] info: Backend Server stdout: 2024-11-23 11:27:47 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:47 [user-service] info: Backend Server stdout: Connection closed
+
+2024-11-23 11:27:51 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:51 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:51 [user-service] info: Backend Server stdout: 2024-11-23 11:27:51 [user-service] [31merror[39m: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+Connection closed
+
+2024-11-23 11:29:06 [user-service] info: Closing servers...
+2024-11-23 11:29:06 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 11:29:06 [user-service] info: Frontend disconnected.
+2024-11-23 11:29:06 [user-service] info: Server closed.
+2024-11-23 11:29:06 [user-service] info: Attempting to kill undefined (PID: 9128)...
+2024-11-23 11:29:06 [user-service] info: Backend Server stdout: 2024-11-23 11:29:06 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 11:29:06 [user-service] [32minfo[39m: Frontend disconnected.
+2024-11-23 11:29:06 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 11:29:06 [user-service] info: Backend Server exited with code 0
+2024-11-23 11:29:06 [user-service] info: Receive Image Server exited with code 3221225786
+2024-11-23 11:29:06 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 9128 /T /F
+ERROR: The process "9128" not found.
+

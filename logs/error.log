@@ -583,3 +583,24 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'portfinder' imported from C:\
 
 Node.js v22.11.0
 
+2024-11-23 11:24:32 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5001
+
+2024-11-23 11:24:32 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+2024-11-23 11:24:41 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5001
+2024-11-23 11:24:41 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5001
+
+2024-11-23 11:27:02 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:02 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:18 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:18 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:47 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:27:47 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:51 [user-service] error: Backend Server stderr: Failed to connect to friend: connect ETIMEDOUT 25.28.81.126:5002
+
+2024-11-23 11:27:51 [user-service] error: Error sending prompt: Connection error: connect ETIMEDOUT 25.28.81.126:5002
+2024-11-23 11:29:06 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 9128 /T /F
+ERROR: The process "9128" not found.
+
