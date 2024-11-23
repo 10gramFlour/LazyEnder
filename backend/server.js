@@ -14,11 +14,11 @@ const app = express();
 let server;
 let io;
 
-// Get the directory name
+// Get the directory of the current script file
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Find an available port
+// Automatically find an available port
 async function startServer() {
     const PORT = await portfinder.getPortPromise({ port: 3001, stopPort: 3999 });
 
@@ -31,10 +31,12 @@ async function startServer() {
             process.exit(1);
         });
 
+    // Middleware for parsing JSON and serving static files
     app.use(express.json());
     app.use('/static', express.static(path.join(__dirname, '../frontend/static')));
     app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../frontend/index.html')));
 
+    // Endpoint to handle prompt forwarding
     app.post('/sendPrompt', [
         body('prompt').isString().trim().escape()
     ], async (req, res) => {
@@ -55,13 +57,16 @@ async function startServer() {
         }
     });
 
+    // WebSocket event listeners
     io.on('connection', (socket) => {
         logger.info('Frontend connected.');
         socket.on('disconnect', () => logger.info('Frontend disconnected.'));
     });
 
+    // Error handler middleware
     app.use(errorHandler);
 
+    // Gracefully shutdown server
     process.on('SIGINT', () => {
         logger.info('Received SIGINT. Closing server...');
         io.close(() => {

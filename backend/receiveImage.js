@@ -11,6 +11,7 @@ import logger from './logger.js';
 const receiveImageEmitter = new EventEmitter();
 let serverStarted = false;
 
+// Function to start the WebSocket server
 async function startServer() {
     if (serverStarted) return logger.info('Server is already running.');
     serverStarted = true;
