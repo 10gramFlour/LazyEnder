@@ -1249,3 +1249,17 @@ This file is being treated as an ES module because it has a '.js' file extension
 Node.js v22.11.0
 
 2024-11-23 11:08:30 [user-service] info: Backend Server exited with code 1
+2024-11-23 11:09:56 [user-service] info: Starting Backend Server...
+2024-11-23 11:09:56 [user-service] info: Starting Receive Image Server...
+2024-11-23 11:09:56 [user-service] info: Receive Image Server stdout: 2024-11-23 11:09:56 [user-service] [32minfo[39m: Image Receiver running on ws://25.39.138.224:5000
+
+2024-11-23 11:09:56 [user-service] info: Receive Image Server stdout: 2024-11-23 11:09:56 [user-service] [31merror[39m: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5000
+
+2024-11-23 11:09:56 [user-service] info: Image Receiver running on ws://25.39.138.224:5000
+2024-11-23 11:09:56 [user-service] error: Error starting the server: listen EADDRINUSE: address already in use 25.39.138.224:5000
+2024-11-23 11:09:56 [user-service] info: Receive Image Server exited with code 0
+2024-11-23 11:09:56 [user-service] info: Backend Server stdout: 2024-11-23 11:09:56 [user-service] [32minfo[39m: Image Receiver running on ws://25.39.138.224:5000
+
+2024-11-23 11:09:56 [user-service] info: Backend Server stdout: 2024-11-23 11:09:56 [user-service] [31merror[39m: Port 3001 is already in use.
+
+2024-11-23 11:09:56 [user-service] info: Backend Server exited with code 1

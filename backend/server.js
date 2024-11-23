@@ -3,6 +3,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import { body, validationResult } from 'express-validator';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import sendPromptToFriend from './promptSender.js';
 import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
@@ -13,6 +15,10 @@ const PORT = process.env.PORT || 3001;
 
 let server;
 let io;
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 function startServer() {
     if (server) return;

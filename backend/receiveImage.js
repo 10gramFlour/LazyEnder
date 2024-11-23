@@ -1,10 +1,16 @@
 import fs from 'fs';
-import { WebSocketServer } from 'ws';
+import WebSocket, { WebSocketServer } from 'ws';
 import EventEmitter from 'events';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
 
