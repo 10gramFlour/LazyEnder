@@ -32961,3 +32961,102 @@ Emitted 'error' event on WebSocketServer instance at:
 
 Node.js v22.11.0
 
+2024-11-23 16:39:54 [user-service] info: stdout: WebSocket Port 8080 written to C:\Apps\LazyEnder\backend\config\websocket.js
+
+2024-11-23 16:39:54 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 16:39:54 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 16:39:54 [user-service] info: Backend Server exited with code 1
+2024-11-23 16:39:54 [user-service] error: Error starting Backend Server: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:30:21)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:108:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+
+Node.js v22.11.0
+
+2024-11-23 16:43:02 [user-service] info: stdout: WebSocket Port 8080 written to C:\Apps\LazyEnder\backend\config\websocket.js
+
+2024-11-23 16:43:02 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 16:43:02 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 16:43:02 [user-service] info: Backend Server exited with code 1
+2024-11-23 16:43:02 [user-service] error: Error starting Backend Server: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:30:21)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:108:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+
+Node.js v22.11.0
+
+2024-11-23 16:43:16 [user-service] info: stdout: WebSocket Port 8081 written to C:\Apps\LazyEnder\backend\config\websocket.js
+
+2024-11-23 16:43:16 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 16:43:16 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 16:43:16 [user-service] info: Backend Server exited with code 1
+2024-11-23 16:43:16 [user-service] error: Error starting Backend Server: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8081
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:30:21)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:108:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8081
+}
+
+Node.js v22.11.0
+

@@ -1,1 +1,1 @@
-export const WEBSOCKET_PORT = 8080;
+export const WEBSOCKET_PORT = 8081;
