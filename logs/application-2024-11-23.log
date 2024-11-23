@@ -33411,3 +33411,94 @@ ERROR: The process "16756" not found.
 2024-11-23 17:14:02 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
 
 2024-11-23 17:14:02 [user-service] info: undefined successfully terminated.
+2024-11-23 17:19:28 [user-service] info: receiveImageServer started with PID: 24572
+2024-11-23 17:19:28 [user-service] info: backendServer started with PID: 22752
+2024-11-23 17:19:28 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 17:19:28 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 17:19:28 [user-service] info: Starting server setup...
+2024-11-23 17:19:28 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 17:19:28 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:19:28 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 17:19:28 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 17:19:28 [user-service] info: JSON body parser middleware added.
+2024-11-23 17:19:28 [user-service] info: Static file serving middleware added.
+2024-11-23 17:19:28 [user-service] info: Error handler middleware added.
+2024-11-23 17:19:28 [user-service] info: Server running at http://localhost:3002
+2024-11-23 17:19:29 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:19:32 [user-service] info: Received request for index.html
+2024-11-23 17:19:32 [user-service] info: index.html served successfully.
+2024-11-23 17:19:32 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:19:32 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:19:39 [user-service] info: Received POST request to /sendPrompt
+2024-11-23 17:19:39 [user-service] info: Received prompt: A beautiful sunset over the ocean
+2024-11-23 17:21:25 [user-service] info: Received request for index.html
+2024-11-23 17:21:25 [user-service] info: index.html served successfully.
+2024-11-23 17:21:25 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:21:48 [user-service] info: Received request for index.html
+2024-11-23 17:21:48 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:21:48 [user-service] info: index.html served successfully.
+2024-11-23 17:21:48 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:01 [user-service] info: Received POST request to /sendPrompt
+2024-11-23 17:22:01 [user-service] info: Received prompt: a professional glowing 3D logo with Text &quot;LE&quot;, modern, neuronal design, strong colors, complex, png background
+2024-11-23 17:22:31 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:31 [user-service] info: Received request for index.html
+2024-11-23 17:22:31 [user-service] info: index.html served successfully.
+2024-11-23 17:22:31 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:32 [user-service] info: Received request for index.html
+2024-11-23 17:22:32 [user-service] info: index.html served successfully.
+2024-11-23 17:22:32 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:33 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:33 [user-service] info: Received request for index.html
+2024-11-23 17:22:33 [user-service] info: index.html served successfully.
+2024-11-23 17:22:33 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:33 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:35 [user-service] info: Received request for index.html
+2024-11-23 17:22:35 [user-service] info: index.html served successfully.
+2024-11-23 17:22:35 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:35 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:37 [user-service] info: Received request for index.html
+2024-11-23 17:22:37 [user-service] info: index.html served successfully.
+2024-11-23 17:22:37 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:37 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:37 [user-service] info: Received request for index.html
+2024-11-23 17:22:37 [user-service] info: index.html served successfully.
+2024-11-23 17:22:37 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:37 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:22:55 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:22:55 [user-service] info: Received request for index.html
+2024-11-23 17:22:55 [user-service] info: index.html served successfully.
+2024-11-23 17:22:56 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:23:01 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:23:01 [user-service] info: Received request for index.html
+2024-11-23 17:23:01 [user-service] info: index.html served successfully.
+2024-11-23 17:23:01 [user-service] info: Frontend connected via WebSocket.
+2024-11-23 17:23:26 [user-service] info: Received POST request to /sendPrompt
+2024-11-23 17:23:26 [user-service] info: Received prompt: a professional glowing 3D logo with Text &quot;LE&quot;, modern, neuronal design, strong colors, complex, png background
+2024-11-23 17:23:47 [user-service] info: Received SIGINT. Initiating graceful shutdown...
+2024-11-23 17:23:47 [user-service] info: SIGINT received. Closing servers...
+2024-11-23 17:23:47 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:23:47 [user-service] info: Frontend disconnected from WebSocket.
+2024-11-23 17:23:47 [user-service] info: Attempting to kill undefined (PID: 22752)...
+2024-11-23 17:23:47 [user-service] info: receiveImageServer exited with code 3221225786
+2024-11-23 17:23:47 [user-service] error: Error starting receiveImageServer: Error: Command failed: node C:\Apps\LazyEnder\backend\receiveImage.js
+^C
+2024-11-23 17:23:48 [user-service] info: backendServer exited with code 1
+2024-11-23 17:23:48 [user-service] error: Error starting backendServer: Error: Command failed: node C:\Apps\LazyEnder\backend\server.js
+
+2024-11-23 17:23:48 [user-service] info: undefined successfully terminated.
+2024-11-23 17:23:52 [user-service] info: receiveImageServer started with PID: 15656
+2024-11-23 17:23:52 [user-service] info: backendServer started with PID: 23400
+2024-11-23 17:23:52 [user-service] info: WebSocket Server running on port 8080
+2024-11-23 17:23:52 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 17:23:52 [user-service] info: Starting server setup...
+2024-11-23 17:23:52 [user-service] info: WebSocket Server running on port 8081
+2024-11-23 17:23:53 [user-service] error: Port 8081 is already in use.
+2024-11-23 17:23:53 [user-service] info: Found available ports: HTTP - 3002, WebSocket - 8082
+2024-11-23 17:23:53 [user-service] info: HTTP and WebSocket servers created.
+2024-11-23 17:23:53 [user-service] info: JSON body parser middleware added.
+2024-11-23 17:23:53 [user-service] info: Static file serving middleware added.
+2024-11-23 17:23:53 [user-service] info: Error handler middleware added.
+2024-11-23 17:23:53 [user-service] info: Server running at http://localhost:3002
+2024-11-23 17:23:54 [user-service] info: Frontend connected.
+2024-11-23 17:23:55 [user-service] info: Received prompt: a professional glowing 3D logo with Text &quot;LE&quot;, modern, neuronal design, strong colors, complex, png background
+2024-11-23 17:23:55 [user-service] info: Frontend connected.

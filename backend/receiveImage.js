@@ -54,15 +54,11 @@ async function startServer() {
                     if (!fs.existsSync(activeDir)) {
                         fs.mkdirSync(activeDir, { recursive: true });
                         logger.info(`Created directory: ${activeDir}`);
-                    } else {
-                        logger.info(`Directory already exists: ${activeDir}`);
                     }
 
                     if (!fs.existsSync(archiveDir)) {
                         fs.mkdirSync(archiveDir, { recursive: true });
                         logger.info(`Created directory: ${archiveDir}`);
-                    } else {
-                        logger.info(`Directory already exists: ${archiveDir}`);
                     }
 
                     // Move the current active image to the archive
@@ -72,8 +68,6 @@ async function startServer() {
                         const archiveImagePath = path.join(archiveDir, uniqueFilename);
                         fs.renameSync(activeImagePath, archiveImagePath);
                         logger.info(`Moved ${activeImagePath} to ${archiveImagePath}`);
-                    } else {
-                        logger.info(`No existing active image to move.`);
                     }
 
                     // Save the new image as received_image.jpg in the active directory

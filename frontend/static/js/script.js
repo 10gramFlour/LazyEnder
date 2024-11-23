@@ -20,7 +20,7 @@ socket.on('disconnect', () => {
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed.');
+    console.log('DOM fully loaded and parsed');
 
     const promptForm = document.getElementById('promptForm');
     if (promptForm) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         promptForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            console.log('Form submit event triggered.');
+            console.log('Form submit event triggered');
 
             const prompt = document.getElementById('prompt').value.trim();
             console.log('Prompt value:', prompt);
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('error').textContent = ''; // Clear previous error messages
 
                 try {
-                    console.log('Initiating fetch request to /sendPrompt endpoint.');
                     const response = await fetch('/sendPrompt', {
                         method: 'POST',
                         headers: {
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         body: JSON.stringify({ prompt })
                     });
 
-                    console.log('Response received from server.');
+                    console.log('Response received from server');
                     const result = await response.json();
                     console.log('Result from server:', result);
 
@@ -75,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // WebSocket connection to receive updates
-                        console.log('Establishing WebSocket connection to receive updates.');
                         const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Use the dynamic WebSocket port
 
                         socket.addEventListener('open', () => {
-                            console.log('WebSocket connection established for updates.');
+                            console.log('WebSocket connection established');
                         });
 
                         socket.addEventListener('message', (event) => {
@@ -99,14 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
 
                         socket.addEventListener('close', () => {
-                            console.log('WebSocket connection closed.');
+                            console.log('WebSocket connection closed');
                         });
                     } else {
                         console.error('Error from server:', result.error);
                         document.getElementById('error').textContent = result.error;
                     }
                 } catch (error) {
-                    console.error('Error occurred during fetch request:', error);
+                    console.error('Error:', error);
                     document.getElementById('error').textContent = 'An error occurred. Please try again later.';
                 }
             } else {
@@ -115,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else {
-        console.error('promptForm element not found.');
+        console.error('promptForm element not found');
     }
 });
 

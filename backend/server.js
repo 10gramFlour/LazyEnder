@@ -47,22 +47,14 @@ async function startServer() {
 
     // Serve index.html
     app.get('/', (req, res) => {
-        logger.info('Received request for index.html');
-        res.sendFile(path.join(__dirname, '../frontend/index.html'), (err) => {
-            if (err) {
-                logger.error('Error sending index.html:', err);
-                res.status(500).send('Error loading index.html');
-            } else {
-                logger.info('index.html served successfully.');
-            }
-        });
+        logger.info('Serving index.html');
+        res.sendFile(path.join(__dirname, '../frontend/index.html'));
     });
 
     // Endpoint to receive prompt from frontend
     app.post('/sendPrompt', [
         body('prompt').isString().trim().escape()
     ], async (req, res) => {
-        logger.info('Received POST request to /sendPrompt');
         const errors = validationResult(req);
         
         if (!errors.isEmpty()) {
@@ -78,7 +70,6 @@ async function startServer() {
 
             // Listen for the image from receiveImage.js
             if (receiveImage.listenerCount('imageReceived') === 0) {
-                logger.info('Setting up listener for imageReceived event.');
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info(`Image received from friend: ${filePath}`);
                     const imagePath = `/images/active/received_image.jpg`;
@@ -96,8 +87,8 @@ async function startServer() {
 
     // WebSocket event listeners
     io.on('connection', (socket) => {
-        logger.info('Frontend connected via WebSocket.');
-        socket.on('disconnect', () => logger.info('Frontend disconnected from WebSocket.'));
+        logger.info('Frontend connected.');
+        socket.on('disconnect', () => logger.info('Frontend disconnected.'));
     });
 
     // Error handler middleware
@@ -106,11 +97,10 @@ async function startServer() {
 
     // Gracefully shutdown server
     process.on('SIGINT', () => {
-        logger.info('Received SIGINT. Initiating graceful shutdown...');
+        logger.info('Received SIGINT. Closing server...');
         io.close(() => {
-            logger.info('WebSocket server closed.');
             server.close(() => {
-                logger.info('HTTP server closed.');
+                logger.info('Server closed.');
                 process.exit(0);
             });
         });
