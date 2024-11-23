@@ -7,8 +7,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 import EventEmitter from 'events';
-import { WebSocketServer } from 'ws';
-import portfinder from 'portfinder';
 
 // Get the directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -27,11 +25,6 @@ async function startServer() {
     serverStarted = true;
 
     try {
-        const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
-        const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
-        logger.info(`WebSocket Server running on port ${WEBSOCKET_PORT}`);
-
-        const imagePort = await portfinder.getPortPromise({ port: RECEIVE_IMAGE_PORT, stopPort: RECEIVE_IMAGE_PORT + 1000 });
         server = net.createServer((socket) => { // Initialize the variable `server` here
             logger.info('Connected to image sender');
 
@@ -48,42 +41,21 @@ async function startServer() {
                 logger.info(`Total received data size: ${dataBuffer.length} bytes`);
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
-                const activeDir = path.join(imagesDir, 'active');
-                const archiveDir = path.join(imagesDir, 'archive');
 
                 try {
-                    if (!fs.existsSync(activeDir)) {
-                        fs.mkdirSync(activeDir, { recursive: true });
-                        logger.info(`Created directory: ${activeDir}`);
+                    if (!fs.existsSync(imagesDir)) {
+                        fs.mkdirSync(imagesDir, { recursive: true });
+                        logger.info(`Created directory: ${imagesDir}`);
                     }
 
-                    if (!fs.existsSync(archiveDir)) {
-                        fs.mkdirSync(archiveDir, { recursive: true });
-                        logger.info(`Created directory: ${archiveDir}`);
-                    }
+                    // Save the new image with a unique name in the images directory
+                    const uniqueFilename = `received_image_${uuidv4()}.jpg`;
+                    const imagePath = path.join(imagesDir, uniqueFilename);
+                    await fs.promises.writeFile(imagePath, dataBuffer);
+                    logger.info(`Image saved to ${imagePath} (Binary)`);
 
-                    // Move the current active image to the archive
-                    const activeImagePath = path.join(activeDir, 'received_image.jpg');
-                    if (fs.existsSync(activeImagePath)) {
-                        const uniqueFilename = `received_image_${uuidv4()}.jpg`;
-                        const archiveImagePath = path.join(archiveDir, uniqueFilename);
-                        fs.renameSync(activeImagePath, archiveImagePath);
-                        logger.info(`Moved ${activeImagePath} to ${archiveImagePath}`);
-                    }
-
-                    // Save the new image as received_image.jpg in the active directory
-                    await fs.promises.writeFile(activeImagePath, dataBuffer);
-                    logger.info(`Image saved to ${activeImagePath} (Binary)`);
-
-                    // Send WebSocket message to notify clients
-                    wss.clients.forEach(client => {
-                        if (client.readyState === WebSocket.OPEN) {
-                            client.send(JSON.stringify({ imagePath: '/images/active/received_image.jpg' }));
-                            logger.info(`Sent image path to client: /images/active/received_image.jpg`);
-                        } else {
-                            logger.info(`Client not ready to receive message.`);
-                        }
-                    });
+                    // Emit event to notify the specific client
+                    receiveImageEmitter.emit('imageReceived', imagePath);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }
@@ -98,13 +70,13 @@ async function startServer() {
             });
         });
 
-        server.listen(imagePort, RECEIVE_IMAGE_HOST, () => {
-            logger.info(`Image Receiver running on ${RECEIVE_IMAGE_HOST}:${imagePort}`);
+        server.listen(RECEIVE_IMAGE_PORT, RECEIVE_IMAGE_HOST, () => {
+            logger.info(`Image Receiver running on ${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
         });
 
         server.on('error', (err) => {
             if (err.code === 'EADDRINUSE') {
-                logger.error(`Port ${imagePort} is already in use.`);
+                logger.error(`Port ${RECEIVE_IMAGE_PORT} is already in use.`);
             } else {
                 logger.error('Error starting the server:', err);
             }

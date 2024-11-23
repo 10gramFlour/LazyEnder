@@ -1,7 +1,6 @@
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
-import portfinder from 'portfinder';
 import { body, validationResult } from 'express-validator';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -10,6 +9,7 @@ import sendPromptToFriend from './promptSender.js';
 import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
 
 const app = express();
 let server;
@@ -20,17 +20,23 @@ const __dirname = dirname(__filename);
 
 async function startServer() {
     logger.info('Starting server setup...');
-    const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
-    const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8081, stopPort: 8999 });
-    logger.info(`Found available ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
+    const PORT = RECEIVE_PROMPT_PORT; // Fixed HTTP port for sending prompts
+    const WEBSOCKET_PORT = 8080; // Fixed WebSocket port
+    logger.info(`Using fixed ports: HTTP - ${PORT}, WebSocket - ${WEBSOCKET_PORT}`);
 
     server = http.createServer(app);
-    io = new Server(server, { port: WEBSOCKET_PORT });
+    io = new Server(server, { cors: { origin: "*" } });
     logger.info('HTTP and WebSocket servers created.');
 
-    server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`))
+    server.listen(PORT, () => logger.info(`HTTP server running at http://${RECEIVE_PROMPT_HOST}:${PORT}`))
         .on('error', (err) => {
-            logger.error('Error starting server:', err);
+            logger.error('Error starting HTTP server:', err);
+            process.exit(1);
+        });
+    
+    io.listen(WEBSOCKET_PORT, () => logger.info(`WebSocket server running at ws://${RECEIVE_PROMPT_HOST}:${WEBSOCKET_PORT}`))
+        .on('error', (err) => {
+            logger.error('Error starting WebSocket server:', err);
             process.exit(1);
         });
 
@@ -62,12 +68,15 @@ async function startServer() {
             await sendPromptToFriend(prompt);
             logger.info('Prompt forwarded to friend.');
 
+            const socketId = req.headers['socket-id']; // Get the socket ID from the request headers
+
             if (receiveImage.listenerCount('imageReceived') === 0) {
                 receiveImage.once('imageReceived', (filePath) => {
                     logger.info(`Image received from friend: ${filePath}`);
-                    const imagePath = `/images/active/received_image.jpg`;
+                    const imagePath = `/images/${path.basename(filePath)}`;
                     logger.info(`Sending image path to frontend: ${imagePath}`);
-                    res.json({ imagePath, websocketPort: WEBSOCKET_PORT });
+                    res.json({ imagePath });
+                    io.to(socketId).emit('imageUpdated', { imagePath }); // Notify the specific client via WebSocket
                 });
             } else {
                 logger.warn('Listener for imageReceived event already exists.');
