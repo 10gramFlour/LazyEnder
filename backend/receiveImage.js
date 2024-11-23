@@ -1,10 +1,11 @@
-const fs = require('fs');
-const WebSocket = require('ws');
-const EventEmitter = require('events');
+import fs from 'fs';
+import WebSocket from 'ws';
+import EventEmitter from 'events';
+import settings from './config/settings';
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
+
 const receiveImageEmitter = new EventEmitter();
-const settings = require('./config/settings');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 
 async function startServer() {
     try {

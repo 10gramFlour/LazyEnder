@@ -100,9 +100,9 @@ function killProcess(pid, serverName) {
             // Fallback to taskkill on Windows if tree-kill fails
             if (process.platform === 'win32') {
                 logger.warn(`tree-kill failed for ${serverName}, attempting taskkill...`);
-                exec(`taskkill /PID ${pid} /T /F`, (taskKillErr, stdout, stderr) => {
+                exec(`taskkill /PID ${pid} /T /F`, (taskKillErr, _stdout, stderr) => {
                     if (taskKillErr) {
-                        logger.error(`Failed to kill ${serverName} with taskkill:`, stderr);
+                        logger.error(`Failed to kill ${serverName} with taskkill:`, stderr);        
                         return reject(taskKillErr);
                     }
 

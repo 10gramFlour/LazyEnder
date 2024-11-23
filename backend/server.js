@@ -67,7 +67,7 @@ io.on('connection', (socket) => {
 // Use the error handling middleware
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`));
 
 // Graceful shutdown on SIGINT (Ctrl+C)
