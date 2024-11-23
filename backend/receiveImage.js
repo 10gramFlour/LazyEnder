@@ -1,11 +1,11 @@
 import fs from 'fs';
-import WebSocket from 'ws';
+import WebSocket, { WebSocketServer } from 'ws';
 import EventEmitter from 'events';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import settings from './config/settings.js';
+import { RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
 import logger from './logger.js';
 
 // Get the directory name
@@ -16,10 +16,9 @@ const receiveImageEmitter = new EventEmitter();
 
 async function startServer() {
     try {
-        const RECEIVE_IMAGE_PORT = settings.RECEIVE_IMAGE_PORT;
-        const imageServer = new WebSocket.Server({ host: settings.RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
+        const imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
 
-        logger.info(`Image Receiver running on ws://${settings.RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
+        logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
 
         imageServer.on('connection', (socket) => {
             logger.info('Connected to image sender');

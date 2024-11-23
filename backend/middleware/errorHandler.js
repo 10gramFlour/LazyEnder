@@ -1,5 +1,5 @@
 // backend/middleware/errorHandler.js
-const logger = require('../logger');
+import logger from '../logger.js';
 
 function errorHandler(err, _req, res, _next) {
     // Log the error message, stack trace, and additional details
@@ -27,4 +27,4 @@ function errorHandler(err, _req, res, _next) {
     res.status(statusCode).json({ error: errorMessage });
 }
 
-module.exports = errorHandler;
+export default errorHandler;
