@@ -13108,3 +13108,75 @@ Connected to friend, sending prompt...
 2024-11-23 13:34:27 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 15364 /T /F
 ERROR: The process "15364" not found.
 
+2024-11-23 13:40:53 [user-service] info: Starting Backend Server...
+2024-11-23 13:40:53 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:40:53 [user-service] error: Receive Image Server stderr: file:///C:/Apps/LazyEnder/backend/receiveImage.js:27
+    const wss = new WebSocket.Server({ port: 8080 });
+                ^
+
+TypeError: WebSocket.Server is not a constructor
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:27:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+
+Node.js v22.11.0
+
+2024-11-23 13:40:53 [user-service] info: Receive Image Server exited with code 1
+2024-11-23 13:40:54 [user-service] info: Backend Server stdout: 2024-11-23 13:40:54 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:40:54 [user-service] info: Backend Server stdout: 2024-11-23 13:40:54 [user-service] [32minfo[39m: Server running at http://localhost:3002
+
+2024-11-23 13:40:54 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:40:54 [user-service] info: Server running at http://localhost:3002
+2024-11-23 13:40:55 [user-service] info: Frontend connected.
+2024-11-23 13:40:55 [user-service] info: Backend Server stdout: 2024-11-23 13:40:55 [user-service] [32minfo[39m: Frontend connected.
+
+2024-11-23 13:41:53 [user-service] info: Received SIGINT. Closing server...
+2024-11-23 13:41:53 [user-service] info: Closing servers...
+2024-11-23 13:41:53 [user-service] info: Frontend disconnected.
+2024-11-23 13:41:53 [user-service] info: Attempting to kill undefined (PID: 6972)...
+2024-11-23 13:41:53 [user-service] info: Backend Server stdout: 2024-11-23 13:41:53 [user-service] [32minfo[39m: Received SIGINT. Closing server...
+2024-11-23 13:41:53 [user-service] [32minfo[39m: Frontend disconnected.
+
+2024-11-23 13:41:53 [user-service] info: Server closed.
+2024-11-23 13:41:53 [user-service] info: Backend Server stdout: 2024-11-23 13:41:53 [user-service] [32minfo[39m: Server closed.
+
+2024-11-23 13:41:53 [user-service] info: Backend Server exited with code 0
+2024-11-23 13:41:53 [user-service] error: Error stopping undefined: Command failed: taskkill /pid 6972 /T /F
+ERROR: The process "6972" not found.
+
+2024-11-23 13:41:56 [user-service] info: Starting Backend Server...
+2024-11-23 13:41:56 [user-service] info: Starting Receive Image Server...
+2024-11-23 13:41:56 [user-service] info: Receive Image Server stdout: 2024-11-23 13:41:56 [user-service] [32minfo[39m: Image Receiver running on 25.39.138.224:5001
+
+2024-11-23 13:41:56 [user-service] info: Image Receiver running on 25.39.138.224:5001
+2024-11-23 13:41:56 [user-service] error: Backend Server stderr: node:events:496
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at Server.listen (node:net:2066:7)
+    at new WebSocketServer (C:\Apps\LazyEnder\node_modules\ws\lib\websocket-server.js:102:20)
+    at startServer (file:///C:/Apps/LazyEnder/backend/receiveImage.js:27:17)
+    at file:///C:/Apps/LazyEnder/backend/receiveImage.js:105:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:268:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:543:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:518:28)
+    at emitErrorNT (node:net:1943:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 8080
+}
+
+Node.js v22.11.0
+
+2024-11-23 13:41:56 [user-service] info: Backend Server exited with code 1
