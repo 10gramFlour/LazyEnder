@@ -20,7 +20,6 @@ function validateScriptPath(scriptPath) {
 // Define paths for the backend and receive image server scripts
 const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js'));
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
-const findFreePortScript = validateScriptPath(path.join(__dirname, 'backend', 'findFreePort.js'));
 
 let serverProcesses = {
     backendServer: null,
@@ -74,26 +73,9 @@ function stopServer(serverName) {
     });
 }
 
-// Call findFreePort.js to find a free port and write it to the configuration file
-exec(`node ${findFreePortScript}`, (error, stdout, stderr) => {
-    if (error) {
-        logger.error(`Error executing findFreePort.js: ${error}`);
-        return;
-    }
-    if (stderr) {
-        logger.error(`stderr: ${stderr}`);
-        return;
-    }
-    logger.info(`stdout: ${stdout}`);
-
-    // Stop existing servers before starting new ones
-    stopServer('backendServer');
-    stopServer('receiveImageServer');
-
-    // Start the other server scripts after finding a free port
-    startServer(receiveImageScript, 'receiveImageServer');
-    startServer(serverScript, 'backendServer');
-});
+// Start the server scripts
+startServer(receiveImageScript, 'receiveImageServer');
+startServer(serverScript, 'backendServer');
 
 // Clean up servers on application termination
 process.on('SIGINT', async () => {

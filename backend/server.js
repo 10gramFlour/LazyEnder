@@ -10,7 +10,6 @@ import sendPromptToFriend from './promptSender.js';
 import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
-import { WEBSOCKET_PORT } from './config/websocket.js'; // Importieren Sie den WebSocket-Port
 
 const app = express();
 let server; // Stellen Sie sicher, dass die Variable `server` hier deklariert wird
@@ -23,6 +22,7 @@ const __dirname = dirname(__filename);
 // Automatically find an available port
 async function startServer() {
     const PORT = await portfinder.getPortPromise({ port: 3002, stopPort: 3999 });
+    const WEBSOCKET_PORT = await portfinder.getPortPromise({ port: 8080, stopPort: 8999 });
 
     server = http.createServer(app); // Initialisieren Sie die Variable `server` hier
     io = new Server(server);

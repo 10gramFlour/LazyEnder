@@ -71,13 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         };
 
                         // WebSocket connection to receive updates
-                        const socket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
+                        const dynamicSocket = new WebSocket(`ws://localhost:${result.websocketPort}`); // Verwenden Sie den dynamischen WebSocket-Port
 
-                        socket.addEventListener('open', () => {
+                        dynamicSocket.addEventListener('open', () => {
                             console.log('WebSocket connection established');
                         });
 
-                        socket.addEventListener('message', (event) => {
+                        dynamicSocket.addEventListener('message', (event) => {
                             const data = JSON.parse(event.data);
                             console.log('WebSocket message received:', data);
 
@@ -88,12 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         });
 
-                        socket.addEventListener('error', (error) => {
+                        dynamicSocket.addEventListener('error', (error) => {
                             console.error('WebSocket error:', error);
                             document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
                         });
 
-                        socket.addEventListener('close', () => {
+                        dynamicSocket.addEventListener('close', () => {
                             console.log('WebSocket connection closed');
                         });
                     } else {
