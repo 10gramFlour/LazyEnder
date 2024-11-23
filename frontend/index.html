@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LazyEnder is a powerful text-to-image generator that allows you to create stunning images from simple text prompts.">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 aria-label="LazyEnder, a Text-to-Image generator">LazyEnder - Text to Image</h1>
+        <span id="statusBadge" class="disconnected" aria-live="polite">Disconnected</span>
+    </header>
+    <main>
+        <div class="container">
+            <form id="promptForm">
+                <label for="prompt">Enter your prompt:</label>
+                <input type="text" id="prompt" name="prompt" maxlength="200" required>
+                <button type="submit">Send</button>
+            </form>
+            <div id="loading" aria-busy="true">Loading...</div>
+            <div id="error" class="error"></div>
+            <div id="imageContainer"></div>
+            <button id="downloadButton">Download</button>
+        </div>
+        <section id="about">
+            <h2>About LazyEnder</h2>
+            <p>LazyEnder is a powerful text-to-image generator that allows you to create stunning images from simple text prompts. Whether you need an image for a project, inspiration, or just for fun, LazyEnder has you covered.</p>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Generate images from text prompts</li>
+                <li>Random prompt generator</li>
+                <li>Download generated images</li>
+                <li>Real-time updates</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us at <a href="mailto:support@lazyender.com">support@lazyender.com</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LazyEnder. All rights reserved.</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

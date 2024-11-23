@@ -1,0 +1,21 @@
+2024-11-23 10:07:30 [user-service] info: Starting Backend Server...
+2024-11-23 10:07:30 [user-service] info: Starting Receive Image Server...
+2024-11-23 10:07:30 [user-service] info: Receive Image Server stdout: Image Receiver running on ws://25.39.138.224:5000
+
+2024-11-23 10:07:31 [user-service] info: Backend Server stdout: Image Receiver running on ws://25.39.138.224:5000
+
+2024-11-23 10:07:31 [user-service] info: Backend Server stdout: 2024-11-23 10:07:31 [user-service] [32minfo[39m: Server running at http://localhost:3001
+
+2024-11-23 10:07:31 [user-service] error: Backend Server stderr: Error starting the server: Error: listen EADDRINUSE: address already in use 25.39.138.224:5000
+    at Server.setupListenHandle [as _listen2] (node:net:1907:16)
+    at listenInCluster (node:net:1964:12)
+    at node:net:2170:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '25.39.138.224',
+  port: 5000
+}
+
+2024-11-23 10:07:31 [user-service] info: Server running at http://localhost:3001
