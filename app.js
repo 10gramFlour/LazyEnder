@@ -62,8 +62,8 @@ function startServer(scriptPath, serverName) {
     return server;
 }
 
-const backendServer = startServer(serverScript, 'Backend Server');
-const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server');
+const backendServer = backendServerStarted ? null : startServer(serverScript, 'Backend Server');
+const receiveImageServer = receiveImageServerStarted ? null : startServer(receiveImageScript, 'Receive Image Server');
 
 // Stop all servers on application exit
 process.on('SIGINT', async () => {

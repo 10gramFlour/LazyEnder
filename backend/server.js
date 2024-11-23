@@ -71,16 +71,26 @@ io.on('connection', (socket) => {
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3001;
-server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`));
 
-// Graceful shutdown on SIGINT (Ctrl+C)
-process.on('SIGINT', () => {
-    logger.info('Received SIGINT. Closing server gracefully...');
-    io.close(() => {
-        logger.info('WebSocket server closed.');
-        server.close(() => {
-            logger.info('HTTP server closed.');
-            process.exit(0); // Exit the process
+let serverStarted = false;
+
+function startServer() {
+    if (serverStarted) return;
+    serverStarted = true;
+
+    server.listen(PORT, () => logger.info(`Server running at http://localhost:${PORT}`));
+
+    // Graceful shutdown on SIGINT (Ctrl+C)
+    process.on('SIGINT', () => {
+        logger.info('Received SIGINT. Closing server gracefully...');
+        io.close(() => {
+            logger.info('WebSocket server closed.');
+            server.close(() => {
+                logger.info('HTTP server closed.');
+                process.exit(0); // Exit the process
+            });
         });
     });
-});
+}
+
+startServer();

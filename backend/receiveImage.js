@@ -13,10 +13,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const receiveImageEmitter = new EventEmitter();
+let serverStarted = false;
+let imageServer;
 
 async function startServer() {
+    if (serverStarted) {
+        logger.info('Server is already running.');
+        return;
+    }
+
     try {
-        const imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
+        imageServer = new WebSocketServer({ host: RECEIVE_IMAGE_HOST, port: RECEIVE_IMAGE_PORT });
+        serverStarted = true;
 
         logger.info(`Image Receiver running on ws://${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}`);
 
@@ -80,8 +88,20 @@ async function startServer() {
         imageServer.on('error', (err) => {
             logger.error('Error starting the server:', err);
         });
+
+        process.on('SIGINT', shutdownServer);
+        process.on('SIGTERM', shutdownServer);
     } catch (err) {
         logger.error('Error starting the server:', err);
+    }
+}
+
+function shutdownServer() {
+    if (imageServer) {
+        imageServer.close(() => {
+            logger.info('Server shut down gracefully.');
+            process.exit(0);
+        });
     }
 }
 
