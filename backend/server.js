@@ -6,8 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import sendPromptToFriend from './promptSender.js';
-import EventEmitter from 'events';
-const receiveImage = new EventEmitter();
+import receiveImage from './receiveImage.js';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
 import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
@@ -76,7 +75,9 @@ async function startServer() {
                 const imagePath = `/images/${path.basename(filePath)}`;
                 logger.info(`Sending image path to frontend: ${imagePath}`);
                 res.json({ imagePath });
+                logger.info(`Emitting 'imageUpdated' event to socket ID: ${socketId}`);
                 io.to(socketId).emit('imageUpdated', { imagePath }); // Notify the specific client via WebSocket
+                logger.info(`WebSocket message 'imageUpdated' sent to socket ID: ${socketId} with path: ${imagePath}`);
             });
         } catch (error) {
             logger.error('Error sending prompt:', error);

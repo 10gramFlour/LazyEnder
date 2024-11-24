@@ -1,20 +1,6 @@
 // Establish WebSocket connection
 const socket = io();  // Production environment
 
-// Update status badge on connection
-socket.on('connect', () => {
-    const statusBadge = document.getElementById('statusBadge');
-    statusBadge.textContent = 'Connected';
-    statusBadge.className = 'connected';
-});
-
-// Update status badge on disconnection
-socket.on('disconnect', () => {
-    const statusBadge = document.getElementById('statusBadge');
-    statusBadge.textContent = 'Disconnected';
-    statusBadge.className = 'disconnected';
-});
-
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
@@ -42,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const activeImage = document.getElementById('activeImage');
             activeImage.src = data.imagePath;
             console.log('Active image updated via WebSocket:', activeImage.src);
+        } else {
+            console.error('No imagePath received in WebSocket message');
         }
     });
 
