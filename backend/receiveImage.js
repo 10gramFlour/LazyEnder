@@ -92,7 +92,7 @@ async function startServer() {
         logger.error('Error starting the server:', err);
     }
 }
-
+ 
 startServer();
 
 export default receiveImageEmitter;

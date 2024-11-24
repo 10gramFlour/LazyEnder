@@ -6,10 +6,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import sendPromptToFriend from './promptSender.js';
-import receiveImageEmitter from './receiveImage.js';
+import { EventEmitter } from 'events';
 import errorHandler from './middleware/errorHandler.js';
 import logger from './logger.js';
-import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT, RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './config/settings.js';
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT } from './config/settings.js';
 
 const app = express();
 let server;
@@ -18,27 +18,20 @@ let io;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+const receiveImageEmitter = new EventEmitter();
+
 async function startServer() {
     logger.info('Starting server setup...');
     const PORT = RECEIVE_PROMPT_PORT; // HTTP port
-    const WEBSOCKET_PORT = 8081; // WebSocket port
 
     // HTTP Server setup
     server = http.createServer(app);
     io = new Server(server, { cors: { origin: "*" } });
 
     server.listen(PORT, () => {
-        logger.info(`HTTP server running at http://${RECEIVE_PROMPT_HOST}:${PORT}`);
+        logger.info(`HTTP and WebSocket server running at http://${RECEIVE_PROMPT_HOST}:${PORT}`);
     }).on('error', (err) => {
         logger.error('Error starting HTTP server:', err);
-        process.exit(1);
-    });
-
-    // WebSocket Server setup
-    io.listen(WEBSOCKET_PORT, () => {
-        logger.info(`WebSocket server running at ws://${RECEIVE_PROMPT_HOST}:${WEBSOCKET_PORT}`);
-    }).on('error', (err) => {
-        logger.error('Error starting WebSocket server:', err);
         process.exit(1);
     });
 
@@ -50,7 +43,7 @@ async function startServer() {
         setHeaders: (res, filePath) => {
             res.set('Access-Control-Allow-Origin', '*');
             logger.info(`Serving file from: ${filePath}`);
-        },
+        }
     }));
 
     logger.info('Middleware added for JSON parsing and static files.');
@@ -91,25 +84,17 @@ async function startServer() {
             logger.info('Prompt forwarded to the external service.');
 
             const imageReceivedHandler = (filePath) => {
-                logger.info(`Image received with file path: ${filePath}`);
-
-                // Normalize the path and replace backslashes with forward slashes
-                const imagePath = `/images/${path.basename(filePath).replace(/\\/g, '/')}`;
-                logger.info(`Generated image path: ${imagePath}`);
-
-                // Send image path to the client
+                logger.info(`Image received from friend: ${filePath}`);
+                const imagePath = `/images/${path.basename(filePath)}`;
+                logger.info(`Sending image path to frontend: ${imagePath}`);
                 res.json({ imagePath });
-
-                // Send WebSocket message to the client
-                io.to(socketId).emit('imageUpdated', { imagePath });
+                logger.info(`Emitting 'imageUpdated' event to socket ID: ${socketId}`);
+                io.to(socketId).emit('imageUpdated', { imagePath }); // Notify the specific client via WebSocket
                 logger.info(`WebSocket message 'imageUpdated' sent to socket ID: ${socketId} with path: ${imagePath}`);
-
-                // Remove listener after sending image
-                receiveImageEmitter.off('imageReceived', imageReceivedHandler);
             };
 
             // Register the imageReceived handler
-            receiveImageEmitter.on('imageReceived', imageReceivedHandler);
+            receiveImageEmitter.once('imageReceived', imageReceivedHandler);
 
         } catch (error) {
             logger.error('Error processing prompt:', error);

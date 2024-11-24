@@ -1,5 +1,5 @@
 // Establish WebSocket connection
-const socket = io('http://localhost:8081'); // Production environment
+const socket = io('http://localhost:5002'); // Production environment
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusBadge = document.getElementById('statusBadge');
     const activeImage = document.getElementById('activeImage');
     const downloadButton = document.getElementById('downloadButton');
+    if (downloadButton) {
+        downloadButton.style.display = 'none';
+    }
     const loadingIndicator = document.getElementById('loading');
     const errorDisplay = document.getElementById('error');
 
@@ -34,6 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatusBadge('Connected', 'connected');
     });
 
+    // Handle socket errors and connection issues
+    socket.on('error', (error) => {
+        handleSocketError('WebSocket error', error);
+        retryWebSocketConnection();  // Aufruf hier
+    });
+
+    socket.on('connect_error', (error) => {
+        handleSocketError('WebSocket connection error', error);
+        retryWebSocketConnection();  // Aufruf hier
+    });
+
+    // Handle socket errors and connection issues
+    socket.on('error', (error) => handleSocketError('WebSocket error', error));
+    socket.on('connect_error', (error) => handleSocketError('WebSocket connection error', error));
+
+    // Listen for image updates
     socket.on('imageUpdated', (data) => {
         if (data.imagePath) {
             console.log('Image updated:', data.imagePath);
@@ -43,9 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             displayError('Error receiving image.');
         }
     });
-
-    socket.on('error', (error) => handleSocketError('WebSocket error', error));
-    socket.on('connect_error', (error) => handleSocketError('WebSocket connection error', error));
 
     // Handle form submission
     if (promptForm) {
@@ -101,12 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateImage(imagePath) {
         if (activeImage && imagePath) {
-            // Verify that the image path is valid
             if (isValidImageUrl(imagePath)) {
                 activeImage.src = imagePath;
                 downloadButton.style.display = 'block';
-                console.log('Image updated:', imagePath);
-                downloadButton.onclick = () => initiateDownload(imagePath);
+
+                // Dynamischer Download-Button je nach Dateityp
+                const fileType = imagePath.split('.').pop();
+                downloadButton.onclick = () => initiateDownload(imagePath, fileType);
             } else {
                 displayError('Invalid image path received.');
             }
@@ -141,14 +158,21 @@ document.addEventListener('DOMContentLoaded', () => {
         displayError('WebSocket error occurred. Please try again later.');
     }
 
-    function initiateDownload(imagePath) {
+    // Retry connection if it fails multiple times
+    function retryWebSocketConnection() {
+        setTimeout(() => {
+            console.log('Attempting to reconnect...');
+            socket.connect();
+        }, 5000);  // Retry every 5 seconds
+    }
+
+    function initiateDownload(imagePath, fileType) {
         if (imagePath) {
             const link = document.createElement('a');
             link.href = imagePath;
-            link.download = 'generated_image.jpg';
+            link.download = `generated_image.${fileType || 'jpg'}`;  // Dynamisch Dateiendung basierend auf URL
             link.click();
             console.log('Download initiated for:', imagePath);
         }
     }
 });
-
