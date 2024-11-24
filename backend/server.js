@@ -93,10 +93,6 @@ async function startServer() {
                 const imagePath = `/images/${path.basename(filePath).replace(/\\/g, '/')}`;
                 logger.info(`Generated image path: ${imagePath}`);
     
-                // Test if the image can be accessed directly by the browser
-                const testUrl = `http://${RECEIVE_IMAGE_HOST}:${RECEIVE_IMAGE_PORT}${imagePath}`;
-                logger.info(`Test URL: ${testUrl}`);
-    
                 // Send image path to the client
                 res.json({ imagePath });
     
@@ -115,7 +111,8 @@ async function startServer() {
             logger.error('Error processing prompt:', error);
             res.status(500).json({ error: 'Error processing prompt.' });
         }
-    });    
+    });
+    
     
     io.on('connection', (socket) => {
         logger.info(`Frontend connected (Socket ID: ${socket.id})`);

@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
 import { spawn } from 'child_process';
+import net from 'net';
 import kill from 'tree-kill';
 
 // Get the directory of the current script file
@@ -23,9 +24,30 @@ const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'r
 
 let backendServerStarted = false;
 let receiveImageServerStarted = false;
+let backendServerProcess = null;
+let receiveImageServerProcess = null;
+
+// Function to check if a port is in use
+function isPortInUse(port) {
+    return new Promise((resolve, reject) => {
+        const server = net.createServer();
+        server.unref();
+        server.on('error', (err) => {
+            if (err.code === 'EADDRINUSE') {
+                resolve(true); // Port is in use
+            } else {
+                reject(err);
+            }
+        });
+        server.listen(port, '127.0.0.1', () => {
+            server.close(() => resolve(false)); // Port is free
+        });
+    });
+}
 
 // Function to start a server using Node.js child process
-function startServer(scriptPath, serverName) {
+// Funktion zum Starten von Servern mit korrekter Portbehandlung
+async function startServer(scriptPath, serverName, port) {
     if ((serverName === 'Backend Server' && backendServerStarted) || 
         (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
         logger.warn(`${serverName} is already started.`);
@@ -59,19 +81,19 @@ function startServer(scriptPath, serverName) {
     return server;
 }
 
-// Start both backend and image receiver servers
-const backendServer = startServer(serverScript, 'Backend Server');
-const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server');
+// Starte beide Server mit unterschiedlichen Ports
+const backendServer = await startServer(serverScript, 'Backend Server', 5002);  // Port 5002 für Backend
+const receiveImageServer = await startServer(receiveImageScript, 'Receive Image Server', 5003);  // Port 5003 für Receive Image Server
 
-// Clean up servers on application termination
+// Sicherstellen, dass der Receive Image Server gestoppt wird
 process.on('SIGINT', async () => {
     logger.info('Closing servers...');
-    await stopServers([backendServer, receiveImageServer]);
+    await stopServers([backendServer, receiveImageServer]); // Verwendung von receiveImageServer
     logger.info('All servers closed. Exiting application.');
     process.exit(0);
 });
 
-// Function to terminate running servers
+// Funktion zum Stoppen der Serverprozesse
 async function stopServers(servers) {
     for (const server of servers) {
         if (server && server.pid) {
@@ -90,7 +112,7 @@ async function stopServers(servers) {
     }
 }
 
-// Helper function to kill a process by PID
+// Hilfsfunktion zum Stoppen eines Prozesses anhand der PID
 function killProcess(pid, serverName) {
     return new Promise((resolve, reject) => {
         logger.info(`Attempting to kill ${serverName} (PID: ${pid})...`);
@@ -103,3 +125,4 @@ function killProcess(pid, serverName) {
         });
     });
 }
+
