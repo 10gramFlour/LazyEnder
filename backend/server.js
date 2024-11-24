@@ -70,8 +70,9 @@ async function startServer() {
 
             const socketId = req.headers['socket-id']; // Get the socket ID from the request headers
 
+            logger.info(`Waiting for imageReceived event for socket ID: ${socketId}`);
             receiveImage.once('imageReceived', (filePath) => {
-                logger.info(`Image received from friend: ${filePath}`);
+                logger.info(`imageReceived event triggered with filePath: ${filePath}`);
                 const imagePath = `/images/${path.basename(filePath)}`;
                 logger.info(`Sending image path to frontend: ${imagePath}`);
                 res.json({ imagePath });

@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('imageUpdated', (data) => {
         console.log('WebSocket message received:', data);
         if (data.imagePath) {
+            console.log('imagePath received:', data.imagePath);
             const activeImage = document.getElementById('activeImage');
             activeImage.src = data.imagePath;
             console.log('Active image updated via WebSocket:', activeImage.src);
