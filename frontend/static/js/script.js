@@ -3,122 +3,149 @@ const socket = io('http://localhost:8081'); // Production environment
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
+    console.log('DOM fully loaded and parsed.');
 
     const promptForm = document.getElementById('promptForm');
+    const statusBadge = document.getElementById('statusBadge');
+    const activeImage = document.getElementById('activeImage');
+    const downloadButton = document.getElementById('downloadButton');
+    const loadingIndicator = document.getElementById('loading');
+    const errorDisplay = document.getElementById('error');
 
+    // WebSocket event listeners
     socket.on('connect', () => {
-        console.log('WebSocket connection established');
-        const statusBadge = document.getElementById('statusBadge');
-        statusBadge.textContent = 'Connected';
-        statusBadge.className = 'connected';
+        console.log('WebSocket connection established (Socket ID:', socket.id, ')');
+        updateStatusBadge('Connected', 'connected');
     });
 
     socket.on('disconnect', () => {
-        console.log('WebSocket connection closed');
-        const statusBadge = document.getElementById('statusBadge');
-        statusBadge.textContent = 'Disconnected';
-        statusBadge.className = 'disconnected';
-    });
-
-    socket.on('imageUpdated', (data) => {
-        console.log('WebSocket message received:', data);
-        if (data.imagePath) {
-            console.log('imagePath received:', data.imagePath);
-            const activeImage = document.getElementById('activeImage');
-            activeImage.src = data.imagePath;
-            console.log('Active image updated via WebSocket:', activeImage.src);
-        } else {
-            console.error('No imagePath received in WebSocket message');
-        }
-    });
-
-    socket.on('error', (error) => {
-        console.error('WebSocket error:', error);
-        document.getElementById('error').textContent = 'WebSocket error. Please try again later.';
-    });
-
-    socket.on('connect_error', (error) => {
-        console.error('WebSocket connection error:', error);
-        document.getElementById('error').textContent = 'Unable to connect to the server. Please check your internet connection and try again.';
+        console.log('WebSocket connection closed.');
+        updateStatusBadge('Disconnected', 'disconnected');
     });
 
     socket.on('reconnect_attempt', () => {
-        const statusBadge = document.getElementById('statusBadge');
-        statusBadge.textContent = 'Reconnecting...';
-        statusBadge.className = 'reconnecting';
+        console.log('WebSocket reconnecting...');
+        updateStatusBadge('Reconnecting...', 'reconnecting');
     });
 
     socket.on('reconnect', () => {
-        const statusBadge = document.getElementById('statusBadge');
-        statusBadge.textContent = 'Connected';
-        statusBadge.className = 'connected';
+        console.log('WebSocket reconnected.');
+        updateStatusBadge('Connected', 'connected');
     });
 
-    if (promptForm) {
-        console.log('Found promptForm element:', promptForm);
+    socket.on('imageUpdated', (data) => {
+        if (data.imagePath) {
+            console.log('Image updated:', data.imagePath);
+            updateImage(data.imagePath);
+        } else {
+            console.error('No imagePath received in WebSocket message.');
+        }
+    });
 
+    socket.on('error', (error) => handleSocketError('WebSocket error', error));
+    socket.on('connect_error', (error) => handleSocketError('WebSocket connection error', error));
+
+    // Handle form submission
+    if (promptForm) {
         promptForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-            console.log('Form submit event triggered');
-
             const prompt = document.getElementById('prompt').value.trim();
-            console.log('Prompt value:', prompt);
 
-            if (prompt) {
-                console.log('Sending prompt to server:', prompt);
-                // Show loading indicator
-                document.getElementById('loading').style.display = 'block';
-                document.getElementById('error').textContent = ''; // Clear previous error messages
+            if (!prompt) {
+                displayError('Prompt cannot be empty.');
+                return;
+            }
 
-                try {
-                    const response = await fetch('/sendPrompt', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'socket-id': socket.id // Send the socket ID in the request headers
-                        },
-                        body: JSON.stringify({ prompt })
-                    });
+            console.log('Submitting prompt:', prompt);
+            displayLoading(true);
+            clearError();
 
-                    console.log('Response received from server');
-                    const result = await response.json();
-                    console.log('Result from server:', result);
+            try {
+                const response = await fetch('/sendPrompt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'socket-id': socket.id // Attach the socket ID
+                    },
+                    body: JSON.stringify({ prompt })
+                });
 
-                    if (response.ok) {
-                        console.log('Received image path from server:', result.imagePath);
-                        // Hide loading indicator
-                        document.getElementById('loading').style.display = 'none';
-
-                        // Update the active image
-                        const activeImage = document.getElementById('activeImage');
-                        activeImage.src = result.imagePath;
-                        console.log('Active image updated:', activeImage.src);
-
-                        // Show download button
-                        const downloadButton = document.getElementById('downloadButton');
-                        downloadButton.style.display = 'block';
-                        downloadButton.onclick = () => {
-                            const a = document.createElement('a');
-                            a.href = activeImage.src;
-                            a.download = 'generated_image.jpg';
-                            a.click();
-                            console.log('Download initiated for:', activeImage.src);
-                        };
-                    } else {
-                        console.error('Error from server:', result.error);
-                        document.getElementById('error').textContent = result.error;
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    document.getElementById('error').textContent = 'An error occurred. Please try again later.';
+                const result = await response.json();
+                if (response.ok) {
+                    console.log('Image path received from server:', result.imagePath);
+                    updateImage(result.imagePath);
+                } else {
+                    console.error('Server error:', result.error);
+                    displayError(result.error || 'Unexpected server error.');
                 }
-            } else {
-                console.error('Prompt cannot be empty.');
-                document.getElementById('error').textContent = 'Prompt cannot be empty.';
+            } catch (error) {
+                console.error('Request error:', error);
+                displayError('An error occurred while sending the prompt. Please try again.');
+            } finally {
+                displayLoading(false);
             }
         });
     } else {
-        console.error('promptForm element not found');
+        console.error('Prompt form not found in DOM.');
+    }
+
+    // Utility functions
+    function updateStatusBadge(text, className) {
+        if (statusBadge) {
+            statusBadge.textContent = text;
+            statusBadge.className = className;
+        }
+    }
+
+    function updateImage(imagePath) {
+        if (activeImage && imagePath) {
+            // Verify that the image path is valid
+            if (isValidImageUrl(imagePath)) {
+                activeImage.src = imagePath;
+                downloadButton.style.display = 'block';
+                console.log('Image updated:', imagePath);
+                downloadButton.onclick = () => initiateDownload(imagePath);
+            } else {
+                displayError('Invalid image path received.');
+            }
+        }
+    }
+
+    function isValidImageUrl(url) {
+        // Simple check to see if the URL seems valid
+        return url && (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/images/'));
+    }
+
+    function displayLoading(show) {
+        if (loadingIndicator) {
+            loadingIndicator.style.display = show ? 'block' : 'none';
+        }
+    }
+
+    function clearError() {
+        if (errorDisplay) {
+            errorDisplay.textContent = '';
+        }
+    }
+
+    function displayError(message) {
+        if (errorDisplay) {
+            errorDisplay.textContent = message;
+        }
+    }
+
+    function handleSocketError(logMessage, error) {
+        console.error(logMessage, error);
+        displayError('WebSocket error occurred. Please try again later.');
+    }
+
+    function initiateDownload(imagePath) {
+        if (imagePath) {
+            const link = document.createElement('a');
+            link.href = imagePath;
+            link.download = 'generated_image.jpg';
+            link.click();
+            console.log('Download initiated for:', imagePath);
+        }
     }
 });

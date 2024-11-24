@@ -31,39 +31,42 @@ async function startServer() {
             let dataBuffer = Buffer.alloc(0);
 
             socket.on('data', (data) => {
-                logger.info(`Receiving image data chunk of size ${data.length} bytes...`);
                 dataBuffer = Buffer.concat([dataBuffer, data]);
-                logger.info(`Current buffer size: ${dataBuffer.length} bytes`);
             });
 
             socket.on('end', async () => {
                 logger.info('Image data received completely.');
                 logger.info(`Total received data size: ${dataBuffer.length} bytes`);
-
+            
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
                 const publicImagePath = '/images'; // URL path for the client
-
+            
                 try {
                     if (!fs.existsSync(imagesDir)) {
                         fs.mkdirSync(imagesDir, { recursive: true });
                         logger.info(`Created directory: ${imagesDir}`);
                     }
-
+            
                     // Save the new image with a unique name in the images directory
                     const uniqueFilename = `received_image_${uuidv4()}.jpg`;
                     const imagePath = path.join(imagesDir, uniqueFilename);
                     const relativeImagePath = path.join(publicImagePath, uniqueFilename); // Client-accessible path
-
+            
                     await fs.promises.writeFile(imagePath, dataBuffer);
                     logger.info(`Image saved to ${imagePath} (Binary)`);
-
+            
                     // Emit event to notify the specific client
-                    receiveImageEmitter.emit('imageReceived', relativeImagePath);
-                    logger.info(`Event 'imageReceived' emitted with relative path: ${relativeImagePath}`);
+                    logger.info('Emitting imageReceived event...');
+
+                    // Normiere den Pfad (ersetze Backslashes durch Forward Slashes)
+                    const normalizedPath = relativeImagePath.replace(/\\/g, '/');
+
+                    receiveImageEmitter.emit('imageReceived', normalizedPath);
+                    logger.info(`Event 'imageReceived' emitted with relative path: ${normalizedPath}`);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }
-            });
+            });            
 
             socket.on('close', () => {
                 logger.info('Image sender disconnected');
