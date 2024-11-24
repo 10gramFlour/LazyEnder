@@ -1,5 +1,5 @@
 // Establish WebSocket connection
-const socket = io('http://localhost:5002'); // Production environment
+const socket = io('http://localhost:5002'); // Update to production environment as needed
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusBadge = document.getElementById('statusBadge');
     const activeImage = document.getElementById('activeImage');
     const downloadButton = document.getElementById('downloadButton');
+    const loadingIndicator = document.getElementById('loading');
+    const errorDisplay = document.getElementById('error');
+
     if (downloadButton) {
         downloadButton.style.display = 'none';
     }
-    const loadingIndicator = document.getElementById('loading');
-    const errorDisplay = document.getElementById('error');
 
     // WebSocket event listeners
     socket.on('connect', () => {
@@ -37,20 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatusBadge('Connected', 'connected');
     });
 
-    // Handle socket errors and connection issues
+    // Handle errors
     socket.on('error', (error) => {
         handleSocketError('WebSocket error', error);
-        retryWebSocketConnection();  // Aufruf hier
+        retryWebSocketConnection();
     });
 
     socket.on('connect_error', (error) => {
         handleSocketError('WebSocket connection error', error);
-        retryWebSocketConnection();  // Aufruf hier
+        retryWebSocketConnection();
     });
-
-    // Handle socket errors and connection issues
-    socket.on('error', (error) => handleSocketError('WebSocket error', error));
-    socket.on('connect_error', (error) => handleSocketError('WebSocket connection error', error));
 
     // Listen for image updates
     socket.on('imageUpdated', (data) => {
@@ -121,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 activeImage.src = imagePath;
                 downloadButton.style.display = 'block';
 
-                // Dynamischer Download-Button je nach Dateityp
                 const fileType = imagePath.split('.').pop();
                 downloadButton.onclick = () => initiateDownload(imagePath, fileType);
             } else {
@@ -131,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function isValidImageUrl(url) {
-        // Simple check to see if the URL seems valid
         return url && (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/images/'));
     }
 
@@ -158,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayError('WebSocket error occurred. Please try again later.');
     }
 
-    // Retry connection if it fails multiple times
     function retryWebSocketConnection() {
         setTimeout(() => {
             console.log('Attempting to reconnect...');
@@ -170,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (imagePath) {
             const link = document.createElement('a');
             link.href = imagePath;
-            link.download = `generated_image.${fileType || 'jpg'}`;  // Dynamisch Dateiendung basierend auf URL
+            link.download = `generated_image.${fileType || 'jpg'}`;
             link.click();
             console.log('Download initiated for:', imagePath);
         }
