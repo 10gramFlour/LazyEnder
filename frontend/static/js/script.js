@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('disconnect', () => {
         console.log('WebSocket connection closed.');
         updateStatusBadge('Disconnected', 'disconnected');
+        displayError('Disconnected from WebSocket. Please try again later.');
     });
 
     socket.on('reconnect_attempt', () => {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateImage(data.imagePath);
         } else {
             console.error('No imagePath received in WebSocket message.');
+            displayError('Error receiving image.');
         }
     });
 
@@ -149,3 +151,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+

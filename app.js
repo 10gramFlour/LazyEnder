@@ -1,16 +1,18 @@
+// Importiere die Konfiguration aus settings.js
+import { RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT, RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT } from './backend/config/settings.js';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import logger from './backend/logger.js';
 import { spawn } from 'child_process';
-import net from 'net';
 import kill from 'tree-kill';
 
-// Get the directory of the current script file
+// Hole das Verzeichnis der aktuellen Skriptdatei
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Function to validate and sanitize script paths
+// Funktion zur Validierung und Sanitisierung von Skript-Pfaden
 function validateScriptPath(scriptPath) {
     if (!path.isAbsolute(scriptPath)) {
         throw new Error(`Invalid script path: ${scriptPath}`);
@@ -18,43 +20,22 @@ function validateScriptPath(scriptPath) {
     return scriptPath;
 }
 
-// Define paths for the backend and receive image server scripts
+// Definiere Pfade für die Server-Skripte
 const serverScript = validateScriptPath(path.join(__dirname, 'backend', 'server.js'));
 const receiveImageScript = validateScriptPath(path.join(__dirname, 'backend', 'receiveImage.js'));
 
 let backendServerStarted = false;
 let receiveImageServerStarted = false;
-let backendServerProcess = null;
-let receiveImageServerProcess = null;
 
-// Function to check if a port is in use
-function isPortInUse(port) {
-    return new Promise((resolve, reject) => {
-        const server = net.createServer();
-        server.unref();
-        server.on('error', (err) => {
-            if (err.code === 'EADDRINUSE') {
-                resolve(true); // Port is in use
-            } else {
-                reject(err);
-            }
-        });
-        server.listen(port, '127.0.0.1', () => {
-            server.close(() => resolve(false)); // Port is free
-        });
-    });
-}
-
-// Function to start a server using Node.js child process
-// Funktion zum Starten von Servern mit korrekter Portbehandlung
-async function startServer(scriptPath, serverName, port) {
+// Funktion zum Starten eines Servers über einen Child-Prozess
+function startServer(scriptPath, serverName, host, port) {
     if ((serverName === 'Backend Server' && backendServerStarted) || 
         (serverName === 'Receive Image Server' && receiveImageServerStarted)) {
         logger.warn(`${serverName} is already started.`);
         return null;
     }
 
-    logger.info(`Starting ${serverName}...`);
+    logger.info(`Starting ${serverName} on ${host}:${port}...`);
     const server = spawn('node', [scriptPath]);
 
     server.stdout.on('data', (data) => {
@@ -81,14 +62,14 @@ async function startServer(scriptPath, serverName, port) {
     return server;
 }
 
-// Starte beide Server mit unterschiedlichen Ports
-const backendServer = await startServer(serverScript, 'Backend Server', 5002);  // Port 5002 für Backend
-const receiveImageServer = await startServer(receiveImageScript, 'Receive Image Server', 5003);  // Port 5003 für Receive Image Server
+// Starte beide Server mit den Konfigurationswerten aus settings.js
+const backendServer = startServer(serverScript, 'Backend Server', RECEIVE_PROMPT_HOST, RECEIVE_PROMPT_PORT);
+const receiveImageServer = startServer(receiveImageScript, 'Receive Image Server', RECEIVE_IMAGE_HOST, RECEIVE_IMAGE_PORT);
 
-// Sicherstellen, dass der Receive Image Server gestoppt wird
+// Bereinige Server beim Beenden der Anwendung
 process.on('SIGINT', async () => {
     logger.info('Closing servers...');
-    await stopServers([backendServer, receiveImageServer]); // Verwendung von receiveImageServer
+    await stopServers([backendServer, receiveImageServer]);
     logger.info('All servers closed. Exiting application.');
     process.exit(0);
 });
@@ -125,4 +106,3 @@ function killProcess(pid, serverName) {
         });
     });
 }
-
