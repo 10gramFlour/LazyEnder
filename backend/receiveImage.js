@@ -15,7 +15,7 @@ const __dirname = dirname(__filename);
 const receiveImageEmitter = new EventEmitter();
 
 let serverStarted = false;
-let server; // Ensure the variable `server` is declared here
+let server;
 
 async function startServer() {
     if (serverStarted) {
@@ -25,7 +25,7 @@ async function startServer() {
     serverStarted = true;
 
     try {
-        server = net.createServer((socket) => { // Initialize the variable `server` here
+        server = net.createServer((socket) => {
             logger.info('Connected to image sender');
 
             let dataBuffer = Buffer.alloc(0);
@@ -41,6 +41,7 @@ async function startServer() {
                 logger.info(`Total received data size: ${dataBuffer.length} bytes`);
 
                 const imagesDir = 'C:\\Apps\\LazyEnder\\images';
+                const publicImagePath = '/images'; // URL path for the client
 
                 try {
                     if (!fs.existsSync(imagesDir)) {
@@ -51,12 +52,14 @@ async function startServer() {
                     // Save the new image with a unique name in the images directory
                     const uniqueFilename = `received_image_${uuidv4()}.jpg`;
                     const imagePath = path.join(imagesDir, uniqueFilename);
+                    const relativeImagePath = path.join(publicImagePath, uniqueFilename); // Client-accessible path
+
                     await fs.promises.writeFile(imagePath, dataBuffer);
                     logger.info(`Image saved to ${imagePath} (Binary)`);
 
                     // Emit event to notify the specific client
-                    receiveImageEmitter.emit('imageReceived', imagePath);
-                    logger.info(`Event 'imageReceived' emitted with path: ${imagePath}`);
+                    receiveImageEmitter.emit('imageReceived', relativeImagePath);
+                    logger.info(`Event 'imageReceived' emitted with relative path: ${relativeImagePath}`);
                 } catch (err) {
                     logger.error('Error handling the image directory or file:', err);
                 }

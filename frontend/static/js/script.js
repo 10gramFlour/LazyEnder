@@ -1,12 +1,11 @@
 // Establish WebSocket connection
-const socket = io();  // Production environment
+const socket = io('http://localhost:8081'); // Production environment
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
     const promptForm = document.getElementById('promptForm');
-    const socket = io('http://localhost:8081'); // Use the fixed WebSocket port
 
     socket.on('connect', () => {
         console.log('WebSocket connection established');
